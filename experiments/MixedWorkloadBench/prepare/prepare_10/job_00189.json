@@ -1,0 +1,148 @@
+{
+  "job_id": "job_00189",
+  "dispatch_id": 189,
+  "benchmark": "research_bench",
+  "logical_id": "2112.10752",
+  "arrival_offset_s": 972.378789,
+  "task_prompt_sha256": "3b9ac8061e4fe605953bfa2edf93c1df196b738325f9bec59f0a0cf9040735e6",
+  "planning_start_time": 1777599343.6063488,
+  "planning_end_time": 1777599354.385767,
+  "planning_duration_s": 10.7794,
+  "planner_input_tokens": 23433,
+  "planner_completion_tokens": 1073,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_robin",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Robin Rombach's persona.",
+        "agent_params": {
+          "author_name": "Robin Rombach",
+          "affiliation": "Unknown",
+          "publications": [
+            "Stochastic Image-to-Video Synthesis using cINNs",
+            "ImageBART: Bidirectional Context with Multinomial Diffusion for Autoregressive Image Synthesis",
+            "Geometry-Free View Synthesis: Transformers and no 3D Priors"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_andreas",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Andreas Blattmann's persona.",
+        "agent_params": {
+          "author_name": "Andreas Blattmann",
+          "affiliation": "Unknown",
+          "publications": [
+            "Stochastic Image-to-Video Synthesis using cINNs",
+            "iPOKE: Poking a Still Image for Controlled Stochastic Video Synthesis",
+            "Behavior-Driven Synthesis of Human Dynamics"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_dominik",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Dominik Lorenz's persona.",
+        "agent_params": {
+          "author_name": "Dominik Lorenz",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Part-Based Disentangling of Object Shape and Appearance"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_patrick",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Patrick Esser's persona.",
+        "agent_params": {
+          "author_name": "Patrick Esser",
+          "affiliation": "Unknown",
+          "publications": [
+            "Integrated Modelling and Simulation of the Additive Manufacturing and Heat Treatment Process Chain",
+            "ImageBART: Bidirectional Context with Multinomial Diffusion for Autoregressive Image Synthesis",
+            "Geometry-Free View Synthesis: Transformers and no 3D Priors"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_bjorn",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Björn Ommer's persona.",
+        "agent_params": {
+          "author_name": "Björn Ommer",
+          "affiliation": "Unknown",
+          "publications": [
+            "Stochastic Image-to-Video Synthesis using cINNs",
+            "VelocityNet: Motion-Driven Feature Aggregation for 3D Object Detection in Point Cloud Sequences",
+            "iPOKE: Poking a Still Image for Controlled Stochastic Video Synthesis"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator synthesizes these into a cohesive final proposal."
+  }
+}

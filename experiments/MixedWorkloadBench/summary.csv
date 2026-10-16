@@ -1,0 +1,78 @@
+Section,Metric
+Experiment Setup,Random seed
+Experiment Setup,Test window (min)
+Experiment Setup,Target total JPS
+Experiment Setup,Submitted JPS
+Experiment Setup,Backend
+Experiment Setup,Runtime
+Experiment Setup,Hardware
+Experiment Setup,Models
+,
+Completion Results,Submitted jobs
+Completion Results,Succeeded jobs
+Completion Results,Failed jobs
+Completion Results,Killed jobs
+,
+E2E Job,Mean job runtime (s)
+E2E Job,P95 job runtime (s)
+E2E Job,Max job runtime (s)
+E2E Job,Jobs with job queueing delay
+E2E Job,Mean job queueing delay (s)
+E2E Job,Max job queueing delay (s)
+,
+Token Metrics,Jobs with token metrics
+Token Metrics,Mean total tokens/job
+Token Metrics,P95 total tokens/job
+Token Metrics,Max total tokens/job
+Token Metrics,Mean input tokens/job
+Token Metrics,Mean output tokens/job
+,
+Tool Metrics,Jobs with tool latency metric
+Tool Metrics,Mean tool-call latency/job (s)
+Tool Metrics,Max tool-call latency/job (s)
+,
+Inference Metrics,Jobs with metrics
+Inference Metrics,LLM calls
+Inference Metrics,Mean client latency total/job (s)
+Inference Metrics,P95 client latency total/job (s)
+Inference Metrics,Max client latency total/job (s)
+Inference Metrics,Mean backend latency total/job (s)
+Inference Metrics,P95 backend latency total/job (s)
+Inference Metrics,Max backend latency total/job (s)
+Inference Metrics,Mean backend queue wait total/job (s)
+Inference Metrics,P95 backend queue wait total/job (s)
+Inference Metrics,Max backend queue wait total/job (s)
+,
+Concurrency Metrics,Mean concurrent jobs
+Concurrency Metrics,Max concurrent jobs
+Concurrency Metrics,Mean concurrent LLM calls
+Concurrency Metrics,Max concurrent LLM calls
+,
+Agent Graph Metrics,Jobs with agent graph metrics
+Agent Graph Metrics,Mean agents/job
+Agent Graph Metrics,Max agents/job
+Agent Graph Metrics,Mean agent graph depth
+Agent Graph Metrics,Max agent graph depth
+Agent Graph Metrics,Mean critical path latency (s)
+Agent Graph Metrics,Max critical path latency (s)
+Agent Graph Metrics,Mean parallelism
+Agent Graph Metrics,Max parallelism
+,
+Resource Metrics,Resource samples
+Resource Metrics,Mean CPU usage (%)
+Resource Metrics,Max CPU usage (%)
+Resource Metrics,Mean SM util (%)
+Resource Metrics,Max SM util (%)
+Resource Metrics,Mean KV cache usage
+Resource Metrics,Max KV cache usage
+Resource Metrics,Mean KV reuse rate
+Resource Metrics,Max KV reuse rate
+,
+ORLA Metrics,Jobs with ORLA metrics
+ORLA Metrics,Mean ORLA queue wait/job (s)
+ORLA Metrics,P95 ORLA queue wait/job (s)
+ORLA Metrics,Mean ORLA scheduler decision/job (s)
+ORLA Metrics,Mean ORLA dispatch/job (s)
+ORLA Metrics,Mean ORLA backend request latency/job (s)
+ORLA Metrics,P95 ORLA backend request latency/job (s)
+ORLA Metrics,Total ORLA estimated cost (USD)

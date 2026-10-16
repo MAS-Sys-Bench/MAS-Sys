@@ -1,0 +1,10 @@
+seed: 42
+duration_minutes: 30
+total_jps: 0.01
+
+ratio:
+  research_bench: 0.2
+  pinchbench: 0.2
+  swebench: 0.2
+  paperbananabench: 0.2
+  deepfundbench: 0.2

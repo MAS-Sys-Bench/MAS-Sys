@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00061",
+  "dispatch_id": 61,
+  "benchmark": "research_bench",
+  "logical_id": "2102.03334",
+  "arrival_offset_s": 667.91585,
+  "task_prompt_sha256": "cd38605ecb9fc675630e327c35f01ae817f7e37ec7306584f2c83096fccfe597",
+  "planning_start_time": 1777451678.2210033,
+  "planning_end_time": 1777451684.9017653,
+  "planning_duration_s": 6.6808,
+  "planner_input_tokens": 14988,
+  "planner_completion_tokens": 779,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_1",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a research proposal candidate from the persona of Wonjae Kim.",
+        "agent_params": {
+          "author_name": "Wonjae Kim",
+          "affiliation": "Unknown",
+          "publications": [
+            "ViDT: An Efficient and Effective Fully Transformer-based Object Detector",
+            "Conditional Generation of Periodic Signals with Fourier-Based Decoder",
+            "Discrete Infomax Codes for Supervised Representation Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_2",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a research proposal candidate from the persona of Bokyung Son.",
+        "agent_params": {
+          "author_name": "Bokyung Son",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sparse and Decorrelated Representations for Stable Zero-shot NMT",
+            "Revisiting Modularized Multilingual NMT to Meet Industrial Demands",
+            "AttnIO: Knowledge Graph Exploration with In-and-Out Attention Flow for Knowledge-Grounded Dialogue"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_3",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a research proposal candidate from the persona of Ildoo Kim.",
+        "agent_params": {
+          "author_name": "Ildoo Kim",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sacrificial Template‐Assisted Synthesis of Inorganic Nanosheets with High‐Loading Single‐Atom Catalysts: A General Approach",
+            "Reduced Graphene-Oxide-Encapsulated MoS2/Carbon Nanofiber Composite Electrode for High-Performance Na-Ion Batteries",
+            "Spatially Consistent Representation Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates the research proposal candidates into a final proposal in [Question 1]-[Question 5] format.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research background. The final proposal is aggregated from these candidates."
+  }
+}

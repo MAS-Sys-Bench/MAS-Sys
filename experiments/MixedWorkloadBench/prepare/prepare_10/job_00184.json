@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00184",
+  "dispatch_id": 184,
+  "benchmark": "research_bench",
+  "logical_id": "2205.11916",
+  "arrival_offset_s": 965.080124,
+  "task_prompt_sha256": "e90fe3ad0bcecd4df3f0e2b089fa0e208a19c4faa66e9cdf0db87d0f5bcb2c34",
+  "planning_start_time": 1777599307.953229,
+  "planning_end_time": 1777599321.089554,
+  "planning_duration_s": 13.1363,
+  "planner_input_tokens": 12482,
+  "planner_completion_tokens": 1107,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_takeshi_kojima",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Takeshi Kojima's persona.",
+        "agent_params": {
+          "author_name": "Takeshi Kojima",
+          "affiliation": "Unknown",
+          "publications": [
+            "Robustifying Vision Transformer without Retraining from Scratch by Test-Time Class-Conditional Feature Alignment",
+            "Making Use of Latent Space in Language GANs for Generating Diverse Text without Pre-training",
+            "Cycle Sketch GAN: Unpaired Sketch to Sketch Translation Based on Cycle GAN Algorithm"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_shixiang_shane_gu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Shixiang Shane Gu's persona.",
+        "agent_params": {
+          "author_name": "Shixiang Shane Gu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Blocks Assemble! Learning to Assemble with Large-Scale Structured Reinforcement Learning",
+            "Can Wikipedia Help Offline Reinforcement Learning?",
+            "Mind's Eye: Grounded Language Model Reasoning through Simulation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_machel_reid",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Machel Reid's persona.",
+        "agent_params": {
+          "author_name": "Machel Reid",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Few Thousand Translations Go a Long Way! Leveraging Pre-trained Models for African News Translation",
+            "Can Wikipedia Help Offline Reinforcement Learning?",
+            "Learning to Model Editing Processes"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yutaka_matsuo",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yutaka Matsuo's persona.",
+        "agent_params": {
+          "author_name": "Yutaka Matsuo",
+          "affiliation": "Unknown",
+          "publications": [
+            "Detecting Human Actions in Drone Images Using YoloV5 and Stochastic Gradient Boosting",
+            "Detecting Object-Level Scene Changes in Images with Viewpoint Differences Using Graph Matching",
+            "Langevin Autoencoders for Learning Deep Latent Variable Models"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yusuke_iwasawa",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yusuke Iwasawa's persona.",
+        "agent_params": {
+          "author_name": "Yusuke Iwasawa",
+          "affiliation": "Unknown",
+          "publications": [
+            "Detecting Object-Level Scene Changes in Images with Viewpoint Differences Using Graph Matching",
+            "Langevin Autoencoders for Learning Deep Latent Variable Models",
+            "Multimodal Sequential Generative Models for Semi-Supervised Language Instruction Following"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise and previous work of multiple authors. Each author contributes a proposal candidate based on their research background, which is then aggregated into a cohesive final proposal."
+  }
+}

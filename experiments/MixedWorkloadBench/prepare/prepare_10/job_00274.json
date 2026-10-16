@@ -1,0 +1,148 @@
+{
+  "job_id": "job_00274",
+  "dispatch_id": 274,
+  "benchmark": "deepfundbench",
+  "logical_id": "main:2025-04-21:KO",
+  "arrival_offset_s": 1358.516608,
+  "task_prompt_sha256": "dfbce24218b91eb1fe05612952aabad9e15620e8be8cef03bd0791ce66552036",
+  "planning_start_time": 1777600017.972365,
+  "planning_end_time": 1777600026.5188565,
+  "planning_duration_s": 8.5465,
+  "planner_input_tokens": 2686,
+  "planner_completion_tokens": 998,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "fund_manager_ko"
+    },
+    "agents": [
+      {
+        "agent_key": "fund_technical",
+        "instance_id": "fund_technical_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes technical indicators for KO to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_fundamental",
+        "instance_id": "fund_fundamental_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates fundamental financial metrics for KO to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_insider",
+        "instance_id": "fund_insider_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes insider trading activities for KO to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_news",
+        "instance_id": "fund_news_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates recent news articles about KO to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_macro",
+        "instance_id": "fund_macro_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Assesses macroeconomic conditions to generate a Bullish/Bearish/Neutral signal for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_policy",
+        "instance_id": "fund_policy_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates fiscal and monetary policy impacts to generate a Bullish/Bearish/Neutral signal for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_manager",
+        "instance_id": "fund_manager_ko",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Performs risk analysis and makes final Buy/Sell/Hold decisions for KO based on analyst signals.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-21",
+          "portfolio": {
+            "cashflow": 100000,
+            "positions": {}
+          }
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS performs a comprehensive stock trading analysis for KO on 2025-04-21, using multiple financial analysis agents to generate signals that inform the fund manager's final trading decisions."
+  }
+}

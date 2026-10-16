@@ -1,0 +1,13 @@
+exp_name: "main"
+start_date: "2025-04-01"
+end_date: "2025-05-01"
+cashflow: 100000
+
+tickers:
+  - TSLA
+  - NVDA
+  - AAPL
+  - AXP
+  - BAC
+  - KO
+  - CVX

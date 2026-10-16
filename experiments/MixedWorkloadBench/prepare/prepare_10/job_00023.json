@@ -1,0 +1,110 @@
+{
+  "job_id": "job_00023",
+  "dispatch_id": 23,
+  "benchmark": "swebench",
+  "logical_id": "matplotlib__matplotlib-25433",
+  "arrival_offset_s": 76.559211,
+  "task_prompt_sha256": "a89e70e033ab4e1ae10fb63c4e0a8bfe0a558f288f3e098fc9b21d66957d7def",
+  "planning_start_time": 1777598113.0606935,
+  "planning_end_time": 1777598118.6849332,
+  "planning_duration_s": 5.6242,
+  "planner_input_tokens": 4452,
+  "planner_completion_tokens": 519,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Explores the repository to understand the codebase structure and locate relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "code_fixer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Makes necessary code changes to fix the issue identified in the relevant source files.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Verifies the changes made to ensure the issue is fixed correctly.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_fixer"
+      },
+      {
+        "source": "code_fixer",
+        "target": "code_verifier"
+      },
+      {
+        "source": "code_verifier",
+        "target": "code_fixer"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_fixer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to resolve a GitHub issue in the matplotlib project by exploring the codebase, making necessary code changes, and verifying the fix iteratively until the issue is resolved."
+  }
+}

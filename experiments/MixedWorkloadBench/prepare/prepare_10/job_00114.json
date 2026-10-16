@@ -1,0 +1,171 @@
+{
+  "job_id": "job_00114",
+  "dispatch_id": 114,
+  "benchmark": "research_bench",
+  "logical_id": "2105.15203",
+  "arrival_offset_s": 611.208007,
+  "task_prompt_sha256": "a4c8bde3adbc08a7639e8a057f937a858955c031ba41ca06f62c1efa7f1ded8b",
+  "planning_start_time": 1777598800.2872953,
+  "planning_end_time": 1777598812.9533603,
+  "planning_duration_s": 12.6661,
+  "planner_input_tokens": 19141,
+  "planner_completion_tokens": 1266,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Enze Xie.",
+        "agent_params": {
+          "author_name": "Enze Xie",
+          "affiliation": "Unknown",
+          "publications": [
+            "Watch Only Once: An End-to-End Video Action Detection Framework",
+            "Trans2Seg: Transparent Object Segmentation with Transformer",
+            "PolarMask++: Enhanced Polar Representation for Single-Shot Instance Segmentation and Beyond"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Wenhai Wang.",
+        "agent_params": {
+          "author_name": "Wenhai Wang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Trans2Seg: Transparent Object Segmentation with Transformer",
+            "PolarMask++: Enhanced Polar Representation for Single-Shot Instance Segmentation and Beyond",
+            "Panoptic SegFormer"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zhiding Yu.",
+        "agent_params": {
+          "author_name": "Zhiding Yu",
+          "affiliation": "Unknown",
+          "publications": [
+            "DiscoBox: Weakly Supervised Instance Segmentation and Semantic Correspondence from Box Supervision",
+            "Panoptic SegFormer",
+            "AugMax: Adversarial Composition of Random Augmentations for Robust Training"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Anima Anandkumar.",
+        "agent_params": {
+          "author_name": "Anima Anandkumar",
+          "affiliation": "Unknown",
+          "publications": [
+            "Long-Short Transformer: Efficient Transformers for Language and Vision",
+            "Few-shot Instruction Prompts for Pretrained Language Models to Detect Social Biases",
+            "DiscoBox: Weakly Supervised Instance Segmentation and Semantic Correspondence from Box Supervision"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author5_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jose M. Alvarez.",
+        "agent_params": {
+          "author_name": "Jose M. Alvarez",
+          "affiliation": "Unknown",
+          "publications": [
+            "See through Gradients: Image Batch Recovery via GradInversion",
+            "Cost Volume Pyramid Based Depth Inference for Multi-View Stereo",
+            "Active Learning for Deep Object Detection via Probabilistic Modeling"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author6_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ping Luo.",
+        "agent_params": {
+          "author_name": "Ping Luo",
+          "affiliation": "Unknown",
+          "publications": [
+            "Normalization of the Immune Microenvironment during Lenalidomide Maintenance Is Associated with Sustained MRD Negativity in Patients with Multiple Myeloma",
+            "When Human Pose Estimation Meets Robustness: Adversarial Algorithms and Benchmarks",
+            "A Novel Ladder Control Assisted Startup for Primary Side Regulated Flyback Converter"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "job_id": "job_00328",
+  "dispatch_id": 328,
+  "benchmark": "swebench",
+  "logical_id": "psf__requests-2148",
+  "arrival_offset_s": 1631.767958,
+  "task_prompt_sha256": "2aaa7d8cac501fc50b6470130902a5a02b6c0dffeb3ed5089989fcd8ef79d0a3",
+  "planning_start_time": 1777600394.155382,
+  "planning_end_time": 1777600398.9281151,
+  "planning_duration_s": 4.7727,
+  "planner_input_tokens": 3670,
+  "planner_completion_tokens": 514,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Explore the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "code_fixer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Make the necessary code changes to fix the issue by wrapping socket errors in requests exceptions.",
+        "agent_params": {},
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Verify the changes made to ensure the issue is fixed correctly.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_fixer"
+      },
+      {
+        "source": "code_fixer",
+        "target": "code_verifier"
+      },
+      {
+        "source": "code_verifier",
+        "target": "code_fixer"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_fixer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to resolve a GitHub issue in the psf/requests repository by exploring the codebase, fixing the socket error handling, and verifying the fix."
+  }
+}

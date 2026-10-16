@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00103",
+  "dispatch_id": 103,
+  "benchmark": "research_bench",
+  "logical_id": "1908.02265",
+  "arrival_offset_s": 1110.019732,
+  "task_prompt_sha256": "03f29de9b3d3196403a28630f31e477af73857e284808e41f6b19733c8555441",
+  "planning_start_time": 1777451983.3084784,
+  "planning_end_time": 1777451989.4948072,
+  "planning_duration_s": 6.1863,
+  "planner_input_tokens": 13778,
+  "planner_completion_tokens": 868,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jiasen_lu",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Jiasen Lu's persona.",
+        "agent_params": {
+          "author_name": "Jiasen Lu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Self-Monitoring Navigation Agent via Auxiliary Progress Estimation",
+            "12-in-1: Multi-Task Vision and Language Representation Learning",
+            "Emergence of Compositional Language with Deep Generational Transmission"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_dhruv_batra",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Dhruv Batra's persona.",
+        "agent_params": {
+          "author_name": "Dhruv Batra",
+          "affiliation": "Unknown",
+          "publications": [
+            "Audio Visual Scene-Aware Dialog",
+            "Chasing Ghosts: Instruction Following as Bayesian State Tracking",
+            "EvalAI: Towards Better Evaluation of AI Agents"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_devi_parikh",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Devi Parikh's persona.",
+        "agent_params": {
+          "author_name": "Devi Parikh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Audio Visual Scene-Aware Dialog",
+            "Chasing Ghosts: Instruction Following as Bayesian State Tracking",
+            "LANGUAGE MODELS MORE GROUNDED"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_stefan_lee",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Stefan Lee's persona.",
+        "agent_params": {
+          "author_name": "Stefan Lee",
+          "affiliation": "Unknown",
+          "publications": [
+            "Audio Visual Scene-Aware Dialog",
+            "Chasing Ghosts: Instruction Following as Bayesian State Tracking",
+            "Visual Dialog"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors, each contributing a proposal candidate based on their research persona, which is then aggregated into a final proposal."
+  }
+}

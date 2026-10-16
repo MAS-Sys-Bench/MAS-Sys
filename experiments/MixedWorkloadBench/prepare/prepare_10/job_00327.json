@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00327",
+  "dispatch_id": 327,
+  "benchmark": "research_bench",
+  "logical_id": "1911.11763",
+  "arrival_offset_s": 1627.525701,
+  "task_prompt_sha256": "3d6062f303ff8483da39eaaee3cac17db0e86967163b92b13a688694a078075d",
+  "planning_start_time": 1777600386.3422217,
+  "planning_end_time": 1777600394.1533425,
+  "planning_duration_s": 7.8111,
+  "planner_input_tokens": 15435,
+  "planner_completion_tokens": 919,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Paul-Edouard Sarlin.",
+        "agent_params": {
+          "author_name": "Paul-Edouard Sarlin",
+          "affiliation": "Unknown",
+          "publications": [
+            "Fishyscapes: A Benchmark for Safe Semantic Segmentation in Autonomous Driving",
+            "Leveraging Deep Visual Descriptors for Hierarchical Efficient Localization",
+            "From Coarse to Fine: Robust Hierarchical Localization at Large Scale"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Daniel DeTone.",
+        "agent_params": {
+          "author_name": "Daniel DeTone",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep ChArUco: Dark ChArUco Marker Pose Estimation",
+            "Self-Improving Visual Odometry",
+            "Toward Geometric Deep SLAM"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Tomasz Malisiewicz.",
+        "agent_params": {
+          "author_name": "Tomasz Malisiewicz",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning Data-Adaptive Interest Points through Epipolar Adaptation",
+            "Deep ChArUco: Dark ChArUco Marker Pose Estimation",
+            "Self-Improving Visual Odometry"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Andrew Rabinovich.",
+        "agent_params": {
+          "author_name": "Andrew Rabinovich",
+          "affiliation": "Unknown",
+          "publications": [
+            "EyeNet: A Multi-Task Deep Network for Off-Axis Eye Gaze Estimation",
+            "EyeNet: A Multi-Task Network for Off-Axis Eye Gaze Estimation and User Understanding",
+            "DeepPerimeter: Indoor Boundary Estimation from Posed Monocular Sequences"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of four authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

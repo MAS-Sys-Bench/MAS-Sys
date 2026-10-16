@@ -1,0 +1,109 @@
+{
+  "job_id": "job_00339",
+  "dispatch_id": 339,
+  "benchmark": "swebench",
+  "logical_id": "scikit-learn__scikit-learn-11040",
+  "arrival_offset_s": 1671.68189,
+  "task_prompt_sha256": "4bb8e00e682e21a6e8b6fbe2ae1f721023356519646bc512b057c3896ec43280",
+  "planning_start_time": 1777600461.6554744,
+  "planning_end_time": 1777600465.5943365,
+  "planning_duration_s": 3.9389,
+  "planner_input_tokens": 3726,
+  "planner_completion_tokens": 507,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Explores the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe",
+        "instance_id": "code_editor",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Makes the necessary code changes to fix the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Verifies the changes made to ensure they are correct.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_editor"
+      },
+      {
+        "source": "code_editor",
+        "target": "code_verifier"
+      },
+      {
+        "source": "code_verifier",
+        "target": "code_editor"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_editor",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to resolve a GitHub issue in the scikit-learn repository by exploring the codebase, making necessary code changes to fix the issue, and verifying the correctness of these changes."
+  }
+}

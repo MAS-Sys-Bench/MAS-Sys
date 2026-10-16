@@ -1,0 +1,21 @@
+# DeepFundBench – Gold ETF & Mining Stocks Experiment
+# Source: DeepFund/src/config/exp/gold_etf.yaml
+#
+# Gold ETF + two major gold mining companies.
+# Fundamental & insider analysis not applicable to ETFs,
+# so only technical + macroeconomic + policy analysts are used.
+
+exp_name: "gold-etf-stock"
+start_date: "2025-04-01"
+end_date: "2025-05-01"
+cashflow: 100000
+
+tickers:
+  - GLD    # SPDR Gold Shares ETF
+  - NEM    # Newmont Corporation
+  - GOLD   # Barrick Gold
+
+# workflow_analysts:
+#   - technical
+#   - macroeconomic
+#   - policy

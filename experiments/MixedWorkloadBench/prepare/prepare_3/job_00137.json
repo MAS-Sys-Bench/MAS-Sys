@@ -1,0 +1,146 @@
+{
+  "job_id": "job_00137",
+  "dispatch_id": 137,
+  "benchmark": "deepfundbench",
+  "logical_id": "main:2025-04-10:NVDA",
+  "arrival_offset_s": 1457.423949,
+  "task_prompt_sha256": "a3126b465371201dd1c5115e7ee12472dec4021f219939945a5cd7de9dcaa279",
+  "planning_start_time": 1777452225.910869,
+  "planning_end_time": 1777452236.0787048,
+  "planning_duration_s": 10.1678,
+  "planner_input_tokens": 2919,
+  "planner_completion_tokens": 999,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "fund_manager_node"
+    },
+    "agents": [
+      {
+        "agent_key": "fund_technical",
+        "instance_id": "technical_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Analyzes technical indicators for NVDA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "NVDA",
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_fundamental",
+        "instance_id": "fundamental_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Evaluates NVDA's financial health to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "NVDA",
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_insider",
+        "instance_id": "insider_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Analyzes insider trading activities for NVDA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "NVDA",
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_news",
+        "instance_id": "news_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Evaluates recent news articles about NVDA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "NVDA",
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_macro",
+        "instance_id": "macro_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Evaluates macroeconomic conditions to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_policy",
+        "instance_id": "policy_analyst_node",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Evaluates fiscal and monetary policy news to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "trading_date": "2025-04-10"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_manager",
+        "instance_id": "fund_manager_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Performs risk analysis and makes final Buy/Sell/Hold trading decisions for NVDA.",
+        "agent_params": {
+          "ticker": "NVDA",
+          "trading_date": "2025-04-10",
+          "portfolio": {
+            "cashflow": 100000,
+            "positions": {}
+          }
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": true,
+          "can_write": true
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS performs a comprehensive stock trading analysis for NVDA by evaluating technical, fundamental, insider, news, macroeconomic, and policy factors to inform a portfolio manager's trading decisions."
+  }
+}

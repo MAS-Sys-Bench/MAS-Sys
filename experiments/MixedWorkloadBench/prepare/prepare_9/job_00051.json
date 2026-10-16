@@ -1,0 +1,171 @@
+{
+  "job_id": "job_00051",
+  "dispatch_id": 51,
+  "benchmark": "research_bench",
+  "logical_id": "2006.06676",
+  "arrival_offset_s": 518.107968,
+  "task_prompt_sha256": "f4146b09a82cd4c931be7b83bf4b45e721998d67cb81654e527e83e054dd9673",
+  "planning_start_time": 1777596748.293552,
+  "planning_end_time": 1777596759.0526438,
+  "planning_duration_s": 10.7591,
+  "planner_input_tokens": 14226,
+  "planner_completion_tokens": 1268,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_tero_karras",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Tero Karras's persona.",
+        "agent_params": {
+          "author_name": "Tero Karras",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Style-Based Generator Architecture for Generative Adversarial Networks",
+            "Semi-Supervised StyleGAN for Disentanglement Learning",
+            "Modular primitives for high-performance differentiable rendering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_miika_aittala",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Miika Aittala's persona.",
+        "agent_params": {
+          "author_name": "Miika Aittala",
+          "affiliation": "Unknown",
+          "publications": [
+            "Analyzing and Improving the Image Quality of StyleGAN",
+            "Sample-based Monte Carlo denoising using a kernel-splatting network",
+            "Generating Training Data for Denoising Real RGB Images via Camera Pipeline Simulation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_janne_hellsten",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Janne Hellsten's persona.",
+        "agent_params": {
+          "author_name": "Janne Hellsten",
+          "affiliation": "Unknown",
+          "publications": [
+            "Modular primitives for high-performance differentiable rendering",
+            "Analyzing and Improving the Image Quality of StyleGAN",
+            "Image-Space Painterly Rendering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_samuli_laine",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Samuli Laine's persona.",
+        "agent_params": {
+          "author_name": "Samuli Laine",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Style-Based Generator Architecture for Generative Adversarial Networks",
+            "Modular primitives for high-performance differentiable rendering",
+            "AN12954 Porting a Deep Convolutional Generative Adversarial Network on imx8MMini with eIQ"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jaakko_lehtinen",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jaakko Lehtinen's persona.",
+        "agent_params": {
+          "author_name": "Jaakko Lehtinen",
+          "affiliation": "Unknown",
+          "publications": [
+            "Modular primitives for high-performance differentiable rendering",
+            "GANSpace: Discovering Interpretable GAN Controls",
+            "Predicting Mid-Air Interaction Movements and Fatigue Using Deep Reinforcement Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_timo_aila",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Timo Aila's persona.",
+        "agent_params": {
+          "author_name": "Timo Aila",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Style-Based Generator Architecture for Generative Adversarial Networks",
+            "Modular primitives for high-performance differentiable rendering",
+            "AN12954 Porting a Deep Convolutional Generative Adversarial Network on imx8MMini with eIQ"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

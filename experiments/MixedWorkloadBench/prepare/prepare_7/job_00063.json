@@ -1,0 +1,188 @@
+{
+  "job_id": "job_00063",
+  "dispatch_id": 63,
+  "benchmark": "research_bench",
+  "logical_id": "2012.07436",
+  "arrival_offset_s": 1395.046693,
+  "task_prompt_sha256": "e6c3a82e932c6159d84ad85b718450d539c83f980ae3a2dee32c014efc718c63",
+  "planning_start_time": 1777475369.3016968,
+  "planning_end_time": 1777475385.5599356,
+  "planning_duration_s": 16.2582,
+  "planner_input_tokens": 13814,
+  "planner_completion_tokens": 1389,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_haoyi_zhou",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Haoyi Zhou's persona.",
+        "agent_params": {
+          "author_name": "Haoyi Zhou",
+          "affiliation": "Unknown",
+          "publications": [
+            "Differentially-private Federated Neural Architecture Search",
+            "A Large Margin Learning Method for Matching Images of Natural Objects With Different Dimensions",
+            "A Time-Sensitive Hybrid Learning Model for Patient Subgrouping"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_shanghang_zhang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Shanghang Zhang's persona.",
+        "agent_params": {
+          "author_name": "Shanghang Zhang",
+          "affiliation": "Unknown",
+          "publications": [
+            "P4Contrast: Contrastive Learning with Pairs of Point-Pixel Pairs for RGB-D Scene Understanding",
+            "Revisiting Mid-Level Patterns for Cross-Domain Few-Shot Recognition",
+            "Cross-Domain Sentiment Classification with Contrastive Learning and Mutual Information Maximization"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jieqi_peng",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jieqi Peng's persona.",
+        "agent_params": {
+          "author_name": "Jieqi Peng",
+          "affiliation": "Unknown",
+          "publications": [
+            "Clinical characteristics of COVID-19 infection in chronic obstructive pulmonary disease: a multicenter, retrospective, observational study"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_shuai_zhang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Shuai Zhang's persona.",
+        "agent_params": {
+          "author_name": "Shuai Zhang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Stacked Kernel Network",
+            "An Efficient Approach to Event Detection and Forecasting in Dynamic Multivariate Social Media Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jianxin_li",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jianxin Li's persona.",
+        "agent_params": {
+          "author_name": "Jianxin Li",
+          "affiliation": "Unknown",
+          "publications": [
+            "Structured Sparsity Model Based Trajectory Tracking Using Private Location Data Release",
+            "Semi-Supervised Community Detection via Constraint Matrix Construction and Active Node Selection",
+            "Motif-Matching Based Subgraph-Level Attentional Convolutional Network for Graph Classification"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_hui_xiong",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Hui Xiong's persona.",
+        "agent_params": {
+          "author_name": "Hui Xiong",
+          "affiliation": "Unknown",
+          "publications": [
+            "Intelligent Exploration for User Interface Modules of Mobile App with Collective Learning",
+            "Inferring Lifetime Status of Point-of-Interest",
+            "Predicting Temporal Sets with Deep Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_wancai_zhang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Wancai Zhang's persona.",
+        "agent_params": {
+          "author_name": "Wancai Zhang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Variable efficacy of drotrecogin alfa (activated) in severe sepsis and septic shock: a meta-analysis",
+            "Effects of peritoneal macrophage autophagy on the immune function of sepsis mice."
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors. Each author contributes a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}

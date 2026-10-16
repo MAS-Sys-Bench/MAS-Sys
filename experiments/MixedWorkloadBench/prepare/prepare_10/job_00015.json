@@ -1,0 +1,147 @@
+{
+  "job_id": "job_00015",
+  "dispatch_id": 15,
+  "benchmark": "deepfundbench",
+  "logical_id": "main:2025-04-30:TSLA",
+  "arrival_offset_s": 54.362384,
+  "task_prompt_sha256": "6081c154cb799d0546c17f15229353973bfafa4960c73dc25abde5616c339bcb",
+  "planning_start_time": 1777598064.1549354,
+  "planning_end_time": 1777598071.8888896,
+  "planning_duration_s": 7.734,
+  "planner_input_tokens": 2688,
+  "planner_completion_tokens": 995,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "fund_manager_node"
+    },
+    "agents": [
+      {
+        "agent_key": "fund_technical",
+        "instance_id": "technical_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes technical indicators for TSLA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "TSLA",
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_fundamental",
+        "instance_id": "fundamental_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates TSLA's financial health to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "TSLA",
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_insider",
+        "instance_id": "insider_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes insider trading activities for TSLA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "TSLA",
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_news",
+        "instance_id": "news_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates recent news articles about TSLA to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "ticker": "TSLA",
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_macro",
+        "instance_id": "macro_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates macroeconomic conditions to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_policy",
+        "instance_id": "policy_analyst_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates fiscal and monetary policy news to generate a Bullish/Bearish/Neutral signal.",
+        "agent_params": {
+          "trading_date": "2025-04-30"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_manager",
+        "instance_id": "fund_manager_node",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Performs risk analysis and makes final Buy/Sell/Hold trading decisions for TSLA.",
+        "agent_params": {
+          "ticker": "TSLA",
+          "trading_date": "2025-04-30",
+          "portfolio": {
+            "cashflow": 100000,
+            "positions": {}
+          },
+          "recent_decisions": []
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS performs a comprehensive stock trading analysis for TSLA by evaluating technical, fundamental, insider, news, macroeconomic, and policy factors to inform a portfolio manager's final trading decision."
+  }
+}

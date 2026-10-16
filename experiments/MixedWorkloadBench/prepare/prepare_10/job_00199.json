@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00199",
+  "dispatch_id": 199,
+  "benchmark": "research_bench",
+  "logical_id": "1905.05950",
+  "arrival_offset_s": 1001.636036,
+  "task_prompt_sha256": "e5fde97116ca98ddcdf17c1b1da6c700d9184dbcb29f6717c34b183b927d2290",
+  "planning_start_time": 1777599415.2431242,
+  "planning_end_time": 1777599422.0841568,
+  "planning_duration_s": 6.841,
+  "planner_input_tokens": 7054,
+  "planner_completion_tokens": 779,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_ian",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Ian Tenney's perspective.",
+        "agent_params": {
+          "author_name": "Ian Tenney",
+          "affiliation": "Unknown",
+          "publications": [
+            "Probing What Different NLP Tasks Teach Machines about Function Word Comprehension",
+            "Intermediate Task Model Intermediate Task Output BERT Input Text Intermediate Task Model Intermediate Task Output ELMo BiLSTM Input Text Target Task Model Target Task Output Intermediate Task-Trained BERT Input Text Pretraining Task Model Pretraining Task Output BiLSTM",
+            "Compositionality as Directional Consistency in Sequential Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_dipanjan",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Dipanjan Das's perspective.",
+        "agent_params": {
+          "author_name": "Dipanjan Das",
+          "affiliation": "Unknown",
+          "publications": [
+            "Handling Divergent Reference Texts when Evaluating Table-to-Text Generation",
+            "Text Generation with Exemplar-based Adaptive Decoding",
+            "What do you learn from context? Probing for sentence structure in contextualized word representations"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_ellie",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Ellie Pavlick's perspective.",
+        "agent_params": {
+          "author_name": "Ellie Pavlick",
+          "affiliation": "Unknown",
+          "publications": [
+            "Probing What Different NLP Tasks Teach Machines about Function Word Comprehension",
+            "Planning with State Abstractions for Non-Markovian Task Specifications",
+            "Emergent Compositionality in Signaling Games"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates the proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise and perspectives of three authors, Ian Tenney, Dipanjan Das, and Ellie Pavlick, and then aggregates their individual proposals into a cohesive final proposal."
+  }
+}

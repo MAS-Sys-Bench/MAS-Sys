@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00087",
+  "dispatch_id": 87,
+  "benchmark": "research_bench",
+  "logical_id": "2301.12597",
+  "arrival_offset_s": 473.980833,
+  "task_prompt_sha256": "3a42279b1ea6d75669f6f5c177bc939c8cb43a3c014333b19a76836dd4bab5be",
+  "planning_start_time": 1777598596.5908833,
+  "planning_end_time": 1777598607.2015724,
+  "planning_duration_s": 10.6107,
+  "planner_input_tokens": 12809,
+  "planner_completion_tokens": 980,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Author 1 using shared related-paper context.",
+        "agent_params": {
+          "author_name": "Junnan Li",
+          "affiliation": "Unknown",
+          "publications": [
+            "ULIP-2: Towards Scalable Multimodal Pre-Training for 3D Understanding",
+            "A Physiological Signal Emotion Recognition Method Based on Domain Adaptation and Incremental Learning",
+            "InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Author 2 using shared related-paper context.",
+        "agent_params": {
+          "author_name": "Dongxu Li",
+          "affiliation": "Unknown",
+          "publications": [
+            "InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning",
+            "LAVIS: A One-stop Library for Language-Vision Intelligence",
+            "BLIP-Diffusion: Pre-trained Subject Representation for Controllable Text-to-Image Generation and Editing"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Author 3 using shared related-paper context.",
+        "agent_params": {
+          "author_name": "Silvio Savarese",
+          "affiliation": "Unknown",
+          "publications": [
+            "Modeling Dynamic Environments with Scene Graph Memory",
+            "Sonicverse: A Multisensory Simulation Platform for Embodied Household Agents that See and Hear",
+            "Enhancing Performance on Seen and Unseen Dialogue Scenarios using Retrieval-Augmented End-to-End Task-Oriented System"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Author 4 using shared related-paper context.",
+        "agent_params": {
+          "author_name": "Steven Hoi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Towards Low-Resource Automatic Program Repair with Meta-Learning and Pretrained Language Models",
+            "InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning",
+            "CodeT5+: Open Code Large Language Models for Code Understanding and Generation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates from all authors into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise and publications of four authors. Each author generates a proposal candidate based on their persona and shared related-paper context, which is then aggregated into a final proposal."
+  }
+}

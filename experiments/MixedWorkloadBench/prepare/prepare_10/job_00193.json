@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00193",
+  "dispatch_id": 193,
+  "benchmark": "research_bench",
+  "logical_id": "2002.05709",
+  "arrival_offset_s": 981.877408,
+  "task_prompt_sha256": "7d47fd84f43361750ce99e59602aa595f16ffa721a4047cf781f52957746f316",
+  "planning_start_time": 1777599381.4747505,
+  "planning_end_time": 1777599389.9034905,
+  "planning_duration_s": 8.4287,
+  "planner_input_tokens": 14924,
+  "planner_completion_tokens": 880,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ting Chen.",
+        "agent_params": {
+          "author_name": "Ting Chen",
+          "affiliation": "Unknown",
+          "publications": [
+            "Graph Contrastive Learning with Augmentations",
+            "Learning Multi-granular Quantized Embeddings for Large-Vocab Categorical Features in Recommender Systems",
+            "Robust Pre-Training by Adversarial Contrastive Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Simon Kornblith.",
+        "agent_params": {
+          "author_name": "Simon Kornblith",
+          "affiliation": "Unknown",
+          "publications": [
+            "Revisiting Spatial Invariance with Low-Rank Local Connectivity",
+            "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation",
+            "Teaching with Commentaries"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Mohammad Norouzi.",
+        "agent_params": {
+          "author_name": "Mohammad Norouzi",
+          "affiliation": "Unknown",
+          "publications": [
+            "RL Unplugged: A Suite of Benchmarks for Offline Reinforcement Learning",
+            "No MCMC for me: Amortized sampling for fast and stable training of energy-based models",
+            "What's in a Loss Function for Image Classification?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Geoffrey Hinton.",
+        "agent_params": {
+          "author_name": "Geoffrey Hinton",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised part representation by Flow Capsules",
+            "The Next Generation of Neural Networks",
+            "Teaching with Commentaries"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors. Each author agent writes a proposal candidate based on their persona and publications, and the aggregator agent combines these into a cohesive final proposal."
+  }
+}

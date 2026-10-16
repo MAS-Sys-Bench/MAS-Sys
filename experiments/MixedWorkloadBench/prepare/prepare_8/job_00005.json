@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00005",
+  "dispatch_id": 5,
+  "benchmark": "research_bench",
+  "logical_id": "1911.09070",
+  "arrival_offset_s": 178.482219,
+  "task_prompt_sha256": "072078351e3f5c4e5cd6ba43f40f9203d2989f7be40a131d6547128a08ace674",
+  "planning_start_time": 1777594035.5302613,
+  "planning_end_time": 1777594047.3969738,
+  "planning_duration_s": 11.8667,
+  "planner_input_tokens": 10864,
+  "planner_completion_tokens": 703,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Mingxing Tan.",
+        "agent_params": {
+          "author_name": "Mingxing Tan",
+          "affiliation": "Unknown",
+          "publications": [
+            "SpineNet: Learning Scale-Permuted Backbone for Recognition and Localization",
+            "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks",
+            "Searching for MobileNetV3"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ruoming Pang.",
+        "agent_params": {
+          "author_name": "Ruoming Pang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Monotonic Infinite Lookback Attention for Simultaneous Machine Translation",
+            "Two-Pass End-to-End Speech Recognition",
+            "Semi-supervised Training for End-to-end Models via Weak Distillation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Quoc V. Le.",
+        "agent_params": {
+          "author_name": "Quoc V. Le",
+          "affiliation": "Unknown",
+          "publications": [
+            "Soft Conditional Computation",
+            "Unsupervised Data Augmentation for Consistency Training",
+            "The Evolved Transformer"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

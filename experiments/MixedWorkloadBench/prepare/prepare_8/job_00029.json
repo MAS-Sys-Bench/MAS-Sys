@@ -1,0 +1,96 @@
+{
+  "job_id": "job_00029",
+  "dispatch_id": 29,
+  "benchmark": "research_bench",
+  "logical_id": "1903.12261",
+  "arrival_offset_s": 1516.399634,
+  "task_prompt_sha256": "3ec6fb72c166024671e59b6a32b4ca831fe929fae2f1e3bf6582dbfe946f4a3d",
+  "planning_start_time": 1777594316.2097874,
+  "planning_end_time": 1777594321.7773821,
+  "planning_duration_s": 5.5676,
+  "planner_input_tokens": 15699,
+  "planner_completion_tokens": 607,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_proposal_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Dan Hendrycks' perspective.",
+        "agent_params": {
+          "author_name": "Dan Hendrycks",
+          "affiliation": "Unknown",
+          "publications": [
+            "AugMix: A Simple Data Processing Method to Improve Robustness and Uncertainty",
+            "Testing Robustness Against Unforeseen Adversaries",
+            "Transfer of Adversarial Robustness Between Perturbation Types"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_proposal_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Thomas Dietterich's perspective.",
+        "agent_params": {
+          "author_name": "Thomas Dietterich",
+          "affiliation": "Unknown",
+          "publications": [
+            "Three-quarter Sibling Regression for Denoising Observational Data",
+            "Open Category Detection with PAC Guarantees",
+            "Crowds Replicate Performance of Scientific Experts Scoring Phylogenetic Matrices of Phenotypes"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates the proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "author1_proposal_writer",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "author2_proposal_writer",
+        "target": "proposal_aggregator"
+      }
+    ],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise and perspectives of two authors, Dan Hendrycks and Thomas Dietterich, and aggregating their insights into a cohesive proposal."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "job_id": "job_00085",
+  "dispatch_id": 85,
+  "benchmark": "swebench",
+  "logical_id": "sympy__sympy-16503",
+  "arrival_offset_s": 1780.790583,
+  "task_prompt_sha256": "6d6ab6902cfee506525ee9475f7b84ab521bc69d86550c0c63bba19efadf82ce",
+  "planning_start_time": 1777450211.1398962,
+  "planning_end_time": 1777450214.497425,
+  "planning_duration_s": 3.3575,
+  "planner_input_tokens": 3856,
+  "planner_completion_tokens": 493,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Explores the repository to understand the codebase structure and locate relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe",
+        "instance_id": "code_editor",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Makes necessary code changes to fix the issue in the relevant source files.",
+        "agent_params": {},
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Verifies the changes made to ensure the issue is fixed correctly.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_editor"
+      },
+      {
+        "source": "code_editor",
+        "target": "code_verifier"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_editor",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to resolve a GitHub issue in the sympy/sympy repository by exploring the codebase, making necessary code changes, and verifying the fix for the issue related to the pretty print alignment of Sum expressions."
+  }
+}

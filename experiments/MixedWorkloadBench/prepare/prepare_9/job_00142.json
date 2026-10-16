@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00142",
+  "dispatch_id": 142,
+  "benchmark": "research_bench",
+  "logical_id": "1904.12848",
+  "arrival_offset_s": 1514.525779,
+  "task_prompt_sha256": "97931edbbe781db52f5871ce3b5d8299ec92fe771c2ecc138956626adb43a752",
+  "planning_start_time": 1777597447.0309408,
+  "planning_end_time": 1777597461.3081353,
+  "planning_duration_s": 14.2772,
+  "planner_input_tokens": 18931,
+  "planner_completion_tokens": 1063,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Qizhe Xie.",
+        "agent_params": {
+          "author_name": "Qizhe Xie",
+          "affiliation": "Unknown",
+          "publications": [
+            "Self-Training With Noisy Student Improves ImageNet Classification",
+            "Unsupervised Data Augmentation",
+            "From Credit Assignment to Entropy Regularization: Two New Algorithms for Neural Sequence Prediction"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zihang Dai.",
+        "agent_params": {
+          "author_name": "Zihang Dai",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Data Augmentation",
+            "A Mutual Information Maximization Perspective of Language Representation Learning",
+            "Transformer-XL: Attentive Language Models beyond a Fixed-Length Context"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Eduard Hovy.",
+        "agent_params": {
+          "author_name": "Eduard Hovy",
+          "affiliation": "Unknown",
+          "publications": [
+            "OPERA: Operations-oriented Probabilistic Extraction, Reasoning, and Analysis",
+            "EQUATE: A Benchmark Evaluation Framework for Quantitative Reasoning in Natural Language Inference",
+            "Self-Training With Noisy Student Improves ImageNet Classification"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Minh-Thang Luong.",
+        "agent_params": {
+          "author_name": "Minh-Thang Luong",
+          "affiliation": "Unknown",
+          "publications": [
+            "Self-Training With Noisy Student Improves ImageNet Classification",
+            "Unsupervised Data Augmentation",
+            "Selfie: Self-supervised Pretraining for Image Embedding"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_5_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Quoc V. Le.",
+        "agent_params": {
+          "author_name": "Quoc V. Le",
+          "affiliation": "Unknown",
+          "publications": [
+            "Soft Conditional Computation",
+            "The Evolved Transformer",
+            "Natural Questions: A Benchmark for Question Answering Research"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

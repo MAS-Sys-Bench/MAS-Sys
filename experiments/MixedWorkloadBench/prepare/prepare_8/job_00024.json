@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00024",
+  "dispatch_id": 24,
+  "benchmark": "research_bench",
+  "logical_id": "1806.09055",
+  "arrival_offset_s": 1159.261381,
+  "task_prompt_sha256": "2b8f45967a89d57d83deeeb8efff802a93ff8a0bcce579f5126059d9687fa2ef",
+  "planning_start_time": 1777594271.302554,
+  "planning_end_time": 1777594277.5848043,
+  "planning_duration_s": 6.2823,
+  "planner_input_tokens": 11136,
+  "planner_completion_tokens": 760,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Hanxiao Liu.",
+        "agent_params": {
+          "author_name": "Hanxiao Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "An On-line Design of Physical Watermarks",
+            "Learning Graph Convolution Filters from Data Manifold",
+            "Graph Convolutional Matrix Completion for Bipartite Edge Prediction"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Karen Simonyan.",
+        "agent_params": {
+          "author_name": "Karen Simonyan",
+          "affiliation": "Unknown",
+          "publications": [
+            "Large Scale GAN Training for High Fidelity Natural Image Synthesis",
+            "The challenge of realistic music generation: modelling raw audio at scale",
+            "How Does Private Firm Innovation Affect Anti-Takeover Provisions in Corporate Charters?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Yiming Yang.",
+        "agent_params": {
+          "author_name": "Yiming Yang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Motion synthesis for high degree-of-freedom robots in complex and changing environments",
+            "Stochastic WaveNet: A Generative Latent Variable Model for Sequential Data",
+            "Desmonostoc danxiaense sp. nov. (Nostocales, Cyanobacteria) from Danxia mountain in China based on polyphasic approach"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates the proposal candidates from all authors into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise and previous work of three authors. Each author agent creates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}

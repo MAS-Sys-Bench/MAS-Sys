@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00353",
+  "dispatch_id": 353,
+  "benchmark": "research_bench",
+  "logical_id": "2207.02696",
+  "arrival_offset_s": 1756.815736,
+  "task_prompt_sha256": "b6d0d8154696454635adb6f51be75a72aaf7ba357448cd39b808ae2e80f265c8",
+  "planning_start_time": 1777600541.1080244,
+  "planning_end_time": 1777600551.594659,
+  "planning_duration_s": 10.4866,
+  "planner_input_tokens": 25589,
+  "planner_completion_tokens": 763,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Chien-Yao Wang.",
+        "agent_params": {
+          "author_name": "Chien-Yao Wang",
+          "affiliation": "Unknown",
+          "publications": [
+            "PADAr: physician-oriented artificial intelligence-facilitating diagnosis aid for retinal diseases",
+            "Designing Network Design Strategies Through Gradient Path Analysis",
+            "NeighborTrack: Improving Single Object Tracking by Bipartite Matching with Neighbor Tracklets"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Alexey Bochkovskiy.",
+        "agent_params": {
+          "author_name": "Alexey Bochkovskiy",
+          "affiliation": "Unknown",
+          "publications": [
+            "Non-deep Networks",
+            "Vision Transformers for Dense Prediction",
+            "Scaled-YOLOv4: Scaling Cross Stage Partial Network"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Hong-Yuan Mark Liao.",
+        "agent_params": {
+          "author_name": "Hong-Yuan Mark Liao",
+          "affiliation": "Unknown",
+          "publications": [
+            "Capturing Humans in Motion: Temporal-Attentive 3D Human Pose and Shape Estimation from Monocular Video",
+            "SearchTrack: Multiple Object Tracking with Object-Customized Search and Motion-Aware Features",
+            "End-to-End Key-Player-Based Group Activity Recognition Network Applied to Basketball Offensive Tactic Identification in Limited Data Scenarios"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates from all authors into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise and previous work of three authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the proposal aggregator."
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "job_id": "job_00134",
+  "dispatch_id": 134,
+  "benchmark": "research_bench",
+  "logical_id": "1807.05960",
+  "arrival_offset_s": 721.843941,
+  "task_prompt_sha256": "d186e0ea324dcd7f95f343dc2df49ff97a0d7eb54a075e7f97be7b146e7bfd0a",
+  "planning_start_time": 1777598936.4978306,
+  "planning_end_time": 1777598948.3105729,
+  "planning_duration_s": 11.8127,
+  "planner_input_tokens": 15049,
+  "planner_completion_tokens": 1375,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_andrei_rusu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Andrei A. Rusu's persona.",
+        "agent_params": {
+          "author_name": "Andrei A. Rusu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Meta-learning by the Baldwin effect",
+            "Reinforcement and Imitation Learning for Diverse Visuomotor Skills",
+            "Neural scene representation and rendering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_dushyant_rao",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Dushyant Rao's persona.",
+        "agent_params": {
+          "author_name": "Dushyant Rao",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learn from experience: Probabilistic prediction of perception performance to avoid failure",
+            "Deep tracking in the wild: End-to-end tracking using recurrent neural networks",
+            "Multimodal learning and inference from visual and remotely sensed data"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jakub_sygnowski",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jakub Sygnowski's persona.",
+        "agent_params": {
+          "author_name": "Jakub Sygnowski",
+          "affiliation": "Unknown",
+          "publications": [
+            "Meta-learning by the Baldwin effect",
+            "Theano: A Python framework for fast computation of mathematical expressions"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_oriol_vinyals",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Oriol Vinyals's persona.",
+        "agent_params": {
+          "author_name": "Oriol Vinyals",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sample Efficient Adaptive Text-to-Speech",
+            "A Study on Overfitting in Deep Reinforcement Learning",
+            "Revisiting Bayes by Backprop"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_razvan_pascanu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Razvan Pascanu's persona.",
+        "agent_params": {
+          "author_name": "Razvan Pascanu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Memory-based Parameter Adaptation",
+            "Relational inductive biases, deep learning, and graph networks",
+            "Relational Deep Reinforcement Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_simon_osindero",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Simon Osindero's persona.",
+        "agent_params": {
+          "author_name": "Simon Osindero",
+          "affiliation": "Unknown",
+          "publications": [
+            "Meta-learning by the Baldwin effect",
+            "Mix&Match - Agent Curricula for Reinforcement Learning",
+            "Kickstarting Deep Reinforcement Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_raia_hadsell",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Raia Hadsell's persona.",
+        "agent_params": {
+          "author_name": "Raia Hadsell",
+          "affiliation": "Unknown",
+          "publications": [
+            "Graph networks as learnable physics engines for inference and control",
+            "The limits and potentials of deep learning for robotics",
+            "Learning Deployable Navigation Policies at Kilometer Scale from a Single Traversal"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}

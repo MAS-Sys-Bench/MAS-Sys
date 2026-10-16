@@ -1,0 +1,192 @@
+{
+  "job_id": "job_00006",
+  "dispatch_id": 6,
+  "benchmark": "research_bench",
+  "logical_id": "1811.04551",
+  "arrival_offset_s": 219.672932,
+  "task_prompt_sha256": "a752d2b1b8e8431617ad98bbd06329c4b58f7928a1dc0451977bac44220d9422",
+  "planning_start_time": 1777594047.398903,
+  "planning_end_time": 1777594063.581038,
+  "planning_duration_s": 16.1821,
+  "planner_input_tokens": 14525,
+  "planner_completion_tokens": 1380,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Danijar Hafner's persona.",
+        "agent_params": {
+          "author_name": "Danijar Hafner",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sample-Efficient Reinforcement Learning with Stochastic Ensemble Value Expansion",
+            "Noise Contrastive Priors for Functional Uncertainty",
+            "Sim-to-Real: Learning Agile Locomotion For Quadruped Robots"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Timothy Lillicrap's persona.",
+        "agent_params": {
+          "author_name": "Timothy Lillicrap",
+          "affiliation": "Unknown",
+          "publications": [
+            "Recall Traces: Backtracking Models for Efficient Reinforcement Learning",
+            "Noise Contrastive Priors for Functional Uncertainty",
+            "The Kanerva Machine: A Generative Distributed Memory"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ian Fischer's persona.",
+        "agent_params": {
+          "author_name": "Ian Fischer",
+          "affiliation": "Unknown",
+          "publications": [
+            "Uncertainty in the Variational Information Bottleneck",
+            "Learning to Attack: Adversarial Transformation Networks",
+            "Generative Models of Visually Grounded Imagination"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ruben Villegas's persona.",
+        "agent_params": {
+          "author_name": "Ruben Villegas",
+          "affiliation": "Unknown",
+          "publications": [
+            "Neural Kinematic Networks for Unsupervised Motion Retargetting",
+            "Hierarchical Long-term Video Prediction without Supervision",
+            "Decomposing Motion and Content for Natural Video Sequence Prediction"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from David Ha's persona.",
+        "agent_params": {
+          "author_name": "David Ha",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning via social awareness: improving sketch representations with facial feedback",
+            "THE IMPORTANCE AND EFFECTIVENESS OF LEARNING THROUGH SOCIAL FEEDBACK",
+            "OPTIMAL CLASSIFIER MODEL STATUS SELECTION USING BAYES BOUNDARY UNCERTAINTY"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Honglak Lee's persona.",
+        "agent_params": {
+          "author_name": "Honglak Lee",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sample-Efficient Reinforcement Learning with Stochastic Ensemble Value Expansion",
+            "Hierarchical Novelty Detection for Visual Object Recognition",
+            "Learning Hierarchical Semantic Image Manipulation through Structured Representations"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_7",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from James Davidson's persona.",
+        "agent_params": {
+          "author_name": "James Davidson",
+          "affiliation": "Unknown",
+          "publications": [
+            "Visual Representations for Semantic Target Driven Navigation",
+            "Learning 6-DOF Grasping Interaction via Deep Geometry-Aware 3D Representations",
+            "Noise Contrastive Priors for Functional Uncertainty"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

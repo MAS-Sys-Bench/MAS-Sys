@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00008",
+  "dispatch_id": 8,
+  "benchmark": "research_bench",
+  "logical_id": "1805.08318",
+  "arrival_offset_s": 65.950964,
+  "task_prompt_sha256": "e5a7e2a4ea1660eb3159aa5e5d73e91c0cb89ecbac3b1cc908e846764235d123",
+  "planning_start_time": 1777596479.1960814,
+  "planning_end_time": 1777596485.9511123,
+  "planning_duration_s": 6.755,
+  "planner_input_tokens": 12978,
+  "planner_completion_tokens": 910,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Han Zhang's persona.",
+        "agent_params": {
+          "author_name": "Han Zhang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Post-disaster Power System Resilience Enhancement Considering Repair Process",
+            "Automatic Modulation Classification with Gaussian Distributed Frequency Offset",
+            "I or You: Whom Should Online Reviewers Direct Their Attention To, and When?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ian Goodfellow's persona.",
+        "agent_params": {
+          "author_name": "Ian Goodfellow",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unrestricted Adversarial Examples",
+            "TensorFuzz: Debugging Neural Networks with Coverage-Guided Fuzzing",
+            "Defense Against the Dark Arts: An overview of adversarial example security research and future research directions"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Dimitris Metaxas's persona.",
+        "agent_params": {
+          "author_name": "Dimitris Metaxas",
+          "affiliation": "Unknown",
+          "publications": [
+            "Multi-component deformable models coupled with 2D-3D U-Net for automated probabilistic segmentation of cardiac walls and blood",
+            "Deep multi-task and task-specific feature learning network for robust shape preserved organ segmentation",
+            "MRI Reconstruction Via Cascaded Channel-Wise Attention Network"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Augustus Odena's persona.",
+        "agent_params": {
+          "author_name": "Augustus Odena",
+          "affiliation": "Unknown",
+          "publications": [
+            "TensorFuzz: Debugging Neural Networks with Coverage-Guided Fuzzing",
+            "Discriminator Rejection Sampling",
+            "Realistic Evaluation of Semi-Supervised Learning Algorithms"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of four authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

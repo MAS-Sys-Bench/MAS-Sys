@@ -1,0 +1,169 @@
+{
+  "job_id": "job_00035",
+  "dispatch_id": 35,
+  "benchmark": "research_bench",
+  "logical_id": "1902.09630",
+  "arrival_offset_s": 1752.019448,
+  "task_prompt_sha256": "f4d14eb840334b0a03fda5eb1b7022cbabac9f2c950120abb12ac47d8b1cd993",
+  "planning_start_time": 1777594367.7145774,
+  "planning_end_time": 1777594379.0918543,
+  "planning_duration_s": 11.3773,
+  "planner_input_tokens": 8145,
+  "planner_completion_tokens": 1250,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_hamid_rezatofighi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Hamid Rezatofighi's perspective.",
+        "agent_params": {
+          "author_name": "Hamid Rezatofighi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Meta Learning with Differentiable Closed-form Solver for Fast Video Object Segmentation",
+            "SparseSense: Human Activity Recognition from Highly Sparse Sensor Data-streams Using Set-based Neural Networks",
+            "CVPR19 Tracking and Detection Challenge: How crowded can it get?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_nathan_tsoi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Nathan Tsoi's perspective.",
+        "agent_params": {
+          "author_name": "Nathan Tsoi",
+          "affiliation": "Unknown",
+          "publications": [
+            "DANTE: Deep Affinity Network for Clustering Conversational Interactants"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_junyoung_gwak",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from JunYoung Gwak's perspective.",
+        "agent_params": {
+          "author_name": "JunYoung Gwak",
+          "affiliation": "Unknown",
+          "publications": [
+            "4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks",
+            "3D Scene Graph: A Structure for Unified Semantics, 3D Space, and Camera",
+            "JRDB: A Dataset and Benchmark for Visual Perception for Navigation in Human Environments"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_amir_sadeghian",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Amir Sadeghian's perspective.",
+        "agent_params": {
+          "author_name": "Amir Sadeghian",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep Visual MPC-Policy Learning for Navigation",
+            "Deep Local Trajectory Replanning and Control for Robot Navigation",
+            "Time-Varying Interaction Estimation Using Ensemble Methods"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ian_reid",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Ian Reid's perspective.",
+        "agent_params": {
+          "author_name": "Ian Reid",
+          "affiliation": "Unknown",
+          "publications": [
+            "Training Quantized Network with Auxiliary Gradient Module",
+            "A Theoretically Sound Upper Bound on the Triplet Loss for Improving the Efficiency of Deep Distance Metric Learning",
+            "Improved Visual Localization via Graph Smoothing"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_silvio_savarese",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Silvio Savarese's perspective.",
+        "agent_params": {
+          "author_name": "Silvio Savarese",
+          "affiliation": "Unknown",
+          "publications": [
+            "Dynamics Learning with Cascaded Variational Inference for Multi-Step Manipulation",
+            "Remote assessment of pre- And post-disaster critical physical infrastructures using mobile workstation chariot and D4AR models",
+            "4D Spatio-Temporal ConvNets: Minkowski Convolutional Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their previous work and publications, which are then aggregated into a final proposal by the proposal aggregator."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "job_id": "job_00358",
+  "dispatch_id": 358,
+  "benchmark": "paperbananabench",
+  "logical_id": "test_258",
+  "arrival_offset_s": 1786.328261,
+  "task_prompt_sha256": "ad76c56c58887b9e60e0f2eb7cecb07013ece20742ae4ab4cedee6119aca6127",
+  "planning_start_time": 1777600570.2975652,
+  "planning_end_time": 1777600577.3456137,
+  "planning_duration_s": 7.048,
+  "planner_input_tokens": 8619,
+  "planner_completion_tokens": 589,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "paperviz_planner",
+        "instance_id": "planner",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Generates a detailed textual description of the target figure for the TimeWak algorithm.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_stylist",
+        "instance_id": "stylist",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Refines the figure description with publication-quality aesthetics following NeurIPS 2025 style guidelines.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_diagram_visualizer",
+        "instance_id": "visualizer",
+        "llm_config_name": "image.qwen-image",
+        "role_description": "Produces a final scientific diagram image from the refined description.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_critic",
+        "instance_id": "critic",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Evaluates the generated figure against its source content and provides structured revision suggestions.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "planner",
+        "target": "stylist"
+      },
+      {
+        "source": "stylist",
+        "target": "visualizer"
+      },
+      {
+        "source": "visualizer",
+        "target": "critic"
+      },
+      {
+        "source": "critic",
+        "target": "visualizer"
+      }
+    ],
+    "fsm": {
+      "start": "planner",
+      "decision_nodes": [
+        {
+          "node": "critic",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "visualizer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate an academic diagram illustration for the TimeWak algorithm in a research paper, ensuring high-quality and accurate representation through iterative refinement."
+  }
+}

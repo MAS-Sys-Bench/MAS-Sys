@@ -1,0 +1,171 @@
+{
+  "job_id": "job_00168",
+  "dispatch_id": 168,
+  "benchmark": "research_bench",
+  "logical_id": "1901.02860",
+  "arrival_offset_s": 896.076419,
+  "task_prompt_sha256": "3a71b0fea2b332187f3def1bfd728d7c1b32b0338beb6758ab31638e8663fc82",
+  "planning_start_time": 1777599191.9986033,
+  "planning_end_time": 1777599218.778886,
+  "planning_duration_s": 26.7803,
+  "planner_input_tokens": 16263,
+  "planner_completion_tokens": 1215,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zihang Dai.",
+        "agent_params": {
+          "author_name": "Zihang Dai",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Data Augmentation for Consistency Training",
+            "Unsupervised Data Augmentation",
+            "A Mutual Information Maximization Perspective of Language Representation Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zhilin Yang.",
+        "agent_params": {
+          "author_name": "Zhilin Yang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Mixtape: Breaking the Softmax Bottleneck Efficiently",
+            "A Road-map Towards Explainable Question Answering A Solution for Information Pollution",
+            "XLNet: Generalized Autoregressive Pretraining for Language Understanding"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Yiming Yang.",
+        "agent_params": {
+          "author_name": "Yiming Yang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reversion and location trends in the bitcoin market",
+            "Compactonostoc shennongjiaensis gen. & sp. nov. (Nostocales, Cyanobacteria) from a wet rocky wall in China",
+            "XL-Editor: Post-editing Sentences with XLNet"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jaime Carbonell.",
+        "agent_params": {
+          "author_name": "Jaime Carbonell",
+          "affiliation": "Unknown",
+          "publications": [
+            "OPERA: Operations-oriented Probabilistic Extraction, Reasoning, and Analysis",
+            "Optimizing Data Usage via Differentiable Rewards",
+            "Hope Speech Detection: A Computational Analysis of the Voice of Peace"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Quoc V. Le.",
+        "agent_params": {
+          "author_name": "Quoc V. Le",
+          "affiliation": "Unknown",
+          "publications": [
+            "Soft Conditional Computation",
+            "Unsupervised Data Augmentation for Consistency Training",
+            "The Evolved Transformer"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ruslan Salakhutdinov.",
+        "agent_params": {
+          "author_name": "Ruslan Salakhutdinov",
+          "affiliation": "Unknown",
+          "publications": [
+            "On Exact Computation with an Infinitely Wide Neural Net",
+            "Learning Data Manipulation for Augmentation and Weighting",
+            "Multiple Futures Prediction"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

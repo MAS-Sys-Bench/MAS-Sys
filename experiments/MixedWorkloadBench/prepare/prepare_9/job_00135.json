@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00135",
+  "dispatch_id": 135,
+  "benchmark": "research_bench",
+  "logical_id": "2006.09661",
+  "arrival_offset_s": 1445.796064,
+  "task_prompt_sha256": "86a4e8329278b21383247cc14fa62a15e8e8946a3e4dcc3647d2c5ffff046612",
+  "planning_start_time": 1777597377.3510802,
+  "planning_end_time": 1777597394.6155782,
+  "planning_duration_s": 17.2645,
+  "planner_input_tokens": 19135,
+  "planner_completion_tokens": 1107,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_vincent_sitzmann",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Vincent Sitzmann's persona.",
+        "agent_params": {
+          "author_name": "Vincent Sitzmann",
+          "affiliation": "Unknown",
+          "publications": [
+            "Inferring Semantic Information with 3D Neural Scene Representations",
+            "Semantic Implicit Neural Scene Representations With Semi-Supervised Training",
+            "State of the Art on Neural Rendering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_julien_martel",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Julien N. P. Martel's persona.",
+        "agent_params": {
+          "author_name": "Julien N. P. Martel",
+          "affiliation": "Unknown",
+          "publications": [
+            "Event-Based Near-Eye Gaze Tracking Beyond 10,000 Hz",
+            "AutoInt: Automatic Integration for Fast Neural Volume Rendering",
+            "Estimation of Z-Thickness and XY-Anisotropy of Electron Microscopy Images using Gaussian Processes"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_alexander_bergman",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Alexander W. Bergman's persona.",
+        "agent_params": {
+          "author_name": "Alexander W. Bergman",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep Adaptive LiDAR: End-to-end Optimization of Sampling and Depth Completion at Low Sampling Rates",
+            "Rate-Constrained Shaping Codes for Structured Sources",
+            "Factorized Convolution Kernels in Image Processing"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_david_lindell",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from David B. Lindell's persona.",
+        "agent_params": {
+          "author_name": "David B. Lindell",
+          "affiliation": "Unknown",
+          "publications": [
+            "Efficient non-line-of-sight imaging with computational single-photon imaging",
+            "Computational time-resolved imaging, single-photon sensing, and non-line-of-sight imaging",
+            "AutoInt: Automatic Integration for Fast Neural Volume Rendering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_gordon_wetzstein",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Gordon Wetzstein's persona.",
+        "agent_params": {
+          "author_name": "Gordon Wetzstein",
+          "affiliation": "Unknown",
+          "publications": [
+            "Suremap: Predicting Uncertainty in Cnn-Based Image Reconstructions Using Stein’s Unbiased Risk Estimate",
+            "Event-Based Near-Eye Gaze Tracking Beyond 10,000 Hz",
+            "Efficient non-line-of-sight imaging with computational single-photon imaging"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors. Each author contributes a proposal candidate based on their research persona, which is then aggregated into a cohesive final proposal."
+  }
+}

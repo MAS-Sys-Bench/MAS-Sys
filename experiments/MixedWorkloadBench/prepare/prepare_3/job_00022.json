@@ -1,0 +1,210 @@
+{
+  "job_id": "job_00022",
+  "dispatch_id": 22,
+  "benchmark": "research_bench",
+  "logical_id": "1406.2661",
+  "arrival_offset_s": 150.31055,
+  "task_prompt_sha256": "3a56294a7f8b7d8546bfb8c5c9fccd44ef9b8011394d26c00f7ebb6065f2cfc6",
+  "planning_start_time": 1777451424.8483765,
+  "planning_end_time": 1777451438.0655038,
+  "planning_duration_s": 13.2171,
+  "planner_input_tokens": 10511,
+  "planner_completion_tokens": 1517,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ian_goodfellow",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Ian J. Goodfellow's persona.",
+        "agent_params": {
+          "author_name": "Ian J. Goodfellow",
+          "affiliation": "Unknown",
+          "publications": [
+            "Qualitatively characterizing neural network optimization problems",
+            "Generative Adversarial Nets",
+            "On distinguishability criteria for estimating generative models"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jean_pouget_abadie",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Jean Pouget-Abadie's persona.",
+        "agent_params": {
+          "author_name": "Jean Pouget-Abadie",
+          "affiliation": "Unknown",
+          "publications": [
+            "Overcoming the Curse of Sentence Length for Neural Machine Translation using Automatic Segmentation",
+            "Generative Adversarial Nets"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_mehdi_mirza",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Mehdi Mirza's persona.",
+        "agent_params": {
+          "author_name": "Mehdi Mirza",
+          "affiliation": "Unknown",
+          "publications": [
+            "Conditional Generative Adversarial Nets",
+            "Generative Adversarial Nets",
+            "An Empirical Investigation of Catastrophic Forgeting in Gradient-Based Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_bing_xu",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Bing Xu's persona.",
+        "agent_params": {
+          "author_name": "Bing Xu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Generative Adversarial Nets"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_david_warde_farley",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from David Warde-Farley's persona.",
+        "agent_params": {
+          "author_name": "David Warde-Farley",
+          "affiliation": "Unknown",
+          "publications": [
+            "Generative Adversarial Nets",
+            "Self-informed neural network structure learning",
+            "Pylearn2: a machine learning research library"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_sherjil_ozair",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Sherjil Ozair's persona.",
+        "agent_params": {
+          "author_name": "Sherjil Ozair",
+          "affiliation": "Unknown",
+          "publications": [
+            "Generative Adversarial Nets",
+            "Deep Directed Generative Autoencoders",
+            "Multimodal Transitions for Generative Stochastic Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_aaron_courville",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Aaron Courville's persona.",
+        "agent_params": {
+          "author_name": "Aaron Courville",
+          "affiliation": "Unknown",
+          "publications": [
+            "The Spike-and-Slab RBM and Extensions to Discrete and Sparse Data Distributions",
+            "Generative Adversarial Nets",
+            "Deep Tempering"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yoshua_bengio",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Yoshua Bengio's persona.",
+        "agent_params": {
+          "author_name": "Yoshua Bengio",
+          "affiliation": "Unknown",
+          "publications": [
+            "How transferable are features in deep neural networks?",
+            "Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation",
+            "Supplementary material for : How transferable are features in deep neural networks ?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated into a coherent document by the central aggregator agent."
+  }
+}

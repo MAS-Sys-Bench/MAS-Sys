@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00159",
+  "dispatch_id": 159,
+  "benchmark": "research_bench",
+  "logical_id": "1809.09401",
+  "arrival_offset_s": 840.243146,
+  "task_prompt_sha256": "198abb1d7c8f8358c76053f80cd81b6c173cbf6a98f80fb5115ee88a0395f16c",
+  "planning_start_time": 1777599114.6477075,
+  "planning_end_time": 1777599124.751974,
+  "planning_duration_s": 10.1043,
+  "planner_input_tokens": 10160,
+  "planner_completion_tokens": 1151,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yifan_feng",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yifan Feng's persona.",
+        "agent_params": {
+          "author_name": "Yifan Feng",
+          "affiliation": "Unknown",
+          "publications": [
+            "PVNet: A Joint Convolutional Network of Point Cloud and Multi-View for 3D Shape Recognition",
+            "MeshNet: Mesh Neural Network for 3D Shape Representation",
+            "Node Feature Transform Node Feature Node Feature Hyperedge Feature Node Feature Edge Feature Gathering Node Feature Aggregating N"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_haoxuan_you",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Haoxuan You's persona.",
+        "agent_params": {
+          "author_name": "Haoxuan You",
+          "affiliation": "Unknown",
+          "publications": [
+            "PVNet: A Joint Convolutional Network of Point Cloud and Multi-View for 3D Shape Recognition",
+            "MeshNet: Mesh Neural Network for 3D Shape Representation",
+            "PVRNet: Point-View Relation Neural Network for 3D Shape Recognition"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_zizhao_zhang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Zizhao Zhang's persona.",
+        "agent_params": {
+          "author_name": "Zizhao Zhang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Inductive Multi-Hypergraph Learning and Its Application on View-Based 3D Object Classification",
+            "EMD Metric Learning",
+            "Node Feature Transform Node Feature Node Feature Hyperedge Feature Node Feature Edge Feature Gathering Node Feature Aggregating N"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_rongrong_ji",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Rongrong Ji's persona.",
+        "agent_params": {
+          "author_name": "Rongrong Ji",
+          "affiliation": "Unknown",
+          "publications": [
+            "Asynchronous Bidirectional Decoding for Neural Machine Translation",
+            "Inductive Multi-Hypergraph Learning and Its Application on View-Based 3D Object Classification",
+            "Weakly Supervised Object Detection via Object-Specific Pixel Gradient"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yue_gao",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yue Gao's persona.",
+        "agent_params": {
+          "author_name": "Yue Gao",
+          "affiliation": "Unknown",
+          "publications": [
+            "Inductive Multi-Hypergraph Learning and Its Application on View-Based 3D Object Classification",
+            "PVNet: A Joint Convolutional Network of Point Cloud and Multi-View for 3D Shape Recognition",
+            "Word Dictionary Emoticon Dictionary SentiBank : ANP Detector Library Microblog with labeled sentiment Testing microblogs Update Update W Update g"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the proposal aggregator."
+  }
+}

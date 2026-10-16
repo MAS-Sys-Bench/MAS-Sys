@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00007",
+  "dispatch_id": 7,
+  "benchmark": "research_bench",
+  "logical_id": "2009.14794",
+  "arrival_offset_s": 259.039394,
+  "task_prompt_sha256": "6b836fb7a5125830f742fe254de5f03410240a03181811b7665cda814ff7d4d2",
+  "planning_start_time": 1777594063.5832596,
+  "planning_end_time": 1777594078.539593,
+  "planning_duration_s": 14.9563,
+  "planner_input_tokens": 17684,
+  "planner_completion_tokens": 1091,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_krzysztof",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Krzysztof Choromanski's persona.",
+        "agent_params": {
+          "author_name": "Krzysztof Choromanski",
+          "affiliation": "Unknown",
+          "publications": [
+            "Demystifying Orthogonal Monte Carlo and Beyond",
+            "Masked Language Modeling for Proteins via Linearly Scalable Long-Context Transformers",
+            "Effective Diversity in Population-Based Reinforcement Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_valerii",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Valerii Likhosherstov's persona.",
+        "agent_params": {
+          "author_name": "Valerii Likhosherstov",
+          "affiliation": "Unknown",
+          "publications": [
+            "Masked Language Modeling for Proteins via Linearly Scalable Long-Context Transformers",
+            "CWY Parametrization for Scalable Learning of Orthogonal and Stiefel Matrices",
+            "UFO-BLO: Unbiased First-Order Bilevel Optimization"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_david",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from David Dohan's persona.",
+        "agent_params": {
+          "author_name": "David Dohan",
+          "affiliation": "Unknown",
+          "publications": [
+            "Amortized Bayesian Optimization over Discrete Spaces",
+            "Masked Language Modeling for Proteins via Linearly Scalable Long-Context Transformers",
+            "Is Transfer Learning Necessary for Protein Landscape Prediction?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_xingyou",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Xingyou Song's persona.",
+        "agent_params": {
+          "author_name": "Xingyou Song",
+          "affiliation": "Unknown",
+          "publications": [
+            "Masked Language Modeling for Proteins via Linearly Scalable Long-Context Transformers",
+            "Robotic Table Tennis with Model-Free Reinforcement Learning",
+            "Rapidly Adaptable Legged Robots via Evolutionary Meta-Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_andreea",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Andreea Gane's persona.",
+        "agent_params": {
+          "author_name": "Andreea Gane",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Comparison of Generative Models for Sequence Design",
+            "Direct Optimization through arg max for Discrete Variational Auto-Encoder",
+            "The Variational Homoencoder: Learning to learn high capacity generative models from few examples"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}
