@@ -1,0 +1,116 @@
+{
+  "job_id": "job_00037",
+  "dispatch_id": 37,
+  "benchmark": "swebench",
+  "logical_id": "matplotlib__matplotlib-23913",
+  "arrival_offset_s": 1387.962432,
+  "task_prompt_sha256": "5a0ed0b47118e7ad46360b93a3651d9bf7d70d2a27c66ac1c66ccccbdd5bc393",
+  "planning_start_time": 1777449370.7907367,
+  "planning_end_time": 1777449375.0090268,
+  "planning_duration_s": 4.2183,
+  "planner_input_tokens": 3338,
+  "planner_completion_tokens": 552,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "explorer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Explore the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "fixer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Make the necessary code changes to fix the issue by adding a 'draggable' keyword to the Legend's __init__ function.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "verifier",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Verify the changes made to ensure they are correct and do not introduce any new issues.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "explorer",
+        "target": "fixer"
+      },
+      {
+        "source": "fixer",
+        "target": "verifier"
+      },
+      {
+        "source": "verifier",
+        "target": "fixer"
+      }
+    ],
+    "fsm": {
+      "start": "explorer",
+      "decision_nodes": [
+        {
+          "node": "verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "fixer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to resolve a GitHub issue in the matplotlib repository by adding a 'draggable' keyword to the Legend's __init__ function, ensuring the changes are correct and do not introduce new issues."
+  }
+}

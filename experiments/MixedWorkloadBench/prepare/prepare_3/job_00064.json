@@ -1,0 +1,105 @@
+{
+  "job_id": "job_00064",
+  "dispatch_id": 64,
+  "benchmark": "swebench",
+  "logical_id": "sympy__sympy-20154",
+  "arrival_offset_s": 700.78726,
+  "task_prompt_sha256": "d6e7b954d0f0d456bd54bfc62ee3b24b17a77d8511f9f4f07405298ccd8fa7cd",
+  "planning_start_time": 1777451697.9389331,
+  "planning_end_time": 1777451703.0706546,
+  "planning_duration_s": 5.1317,
+  "planner_input_tokens": 3237,
+  "planner_completion_tokens": 491,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Explores the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "code_editor",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Makes the necessary code changes to fix the issue in the relevant source files.",
+        "agent_params": {},
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Verifies the changes made to ensure they are correct and do not introduce new issues.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_editor"
+      },
+      {
+        "source": "code_editor",
+        "target": "code_verifier"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_editor",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to resolve a GitHub issue in the sympy/sympy repository by exploring the codebase, making necessary code changes, and verifying the correctness of those changes."
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "job_id": "job_00027",
+  "dispatch_id": 27,
+  "benchmark": "research_bench",
+  "logical_id": "1810.05270",
+  "arrival_offset_s": 1044.565735,
+  "task_prompt_sha256": "6e09b1b99e3d18ebf272c2694fe7b57cda331b36319d7293f7cd75293645da01",
+  "planning_start_time": 1777449298.799203,
+  "planning_end_time": 1777449308.8274727,
+  "planning_duration_s": 10.0283,
+  "planner_input_tokens": 17484,
+  "planner_completion_tokens": 1018,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from the persona of Zhuang Liu.",
+        "agent_params": {
+          "author_name": "Zhuang Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Knowledge Distillation from Few Samples",
+            "Object Detection from Scratch with Deep Supervision",
+            "Few-Shot Object Detection via Feature Reweighting"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from the persona of Mingjie Sun.",
+        "agent_params": {
+          "author_name": "Mingjie Sun",
+          "affiliation": "Unknown",
+          "publications": [
+            "Data Poisoning Attack against Unsupervised Node Embedding Methods"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from the persona of Tinghui Zhou.",
+        "agent_params": {
+          "author_name": "Tinghui Zhou",
+          "affiliation": "Unknown",
+          "publications": [
+            "Visual Learning Beyond Direct Supervision",
+            "Stereo magnification",
+            "Everybody Dance Now"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from the persona of Gao Huang.",
+        "agent_params": {
+          "author_name": "Gao Huang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Domain Invariant and Class Discriminative Feature Learning for Visual Domain Adaptation",
+            "Interpretable Spatio-Temporal Attention for Video Action Recognition",
+            "Domain-Aware SE Network for Sketch-based Image Retrieval with Multiplicative Euclidean Margin Softmax"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_5_writer",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from the persona of Trevor Darrell.",
+        "agent_params": {
+          "author_name": "Trevor Darrell",
+          "affiliation": "Unknown",
+          "publications": [
+            "Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders",
+            "Generating Counterfactual Explanations with Natural Language",
+            "Classifying Collisions with Spatio-Temporal Action Graph Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

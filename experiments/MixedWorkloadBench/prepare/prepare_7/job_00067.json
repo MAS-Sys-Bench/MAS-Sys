@@ -1,0 +1,148 @@
+{
+  "job_id": "job_00067",
+  "dispatch_id": 67,
+  "benchmark": "research_bench",
+  "logical_id": "2205.13764",
+  "arrival_offset_s": 1454.536272,
+  "task_prompt_sha256": "15599565af00f52ffd6e34bdee7a21208c1013d40ca881d83b1021e2267c375b",
+  "planning_start_time": 1777475402.693453,
+  "planning_end_time": 1777475411.91696,
+  "planning_duration_s": 9.2235,
+  "planner_input_tokens": 12613,
+  "planner_completion_tokens": 1029,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_zhi_tian",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Zhi Tian's persona.",
+        "agent_params": {
+          "author_name": "Zhi Tian",
+          "affiliation": "Unknown",
+          "publications": [
+            "Adaptive-Gravity: A Defense Against Adversarial Samples",
+            "Instance and Panoptic Segmentation Using Conditional Convolutions",
+            "Conditional Positional Encodings for Vision Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_xiangxiang_chu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Xiangxiang Chu's persona.",
+        "agent_params": {
+          "author_name": "Xiangxiang Chu",
+          "affiliation": "Unknown",
+          "publications": [
+            "AeDet: Azimuth-Invariant Multi-View 3D Object Detection",
+            "PromptDet: Expand Your Detector Vocabulary with Uncurated Images",
+            "Make RepVGG Greater Again: A Quantization-aware Approach"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_xiaoming_wang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Xiaoming Wang's persona.",
+        "agent_params": {
+          "author_name": "Xiaoming Wang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Golfer: Trajectory Prediction with Masked Goal Conditioning MnM Network"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_xiaolin_wei",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Xiaolin Wei's persona.",
+        "agent_params": {
+          "author_name": "Xiaolin Wei",
+          "affiliation": "Unknown",
+          "publications": [
+            "MT-Net Submission to the Waymo 3D Detection Leaderboard",
+            "PromptDet: Expand Your Detector Vocabulary with Uncurated Images",
+            "Concept Propagation via Attentional Knowledge Graph Reasoning for Video-Text Retrieval"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_chunhua_shen",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Chunhua Shen's persona.",
+        "agent_params": {
+          "author_name": "Chunhua Shen",
+          "affiliation": "Unknown",
+          "publications": [
+            "Improving Monocular Visual Odometry Using Learned Depth",
+            "Hierarchical Normalization for Robust Monocular Depth Estimation",
+            "PointAttN: You Only Need Attention for Point Cloud Completion"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS generates a follow-up research proposal by leveraging the expertise of multiple authors, each contributing a proposal candidate based on their research persona. The proposals are then aggregated into a final five-question format proposal."
+  }
+}

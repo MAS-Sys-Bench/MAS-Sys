@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00288",
+  "dispatch_id": 288,
+  "benchmark": "research_bench",
+  "logical_id": "1907.10903",
+  "arrival_offset_s": 1426.916731,
+  "task_prompt_sha256": "eccf70bca7fcf4138f405791280f6236cea9c1df2c1ecebc54caf5ce28003121",
+  "planning_start_time": 1777600111.703627,
+  "planning_end_time": 1777600124.0095084,
+  "planning_duration_s": 12.3059,
+  "planner_input_tokens": 10881,
+  "planner_completion_tokens": 884,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yu Rong's persona.",
+        "agent_params": {
+          "author_name": "Yu Rong",
+          "affiliation": "Unknown",
+          "publications": [
+            "The General Black-box Attack Method for Graph Neural Networks",
+            "Adversarial Representation Learning on Large-Scale Bipartite Graphs",
+            "Unsupervised Adversarial Graph Alignment with Graph Embedding"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Wenbing Huang's persona.",
+        "agent_params": {
+          "author_name": "Wenbing Huang",
+          "affiliation": "Unknown",
+          "publications": [
+            "The General Black-box Attack Method for Graph Neural Networks",
+            "Adversarial Representation Learning on Large-Scale Bipartite Graphs",
+            "Facial Image-to-Video Translation by a Hidden Affine Transformation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Tingyang Xu's persona.",
+        "agent_params": {
+          "author_name": "Tingyang Xu",
+          "affiliation": "Unknown",
+          "publications": [
+            "The General Black-box Attack Method for Graph Neural Networks",
+            "Application of artificial intelligence in diagnosis and treatment of malignancies",
+            "Unsupervised Adversarial Graph Alignment with Graph Embedding"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Junzhou Huang's persona.",
+        "agent_params": {
+          "author_name": "Junzhou Huang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Polyp Tracking in Video Colonoscopy Using Optical Flow With an On-The-Fly Trained CNN",
+            "The General Black-box Attack Method for Graph Neural Networks",
+            "Online Adaptive Asymmetric Active Learning With Limited Budgets"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of four authors, each contributing a proposal candidate based on their research persona. The proposal aggregator then synthesizes these candidates into a cohesive final proposal."
+  }
+}

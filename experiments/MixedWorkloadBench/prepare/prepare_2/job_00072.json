@@ -1,0 +1,171 @@
+{
+  "job_id": "job_00072",
+  "dispatch_id": 72,
+  "benchmark": "research_bench",
+  "logical_id": "1905.02175",
+  "arrival_offset_s": 1498.627407,
+  "task_prompt_sha256": "2b8647616a5d4d2bb0d09b43e46d4e504fb5fab3c1dbc36a4e19636dbd0673b2",
+  "planning_start_time": 1777450097.630701,
+  "planning_end_time": 1777450116.7660718,
+  "planning_duration_s": 19.1354,
+  "planner_input_tokens": 15702,
+  "planner_completion_tokens": 1238,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Andrew Ilyas's persona.",
+        "agent_params": {
+          "author_name": "Andrew Ilyas",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning Perceptually-Aligned Representations via Adversarial Robustness",
+            "Adversarial Robustness as a Prior for Learned Representations",
+            "Image Synthesis with a Single (Robust) Classifier"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Shibani Santurkar's persona.",
+        "agent_params": {
+          "author_name": "Shibani Santurkar",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning Perceptually-Aligned Representations via Adversarial Robustness",
+            "Adversarial Robustness as a Prior for Learned Representations",
+            "Image Synthesis with a Single (Robust) Classifier"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Dimitris Tsipras's persona.",
+        "agent_params": {
+          "author_name": "Dimitris Tsipras",
+          "affiliation": "Unknown",
+          "publications": [
+            "Label-Consistent Backdoor Attacks",
+            "Continuous Optimization in Deep Learning",
+            "Optimization and Generalization Challenges in Deep Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Logan Engstrom's persona.",
+        "agent_params": {
+          "author_name": "Logan Engstrom",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning Perceptually-Aligned Representations via Adversarial Robustness",
+            "Adversarial Robustness as a Prior for Learned Representations",
+            "Image Synthesis with a Single (Robust) Classifier"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Brandon Tran's persona.",
+        "agent_params": {
+          "author_name": "Brandon Tran",
+          "affiliation": "Unknown",
+          "publications": [
+            "Domain Adaptation for Enterprise Email Search",
+            "Learning Perceptually-Aligned Representations via Adversarial Robustness",
+            "Adversarial Robustness as a Prior for Learned Representations"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Aleksander Madry's persona.",
+        "agent_params": {
+          "author_name": "Aleksander Madry",
+          "affiliation": "Unknown",
+          "publications": [
+            "Label-Consistent Backdoor Attacks",
+            "Optimization and Generalization Challenges in Deep Learning",
+            "Learning Perceptually-Aligned Representations via Adversarial Robustness"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

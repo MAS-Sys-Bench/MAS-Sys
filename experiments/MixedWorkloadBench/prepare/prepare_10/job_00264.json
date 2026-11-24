@@ -1,0 +1,71 @@
+{
+  "job_id": "job_00264",
+  "dispatch_id": 264,
+  "benchmark": "research_bench",
+  "logical_id": "1811.12808",
+  "arrival_offset_s": 1282.534068,
+  "task_prompt_sha256": "56f4352fb49d8bf4fafa520dad9ef653bbd6f28dd22449b3cdb072ca8478c9c6",
+  "planning_start_time": 1777599949.0342677,
+  "planning_end_time": 1777599953.1670232,
+  "planning_duration_s": 4.1328,
+  "planner_input_tokens": 8895,
+  "planner_completion_tokens": 435,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_sebastian_raschka",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate based on Sebastian Raschka's persona and shared related-paper context.",
+        "agent_params": {
+          "author_name": "Sebastian Raschka",
+          "affiliation": "Unknown",
+          "publications": [
+            "Protein-ligand interfaces are polarized: Discovery of a strong trend for intermolecular hydrogen bonds to favor donors on the protein side with implications for predicting and designing ligand complexes",
+            "STAT 479: Machine Learning Lecture Notes",
+            "Identification of potential small-molecule protein-protein inhibitors of cancer metastasis by 3D epitope-based computational screening."
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "writer_sebastian_raschka",
+        "target": "proposal_aggregator"
+      }
+    ],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of Sebastian Raschka and aggregating the proposal into a coherent document."
+  }
+}

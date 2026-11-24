@@ -1,0 +1,119 @@
+{
+  "job_id": "job_00214",
+  "dispatch_id": 214,
+  "benchmark": "paperbananabench",
+  "logical_id": "test_179",
+  "arrival_offset_s": 1074.449753,
+  "task_prompt_sha256": "56bc9191112b056495277491f06e79ec00417285b14192e168da51257b7cdf95",
+  "planning_start_time": 1777599510.6792927,
+  "planning_end_time": 1777599520.3640711,
+  "planning_duration_s": 9.6848,
+  "planner_input_tokens": 7883,
+  "planner_completion_tokens": 676,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "paperviz_planner",
+        "instance_id": "ocl_diagram_planner",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Generates a detailed textual description of the OCL diagram using runtime RAG over the local PaperBanana reference pool.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_stylist",
+        "instance_id": "ocl_diagram_stylist",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Refines the OCL diagram description with publication-quality aesthetics following NeurIPS 2025 style guidelines.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_diagram_visualizer",
+        "instance_id": "ocl_diagram_visualizer",
+        "llm_config_name": "image.qwen-image",
+        "role_description": "Produces a final scientific diagram image of the OCL from a detailed diagram description.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_critic",
+        "instance_id": "ocl_diagram_critic",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Evaluates the generated OCL diagram against its source content and provides structured revision suggestions.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "ocl_diagram_planner",
+        "target": "ocl_diagram_stylist"
+      },
+      {
+        "source": "ocl_diagram_stylist",
+        "target": "ocl_diagram_visualizer"
+      },
+      {
+        "source": "ocl_diagram_visualizer",
+        "target": "ocl_diagram_critic"
+      },
+      {
+        "source": "ocl_diagram_critic",
+        "target": "ocl_diagram_visualizer"
+      }
+    ],
+    "fsm": {
+      "start": "ocl_diagram_planner",
+      "decision_nodes": [
+        {
+          "node": "ocl_diagram_critic",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "ocl_diagram_visualizer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate an academic diagram illustration for a research paper on Orthogonal Contrastive Learning (OCL). It involves planning, styling, visualizing, and critiquing the diagram to ensure it meets publication-quality standards."
+  }
+}

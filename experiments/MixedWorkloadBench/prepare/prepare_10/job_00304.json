@@ -1,0 +1,292 @@
+{
+  "job_id": "job_00304",
+  "dispatch_id": 304,
+  "benchmark": "research_bench",
+  "logical_id": "2103.00020",
+  "arrival_offset_s": 1534.442282,
+  "task_prompt_sha256": "1e69e157f6ec1e16cd99f85db11b328438786b7ab4eff2b3a4af12d507e09a08",
+  "planning_start_time": 1777600216.3442173,
+  "planning_end_time": 1777600236.4968908,
+  "planning_duration_s": 20.1527,
+  "planner_input_tokens": 22716,
+  "planner_completion_tokens": 2233,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_alec_radford",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Alec Radford's persona.",
+        "agent_params": {
+          "author_name": "Alec Radford",
+          "affiliation": "Unknown",
+          "publications": [
+            "Accurate, yet Inconsistent? Consistency Analysis on Language Models",
+            "Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications",
+            "Towards Improving Topic Models with the BERT-based Neural Topic Encoder"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jong_wook_kim",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jong Wook Kim's persona.",
+        "agent_params": {
+          "author_name": "Jong Wook Kim",
+          "affiliation": "Unknown",
+          "publications": [
+            "Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications",
+            "Analyzing Correlations between Movie Characters Based on Deep Learning",
+            "Robust fine-tuning of zero-shot models"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_chris_hallacy",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Chris Hallacy's persona.",
+        "agent_params": {
+          "author_name": "Chris Hallacy",
+          "affiliation": "Unknown",
+          "publications": [
+            "Scaling Laws for Autoregressive Generative Modeling"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_aditya_ramesh",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Aditya Ramesh's persona.",
+        "agent_params": {
+          "author_name": "Aditya Ramesh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Zero-Shot Text-to-Image Generation",
+            "Unsupervised Neural Machine Translation with Generative Language Models Only",
+            "GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_gabriel_goh",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Gabriel Goh's persona.",
+        "agent_params": {
+          "author_name": "Gabriel Goh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Zero-Shot Text-to-Image Generation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_sandhini_agarwal",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Sandhini Agarwal's persona.",
+        "agent_params": {
+          "author_name": "Sandhini Agarwal",
+          "affiliation": "Unknown",
+          "publications": [
+            "Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications",
+            "Zero-Shot Visual Grounding of Referring Utterances in Dialogue Anonymous ACL",
+            "Language Models are Few-Shot Learners"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_girish_sastry",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Girish Sastry's persona.",
+        "agent_params": {
+          "author_name": "Girish Sastry",
+          "affiliation": "Unknown",
+          "publications": [
+            "EncT5: Fine-tuning T5 Encoder for Discriminative Tasks",
+            "Evaluating Large Language Models Trained on Code",
+            "Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_amanda_askell",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Amanda Askell's persona.",
+        "agent_params": {
+          "author_name": "Amanda Askell",
+          "affiliation": "Unknown",
+          "publications": [
+            "A General Language Assistant as a Laboratory for Alignment",
+            "Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims",
+            "Language Models are Few-Shot Learners"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_pamela_mishkin",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Pamela Mishkin's persona.",
+        "agent_params": {
+          "author_name": "Pamela Mishkin",
+          "affiliation": "Unknown",
+          "publications": [
+            "GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models",
+            "Evaluating Large Language Models Trained on Code"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jack_clark",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jack Clark's persona.",
+        "agent_params": {
+          "author_name": "Jack Clark",
+          "affiliation": "Unknown",
+          "publications": [
+            "Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications",
+            "Why and How Governments Should Monitor AI Development",
+            "A General Language Assistant as a Laboratory for Alignment"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_gretchen_krueger",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Gretchen Krueger's persona.",
+        "agent_params": {
+          "author_name": "Gretchen Krueger",
+          "affiliation": "Unknown",
+          "publications": [
+            "Evaluating CLIP: Towards Characterization of Broader Capabilities and Downstream Implications",
+            "Towards Improving Topic Models with the BERT-based Neural Topic Encoder",
+            "WebGPT: Browser-assisted question-answering with human feedback"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ilya_sutskever",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ilya Sutskever's persona.",
+        "agent_params": {
+          "author_name": "Ilya Sutskever",
+          "affiliation": "Unknown",
+          "publications": [
+            "Contrastive Word Embedding Learning for Neural Machine Translation",
+            "Towards Improving Topic Models with the BERT-based Neural Topic Encoder",
+            "Zero-Shot Text-to-Image Generation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their persona and publications, which are then aggregated into a final proposal by the proposal aggregator."
+  }
+}

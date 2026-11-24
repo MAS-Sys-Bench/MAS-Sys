@@ -1,0 +1,115 @@
+{
+  "job_id": "job_00077",
+  "dispatch_id": 77,
+  "benchmark": "swebench",
+  "logical_id": "django__django-16379",
+  "arrival_offset_s": 402.883126,
+  "task_prompt_sha256": "4d6cc9b31f805b3dc2173dad5cf7389ad3b8a71de4469577cc3b9d833070f889",
+  "planning_start_time": 1777598531.1951501,
+  "planning_end_time": 1777598536.393339,
+  "planning_duration_s": 5.1982,
+  "planner_input_tokens": 3182,
+  "planner_completion_tokens": 536,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "explorer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Explore the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "fixer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Make the necessary code changes to fix the issue in the relevant source files.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "verifier",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Verify the changes made to ensure the issue is resolved correctly.",
+        "agent_params": {
+          "repository_path": "/testbed"
+        },
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "explorer",
+        "target": "fixer"
+      },
+      {
+        "source": "fixer",
+        "target": "verifier"
+      },
+      {
+        "source": "verifier",
+        "target": "fixer"
+      }
+    ],
+    "fsm": {
+      "start": "explorer",
+      "decision_nodes": [
+        {
+          "node": "verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "fixer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to resolve a race condition issue in the Django repository by exploring the codebase, making necessary code changes, and verifying the fix iteratively until the issue is resolved."
+  }
+}

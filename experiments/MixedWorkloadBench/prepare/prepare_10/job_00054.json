@@ -1,0 +1,192 @@
+{
+  "job_id": "job_00054",
+  "dispatch_id": 54,
+  "benchmark": "research_bench",
+  "logical_id": "1908.03265",
+  "arrival_offset_s": 289.450409,
+  "task_prompt_sha256": "c2b7b9018e339f9b9d8475296cc94165dc22a7ea57a807a9ff0349ac512dc374",
+  "planning_start_time": 1777598332.7621408,
+  "planning_end_time": 1777598372.0650365,
+  "planning_duration_s": 39.3029,
+  "planner_input_tokens": 11084,
+  "planner_completion_tokens": 1445,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Liyuan Liu.",
+        "agent_params": {
+          "author_name": "Liyuan Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reliability-aware Dynamic Feature Composition for Name Tagging",
+            "Constructing and Mining Heterogeneous Information Networks from Massive Text",
+            "Facet-Aware Evaluation for Extractive Summarization"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Haoming Jiang.",
+        "agent_params": {
+          "author_name": "Haoming Jiang",
+          "affiliation": "Unknown",
+          "publications": [
+            "On Computation and Generalization of Generative Adversarial Networks under Spectrum Control",
+            "Organic-Inorganic Hybrid Heterometallic Halides with Low-Dimensional Structures and Red Photoluminescence Emissions.",
+            "Picasso: A Sparse Learning Library for High Dimensional Data Analysis in R and Python"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Pengcheng He.",
+        "agent_params": {
+          "author_name": "Pengcheng He",
+          "affiliation": "Unknown",
+          "publications": [
+            "Multi-Task Deep Neural Networks for Natural Language Understanding",
+            "X-SQL: reinforce schema representation with context",
+            "Improving Multi-Task Deep Neural Networks via Knowledge Distillation for Natural Language Understanding"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Weizhu Chen.",
+        "agent_params": {
+          "author_name": "Weizhu Chen",
+          "affiliation": "Unknown",
+          "publications": [
+            "Multi-Task Deep Neural Networks for Natural Language Understanding",
+            "X-SQL: reinforce schema representation with context",
+            "Lessons from Contextual Bandit Learning in a Customer Support Bot"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_5_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Xiaodong Liu.",
+        "agent_params": {
+          "author_name": "Xiaodong Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Compliant Wing Based Concept Design for Underwater-launched Aerial Vehicles",
+            "RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers",
+            "Integrated Component Optimization and Energy Management for Plug-In Hybrid Electric Buses"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_6_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jianfeng Gao.",
+        "agent_params": {
+          "author_name": "Jianfeng Gao",
+          "affiliation": "Unknown",
+          "publications": [
+            "ConvLab: Multi-Domain End-to-End Dialog System Platform",
+            "Reactive Motion Planning for Human-Robot Cooperative Tasks Under Uncertainties",
+            "Robust Navigation with Language Pretraining and Stochastic Sampling"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_7_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jiawei Han.",
+        "agent_params": {
+          "author_name": "Jiawei Han",
+          "affiliation": "Unknown",
+          "publications": [
+            "Constrained Sequence-to-sequence Semitic Root Extraction for Enriching Word Embeddings",
+            "Query-Specific Knowledge Summarization with Entity Evolutionary Networks",
+            "Deep functional synthesis: a machine learning approach to gene functional enrichment"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author agent generates a proposal candidate based on their persona and publications, which are then aggregated into a final proposal by the proposal aggregator."
+  }
+}

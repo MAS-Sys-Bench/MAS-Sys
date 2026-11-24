@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00130",
+  "dispatch_id": 130,
+  "benchmark": "research_bench",
+  "logical_id": "1907.11932",
+  "arrival_offset_s": 1386.79098,
+  "task_prompt_sha256": "73c435e41cc46ca8a36ad8aa21ac3d37083afefb60eec1868c05c6a5d381751b",
+  "planning_start_time": 1777597333.3319657,
+  "planning_end_time": 1777597343.6959107,
+  "planning_duration_s": 10.3639,
+  "planner_input_tokens": 10178,
+  "planner_completion_tokens": 903,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Di Jin.",
+        "agent_params": {
+          "author_name": "Di Jin",
+          "affiliation": "Unknown",
+          "publications": [
+            "Publicly Available Clinical BERT Embeddings",
+            "MMM: Multi-stage Multi-task Learning for Multi-choice Reading Comprehension",
+            "Dual Adversarial Neural Transfer for Low-Resource Named Entity Recognition"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zhijing Jin.",
+        "agent_params": {
+          "author_name": "Zhijing Jin",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Text Style Transfer via Iterative Matching and Translation",
+            "Is BERT Really Robust? Natural Language Attack on Text Classification and Entailment",
+            "IMaT: Unsupervised Text Attribute Transfer via Iterative Matching and Translation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Joey Tianyi Zhou.",
+        "agent_params": {
+          "author_name": "Joey Tianyi Zhou",
+          "affiliation": "Unknown",
+          "publications": [
+            "Nonlinear Regression via Deep Negative Correlation Learning",
+            "Ordered or Orderless: A Revisit for Video Based Person Re-Identification",
+            "Query-efficient Meta Attack to Deep Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_4_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Peter Szolovits.",
+        "agent_params": {
+          "author_name": "Peter Szolovits",
+          "affiliation": "Unknown",
+          "publications": [
+            "High-throughput Multimodal Automated Phenotyping (MAP) with Application to PheWAS",
+            "A Framework for Relation Extraction Across Multiple Datasets in Multiple Domains",
+            "MARIKA - A model revision system using qualitative analysis of simulations."
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of four authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

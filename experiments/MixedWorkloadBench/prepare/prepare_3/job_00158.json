@@ -1,0 +1,119 @@
+{
+  "job_id": "job_00158",
+  "dispatch_id": 158,
+  "benchmark": "pinchbench",
+  "logical_id": "task_22_second_brain",
+  "arrival_offset_s": 1673.189056,
+  "task_prompt_sha256": "2ef3eb854c77c7aebefc57b19d430c5bbbbdb6610dd4427034a2118b062a496c",
+  "planning_start_time": 1777452359.7225425,
+  "planning_end_time": 1777452366.21801,
+  "planning_duration_s": 6.4955,
+  "planner_input_tokens": 2878,
+  "planner_completion_tokens": 600,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "paperviz_planner",
+        "instance_id": "planner",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Generates a detailed textual description of the target figure using runtime RAG over the local PaperBanana reference pool.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_stylist",
+        "instance_id": "stylist",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Refines a figure description with publication-quality aesthetics following NeurIPS 2025 style guidelines.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_diagram_visualizer",
+        "instance_id": "visualizer",
+        "llm_config_name": "image.qwen-image",
+        "role_description": "Produces a final scientific diagram image from a detailed diagram description.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "paperviz_critic",
+        "instance_id": "critic",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "Evaluates a generated figure against its source content and provides structured revision suggestions.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "planner",
+        "target": "stylist"
+      },
+      {
+        "source": "stylist",
+        "target": "visualizer"
+      },
+      {
+        "source": "visualizer",
+        "target": "critic"
+      },
+      {
+        "source": "critic",
+        "target": "visualizer"
+      }
+    ],
+    "fsm": {
+      "start": "planner",
+      "decision_nodes": [
+        {
+          "node": "critic",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "visualizer",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to iteratively create and refine a scientific diagram, ensuring it meets high publication standards through a planner, stylist, visualizer, and critic loop."
+  }
+}

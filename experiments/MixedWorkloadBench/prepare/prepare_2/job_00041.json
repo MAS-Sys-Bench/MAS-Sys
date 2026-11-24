@@ -1,0 +1,110 @@
+{
+  "job_id": "job_00041",
+  "dispatch_id": 41,
+  "benchmark": "swebench",
+  "logical_id": "sympy__sympy-13043",
+  "arrival_offset_s": 679.016517,
+  "task_prompt_sha256": "92002e07e60c4def24a9295758df0951ee3b2a9d51c6bacb7329b42f5c70c138",
+  "planning_start_time": 1777449870.0580883,
+  "planning_end_time": 1777449874.6021008,
+  "planning_duration_s": 4.544,
+  "planner_input_tokens": 3224,
+  "planner_completion_tokens": 517,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "code_explorer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Explores the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "code_editor",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Makes the necessary code changes to fix the issue in the decompose() function.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "code_verifier",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Verifies the changes made to ensure they are correct and do not cause test failures.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "code_explorer",
+        "target": "code_editor"
+      },
+      {
+        "source": "code_editor",
+        "target": "code_verifier"
+      },
+      {
+        "source": "code_verifier",
+        "target": "code_editor"
+      }
+    ],
+    "fsm": {
+      "start": "code_explorer",
+      "decision_nodes": [
+        {
+          "node": "code_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "code_editor",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to resolve a GitHub issue in the sympy/sympy repository by exploring the codebase, making necessary code changes to the decompose() function, and verifying the correctness of these changes."
+  }
+}

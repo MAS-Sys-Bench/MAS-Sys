@@ -1,0 +1,129 @@
+{
+  "plan_agent_visible_config": {
+    "llm": {
+      "lang": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "Can be used as a stronger text model for complex reasoning, advanced coding, agentic tool-use planning, multilingual understanding, search-oriented workflows, and long-document analysis with enhaced knowledge.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "vision": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "A versatile multimodal vision-language model capable of advanced reasoning, coding, tool use, multilingual understanding, document/OCR analysis, video comprehension, and long-context tasks.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "image": {
+        "qwen-image": {
+          "model": "Qwen/Qwen-image-2512",
+          "size": "~10B",
+          "capabilities": "Qwen's upgraded open-source text-to-image foundation model, focused on more photorealistic human generation, finer natural textures, and more accurate text/layout rendering in image compositions.",
+          "cost": "Input: $0.20 - $0.40 / 1M tokens; Output: $0.40 - $0.80 / 1M tokens"
+        }
+      }
+    }
+  },
+  "prepare_fingerprint": "5dba17885ed809b1145678bfb02ec409adea2ea0debfca2b2a012a6eb65e5614",
+  "sampling_config": {
+    "seed": 42,
+    "duration_minutes": 30,
+    "total_jps": 0.005,
+    "ratio": {
+      "research_bench": 0.2,
+      "pinchbench": 0.2,
+      "swebench": 0.2,
+      "paperbananabench": 0.2,
+      "deepfundbench": 0.2
+    },
+    "pool_sizes": {
+      "research_bench": 100,
+      "pinchbench": 23,
+      "swebench": 300,
+      "paperbananabench": 292,
+      "deepfundbench": 161
+    },
+    "arrival_plan": [
+      {
+        "dispatch_id": 1,
+        "job_id": "job_00001",
+        "arrival_offset_s": 204.012057,
+        "benchmark": "research_bench",
+        "logical_id": "1911.02116"
+      },
+      {
+        "dispatch_id": 2,
+        "job_id": "job_00002",
+        "arrival_offset_s": 260.190917,
+        "benchmark": "research_bench",
+        "logical_id": "2105.05233"
+      },
+      {
+        "dispatch_id": 3,
+        "job_id": "job_00003",
+        "arrival_offset_s": 486.025519,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:NVDA"
+      },
+      {
+        "dispatch_id": 4,
+        "job_id": "job_00004",
+        "arrival_offset_s": 664.585537,
+        "benchmark": "research_bench",
+        "logical_id": "1903.07291"
+      },
+      {
+        "dispatch_id": 5,
+        "job_id": "job_00005",
+        "arrival_offset_s": 713.928877,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11133"
+      },
+      {
+        "dispatch_id": 6,
+        "job_id": "job_00006",
+        "arrival_offset_s": 878.691727,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_288"
+      },
+      {
+        "dispatch_id": 7,
+        "job_id": "job_00007",
+        "arrival_offset_s": 987.471652,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-26020"
+      },
+      {
+        "dispatch_id": 8,
+        "job_id": "job_00008",
+        "arrival_offset_s": 1319.01927,
+        "benchmark": "research_bench",
+        "logical_id": "1805.08318"
+      },
+      {
+        "dispatch_id": 9,
+        "job_id": "job_00009",
+        "arrival_offset_s": 1558.577259,
+        "benchmark": "pinchbench",
+        "logical_id": "task_04_weather"
+      },
+      {
+        "dispatch_id": 10,
+        "job_id": "job_00010",
+        "arrival_offset_s": 1607.071526,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_53"
+      },
+      {
+        "dispatch_id": 11,
+        "job_id": "job_00011",
+        "arrival_offset_s": 1626.538057,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09418"
+      }
+    ]
+  }
+}

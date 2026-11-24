@@ -1,0 +1,106 @@
+{
+  "job_id": "job_00097",
+  "dispatch_id": 97,
+  "benchmark": "research_bench",
+  "logical_id": "1902.02918",
+  "arrival_offset_s": 1039.256778,
+  "task_prompt_sha256": "5cf7995361c53ea94b0e14630bcd5ad7ce18c09c1f40ecccb214cc8a12325948",
+  "planning_start_time": 1777597066.2272413,
+  "planning_end_time": 1777597073.4207895,
+  "planning_duration_s": 7.1935,
+  "planner_input_tokens": 17111,
+  "planner_completion_tokens": 760,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jeremy M Cohen's persona and shared related-paper context.",
+        "agent_params": {
+          "author_name": "Jeremy M Cohen",
+          "affiliation": "Unknown",
+          "publications": [
+            "A meta-analysis reveals temperature, dose, life stage, and taxonomy influence host susceptibility to a fungal parasite",
+            "Transmission of West Nile and other temperate mosquito-borne viruses peaks at intermediate environmental temperatures",
+            "Different metrics of thermal acclimation yield similar effects of latitude, acclimation duration, and body mass on acclimation capacities"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Elan Rosenfeld's persona and shared related-paper context.",
+        "agent_params": {
+          "author_name": "Elan Rosenfeld",
+          "affiliation": "Unknown",
+          "publications": [
+            "Human-Usable Password Schemas: Beyond Information-Theoretic Security"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from J. Zico Kolter's persona and shared related-paper context.",
+        "agent_params": {
+          "author_name": "J. Zico Kolter",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deterministic PAC-Bayesian generalization bounds for deep networks via generalizing noise-resilience",
+            "Adversarial camera stickers: A Physical Camera Attack on Deep Learning Classifier",
+            "Uniform convergence may be unable to explain generalization in deep learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates from all authors into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research background and shared related-paper context. The final proposal is aggregated into a cohesive document by the proposal aggregator."
+  }
+}

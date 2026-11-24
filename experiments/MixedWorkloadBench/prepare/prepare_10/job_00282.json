@@ -1,0 +1,43 @@
+{
+  "job_id": "job_00282",
+  "dispatch_id": 282,
+  "benchmark": "pinchbench",
+  "logical_id": "task_00_sanity",
+  "arrival_offset_s": 1389.841534,
+  "task_prompt_sha256": "0c9f491db3ed6082026a2029f3150eb031e87ca175ee916d6db1255d32725016",
+  "planning_start_time": 1777600078.818916,
+  "planning_end_time": 1777600080.962997,
+  "planning_duration_s": 2.1441,
+  "planner_input_tokens": 2637,
+  "planner_completion_tokens": 158,
+  "mas_config": {
+    "topology": "chain",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "manus",
+        "instance_id": "greeter",
+        "llm_config_name": "vision.qwen3_5-27b",
+        "role_description": "This agent confirms readiness by saying 'Hello, I'm ready!'",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "A simple task to confirm the system's ability to respond by saying 'Hello, I'm ready!'"
+  }
+}

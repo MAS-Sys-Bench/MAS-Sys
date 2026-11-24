@@ -1,0 +1,24 @@
+# DeepFundBench – Buffett Portfolio Experiment
+# Source: DeepFund/src/config/exp/buffett.yaml
+#
+# Top 5 holdings of Berkshire Hathaway (2024-2025).
+# Uses 4 analyst types — no macro/fundamental (Buffett-style value investing
+# relies more on company-level signals and sentiment).
+
+exp_name: "buffett"
+start_date: "2025-04-01"
+end_date: "2025-05-01"
+cashflow: 100000
+
+tickers:
+  - AAPL
+  - AXP
+  - BAC
+  - KO
+  - CVX
+
+# workflow_analysts:
+#   - technical
+#   - insider
+#   - company_news
+#   - policy

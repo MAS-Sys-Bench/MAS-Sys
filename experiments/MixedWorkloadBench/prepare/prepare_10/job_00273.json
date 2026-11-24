@@ -1,0 +1,170 @@
+{
+  "job_id": "job_00273",
+  "dispatch_id": 273,
+  "benchmark": "research_bench",
+  "logical_id": "1902.03393",
+  "arrival_offset_s": 1356.564166,
+  "task_prompt_sha256": "92a57842f475890b17f96096458f6d3e5800d58144baddf118d479927c2038ef",
+  "planning_start_time": 1777600006.7029183,
+  "planning_end_time": 1777600017.970288,
+  "planning_duration_s": 11.2674,
+  "planner_input_tokens": 12856,
+  "planner_completion_tokens": 1274,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Seyed-Iman Mirzadeh.",
+        "agent_params": {
+          "author_name": "Seyed-Iman Mirzadeh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Improved Knowledge Distillation via Teacher Assistant: Bridging the Gap Between Student and Teacher",
+            "LabelMerger: Learning Activities in Uncontrolled Environments"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Mehrdad Farajtabar.",
+        "agent_params": {
+          "author_name": "Mehrdad Farajtabar",
+          "affiliation": "Unknown",
+          "publications": [
+            "Learning Time Series Associated Event Sequences With Recurrent Point Process Networks",
+            "Cross-View Policy Learning for Street Navigation",
+            "Improved Knowledge Distillation via Teacher Assistant: Bridging the Gap Between Student and Teacher"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ang Li.",
+        "agent_params": {
+          "author_name": "Ang Li",
+          "affiliation": "Unknown",
+          "publications": [
+            "Improved Knowledge Distillation via Teacher Assistant: Bridging the Gap Between Student and Teacher",
+            "A Scalable Framework for Acceleration of CNN Training on Deeply-Pipelined FPGA Clusters with Weight and Workload Balancing",
+            "Interference Exploitation via Symbol-Level Precoding: Overview, State-of-the-Art and Future Directions"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Nir Levine.",
+        "agent_params": {
+          "author_name": "Nir Levine",
+          "affiliation": "Unknown",
+          "publications": [
+            "Robust Reinforcement Learning for Continuous Control with Model Misspecification",
+            "Prediction, Consistency, Curvature: Representation Learning for Locally-Linear Control",
+            "An Extended Relevance Model for Session Search"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Akihiro Matsukawa.",
+        "agent_params": {
+          "author_name": "Akihiro Matsukawa",
+          "affiliation": "Unknown",
+          "publications": [
+            "Detecting Out-of-Distribution Inputs to Deep Generative Models Using a Test for Typicality",
+            "Hybrid Models with Deep and Invertible Features",
+            "Detecting Out-of-Distribution Inputs to Deep Generative Models Using Typicality"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Hassan Ghasemzadeh.",
+        "agent_params": {
+          "author_name": "Hassan Ghasemzadeh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Jump Search: A Fast Technique for the Synthesis of Approximate Circuits",
+            "Resource-Efficient Computing in Wearable Systems",
+            "Embedded Sensor System to Monitor Beverage Intake Type and Volume"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of multiple authors. Each author contributes a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}

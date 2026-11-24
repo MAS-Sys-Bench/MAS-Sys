@@ -1,0 +1,213 @@
+{
+  "plan_agent_visible_config": {
+    "llm": {
+      "lang": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "Can be used as a stronger text model for complex reasoning, advanced coding, agentic tool-use planning, multilingual understanding, search-oriented workflows, and long-document analysis with enhaced knowledge.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "vision": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "A versatile multimodal vision-language model capable of advanced reasoning, coding, tool use, multilingual understanding, document/OCR analysis, video comprehension, and long-context tasks.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "image": {
+        "qwen-image": {
+          "model": "Qwen/Qwen-image-2512",
+          "size": "~10B",
+          "capabilities": "Qwen's upgraded open-source text-to-image foundation model, focused on more photorealistic human generation, finer natural textures, and more accurate text/layout rendering in image compositions.",
+          "cost": "Input: $0.20 - $0.40 / 1M tokens; Output: $0.40 - $0.80 / 1M tokens"
+        }
+      }
+    }
+  },
+  "prepare_fingerprint": "6b7d0aecfb348d91c271e101353c049741092f6820e72cee7d963df35323c55d",
+  "sampling_config": {
+    "seed": 42,
+    "duration_minutes": 30,
+    "total_jps": 0.01,
+    "ratio": {
+      "research_bench": 0.2,
+      "pinchbench": 0.2,
+      "swebench": 0.2,
+      "paperbananabench": 0.2,
+      "deepfundbench": 0.2
+    },
+    "pool_sizes": {
+      "research_bench": 100,
+      "pinchbench": 23,
+      "swebench": 300,
+      "paperbananabench": 292,
+      "deepfundbench": 161
+    },
+    "arrival_plan": [
+      {
+        "dispatch_id": 1,
+        "job_id": "job_00001",
+        "arrival_offset_s": 102.006029,
+        "benchmark": "research_bench",
+        "logical_id": "1911.02116"
+      },
+      {
+        "dispatch_id": 2,
+        "job_id": "job_00002",
+        "arrival_offset_s": 130.095459,
+        "benchmark": "research_bench",
+        "logical_id": "2105.05233"
+      },
+      {
+        "dispatch_id": 3,
+        "job_id": "job_00003",
+        "arrival_offset_s": 243.01276,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:NVDA"
+      },
+      {
+        "dispatch_id": 4,
+        "job_id": "job_00004",
+        "arrival_offset_s": 332.292769,
+        "benchmark": "research_bench",
+        "logical_id": "1903.07291"
+      },
+      {
+        "dispatch_id": 5,
+        "job_id": "job_00005",
+        "arrival_offset_s": 356.964438,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11133"
+      },
+      {
+        "dispatch_id": 6,
+        "job_id": "job_00006",
+        "arrival_offset_s": 439.345863,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_288"
+      },
+      {
+        "dispatch_id": 7,
+        "job_id": "job_00007",
+        "arrival_offset_s": 493.735826,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-26020"
+      },
+      {
+        "dispatch_id": 8,
+        "job_id": "job_00008",
+        "arrival_offset_s": 659.509635,
+        "benchmark": "research_bench",
+        "logical_id": "1805.08318"
+      },
+      {
+        "dispatch_id": 9,
+        "job_id": "job_00009",
+        "arrival_offset_s": 779.288629,
+        "benchmark": "pinchbench",
+        "logical_id": "task_04_weather"
+      },
+      {
+        "dispatch_id": 10,
+        "job_id": "job_00010",
+        "arrival_offset_s": 803.535763,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_53"
+      },
+      {
+        "dispatch_id": 11,
+        "job_id": "job_00011",
+        "arrival_offset_s": 813.269028,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09418"
+      },
+      {
+        "dispatch_id": 12,
+        "job_id": "job_00012",
+        "arrival_offset_s": 905.833975,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:KO"
+      },
+      {
+        "dispatch_id": 13,
+        "job_id": "job_00013",
+        "arrival_offset_s": 982.670217,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:KO"
+      },
+      {
+        "dispatch_id": 14,
+        "job_id": "job_00014",
+        "arrival_offset_s": 990.87805,
+        "benchmark": "pinchbench",
+        "logical_id": "task_20_eli5_pdf_summary"
+      },
+      {
+        "dispatch_id": 15,
+        "job_id": "job_00015",
+        "arrival_offset_s": 1087.24767,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-30:TSLA"
+      },
+      {
+        "dispatch_id": 16,
+        "job_id": "job_00016",
+        "arrival_offset_s": 1108.602716,
+        "benchmark": "research_bench",
+        "logical_id": "2003.01690"
+      },
+      {
+        "dispatch_id": 17,
+        "job_id": "job_00017",
+        "arrival_offset_s": 1134.466613,
+        "benchmark": "pinchbench",
+        "logical_id": "task_02_stock"
+      },
+      {
+        "dispatch_id": 18,
+        "job_id": "job_00018",
+        "arrival_offset_s": 1327.788125,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:CVX"
+      },
+      {
+        "dispatch_id": 19,
+        "job_id": "job_00019",
+        "arrival_offset_s": 1360.357483,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_193"
+      },
+      {
+        "dispatch_id": 20,
+        "job_id": "job_00020",
+        "arrival_offset_s": 1378.109285,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 21,
+        "job_id": "job_00021",
+        "arrival_offset_s": 1409.167218,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-03:BAC"
+      },
+      {
+        "dispatch_id": 22,
+        "job_id": "job_00022",
+        "arrival_offset_s": 1503.1055,
+        "benchmark": "research_bench",
+        "logical_id": "1406.2661"
+      },
+      {
+        "dispatch_id": 23,
+        "job_id": "job_00023",
+        "arrival_offset_s": 1531.184213,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-25433"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00014",
+  "dispatch_id": 14,
+  "benchmark": "research_bench",
+  "logical_id": "2103.02907",
+  "arrival_offset_s": 505.271264,
+  "task_prompt_sha256": "bfd1a7885dc33e52d58de841adfab13b01a8b2e63a50aabc0d9698f970885611",
+  "planning_start_time": 1777594133.0062954,
+  "planning_end_time": 1777594140.83808,
+  "planning_duration_s": 7.8318,
+  "planner_input_tokens": 12790,
+  "planner_completion_tokens": 751,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Qibin Hou.",
+        "agent_params": {
+          "author_name": "Qibin Hou",
+          "affiliation": "Unknown",
+          "publications": [
+            "VOLO: Vision Outlooker for Visual Recognition",
+            "Vision Permutator: A Permutable MLP-Like Architecture for Visual Recognition",
+            "Token Labeling: Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Daquan Zhou.",
+        "agent_params": {
+          "author_name": "Daquan Zhou",
+          "affiliation": "Unknown",
+          "publications": [
+            "Token Labeling: Training a 85.4% Top-1 Accuracy Vision Transformer with 56M Parameters on ImageNet",
+            "AutoSpace: Neural Architecture Search with Less Human Interference",
+            "Refiner: Refining Self-attention for Vision Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jiashi Feng.",
+        "agent_params": {
+          "author_name": "Jiashi Feng",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep Interactive Thin Object Selection",
+            "Unleashing the Power of Contrastive Self-Supervised Visual Models via Contrast-Regularized Fine-Tuning",
+            "CIFS: Improving Adversarial Robustness of CNNs via Channel-wise Importance-based Feature Selection"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a five-question format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

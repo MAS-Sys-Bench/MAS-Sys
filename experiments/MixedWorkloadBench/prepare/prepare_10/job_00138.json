@@ -1,0 +1,129 @@
+{
+  "job_id": "job_00138",
+  "dispatch_id": 138,
+  "benchmark": "research_bench",
+  "logical_id": "1902.10811",
+  "arrival_offset_s": 730.9765,
+  "task_prompt_sha256": "408369585d0864b43f072680db631029f32fbf2e2e39cd565ad8c43368fcbb5a",
+  "planning_start_time": 1777598977.8352313,
+  "planning_end_time": 1777598988.8908064,
+  "planning_duration_s": 11.0556,
+  "planner_input_tokens": 13936,
+  "planner_completion_tokens": 879,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Writes a research proposal candidate based on Benjamin Recht's persona and shared context.",
+        "agent_params": {
+          "author_name": "Benjamin Recht",
+          "affiliation": "Unknown",
+          "publications": [
+            "Certainty Equivalence is Efficient for Linear Quadratic Control",
+            "Learning Linear Dynamical Systems with Semi-Parametric Least Squares",
+            "Mathematical Models of Physiological Responses to Exercise"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Writes a research proposal candidate based on Rebecca Roelofs's persona and shared context.",
+        "agent_params": {
+          "author_name": "Rebecca Roelofs",
+          "affiliation": "Unknown",
+          "publications": [
+            "Do Image Classifiers Generalize Across Time?",
+            "A systematic framework for natural perturbations from videos",
+            "Measuring Generalization and Overfitting in Machine Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Writes a research proposal candidate based on Ludwig Schmidt's persona and shared context.",
+        "agent_params": {
+          "author_name": "Ludwig Schmidt",
+          "affiliation": "Unknown",
+          "publications": [
+            "Do Image Classifiers Generalize Across Time?",
+            "Model Similarity Mitigates Test Set Overuse",
+            "A systematic framework for natural perturbations from videos"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "proposal_writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Writes a research proposal candidate based on Vaishaal Shankar's persona and shared context.",
+        "agent_params": {
+          "author_name": "Vaishaal Shankar",
+          "affiliation": "Unknown",
+          "publications": [
+            "Cloud Programming Simplified: A Berkeley View on Serverless Computing",
+            "Do Image Classifiers Generalize Across Time?",
+            "A systematic framework for natural perturbations from videos"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise and personas of multiple authors, each contributing a proposal candidate based on their previous work and shared context. The final proposal is aggregated into a coherent document."
+  }
+}

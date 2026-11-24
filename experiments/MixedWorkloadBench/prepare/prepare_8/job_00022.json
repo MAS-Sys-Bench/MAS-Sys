@@ -1,0 +1,128 @@
+{
+  "job_id": "job_00022",
+  "dispatch_id": 22,
+  "benchmark": "research_bench",
+  "logical_id": "1812.00420",
+  "arrival_offset_s": 1099.950849,
+  "task_prompt_sha256": "9e2e230e426f8b1b593d860c44d4f9e742cbbf23788981df703a5d39eb83c6c4",
+  "planning_start_time": 1777594249.8886573,
+  "planning_end_time": 1777594261.2311342,
+  "planning_duration_s": 11.3425,
+  "planner_input_tokens": 8923,
+  "planner_completion_tokens": 880,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_arslan_chaudhry",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Arslan Chaudhry's persona.",
+        "agent_params": {
+          "author_name": "Arslan Chaudhry",
+          "affiliation": "Unknown",
+          "publications": [
+            "Riemannian Walk for Incremental Learning: Understanding Forgetting and Intransigence",
+            "Discovering Class-Specific Pixels for Weakly-Supervised Semantic Segmentation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_marc_aurelio_ranzato",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Marc'Aurelio Ranzato's persona.",
+        "agent_params": {
+          "author_name": "Marc'Aurelio Ranzato",
+          "affiliation": "Unknown",
+          "publications": [
+            "GenEval: A Benchmark Suite for Evaluating Generative Models",
+            "Phrase-Based & Neural Unsupervised Machine Translation",
+            "Multiple-Attribute Text Rewriting"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_marcus_rohrbach",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Marcus Rohrbach's persona.",
+        "agent_params": {
+          "author_name": "Marcus Rohrbach",
+          "affiliation": "Unknown",
+          "publications": [
+            "Memory Aware Synapses: Learning what (not) to forget",
+            "Grounded Video Description",
+            "Graph-Based Global Reasoning Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_mohamed_elhoseiny",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Mohamed Elhoseiny's persona.",
+        "agent_params": {
+          "author_name": "Mohamed Elhoseiny",
+          "affiliation": "Unknown",
+          "publications": [
+            "The Shape of Art History in the Eyes of the Machine",
+            "Large-Scale Visual Relationship Understanding",
+            "GDPP: Learning Diverse Generations Using Determinantal Point Process"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of four authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

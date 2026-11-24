@@ -1,0 +1,233 @@
+{
+  "job_id": "job_00053",
+  "dispatch_id": 53,
+  "benchmark": "research_bench",
+  "logical_id": "2006.10739",
+  "arrival_offset_s": 549.554695,
+  "task_prompt_sha256": "d03a00a27f23835cbc08ecba8cb734ff8358ccdc3905b57f592fb49e2d4fc854",
+  "planning_start_time": 1777596766.3444564,
+  "planning_end_time": 1777596779.902551,
+  "planning_duration_s": 13.5581,
+  "planner_input_tokens": 13025,
+  "planner_completion_tokens": 1771,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_matthew_tancik",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Matthew Tancik's persona.",
+        "agent_params": {
+          "author_name": "Matthew Tancik",
+          "affiliation": "Unknown",
+          "publications": [
+            "Lighthouse: Predicting Lighting Volumes for Spatially-Coherent Illumination",
+            "NeRF",
+            "pixelNeRF: Neural Radiance Fields from One or Few Images"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_pratul_srinivasan",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Pratul P. Srinivasan's persona.",
+        "agent_params": {
+          "author_name": "Pratul P. Srinivasan",
+          "affiliation": "Unknown",
+          "publications": [
+            "Lighthouse: Predicting Lighting Volumes for Spatially-Coherent Illumination",
+            "NeRF",
+            "NeRV: Neural Reflectance and Visibility Fields for Relighting and View Synthesis"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ben_mildenhall",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ben Mildenhall's persona.",
+        "agent_params": {
+          "author_name": "Ben Mildenhall",
+          "affiliation": "Unknown",
+          "publications": [
+            "Lighthouse: Predicting Lighting Volumes for Spatially-Coherent Illumination",
+            "Neural Scene Representations for View Synthesis",
+            "NeRF"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_sara_fridovich_keil",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Sara Fridovich-Keil's persona.",
+        "agent_params": {
+          "author_name": "Sara Fridovich-Keil",
+          "affiliation": "Unknown",
+          "publications": [
+            "Neural Kernels Without Tangents",
+            "Approximately Exact Line Search.",
+            "Choosing the Step Size: Intuitive Line Search Algorithms with Efﬁcient Convergence"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_nithin_raghavan",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Nithin Raghavan's persona.",
+        "agent_params": {
+          "author_name": "Nithin Raghavan",
+          "affiliation": "Unknown",
+          "publications": [
+            "Modeling The Effect of Lateral Inhibition in the Retina on Color Perception",
+            "Sim2Real for Self-Supervised Monocular Depth and Segmentation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_utkarsh_singhal",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Utkarsh Singhal's persona.",
+        "agent_params": {
+          "author_name": "Utkarsh Singhal",
+          "affiliation": "Unknown",
+          "publications": [
+            "HyperReal: Complex-Valued Layer Functions For Complex-Valued Scaling Invariance",
+            "Variance Partitioning Reveals Consistent Representation of Object Boundary Contours in LO Across Different Datasets",
+            "The emerging field of bioelectronic medicine seeks methods for deciphering and modulating electrophysiological activity"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ravi_ramamoorthi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ravi Ramamoorthi's persona.",
+        "agent_params": {
+          "author_name": "Ravi Ramamoorthi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep 3D Capture: Geometry and Reflectance From Sparse Multi-View Images",
+            "OpenRooms: An End-to-End Open Framework for Photorealistic Indoor Scene Datasets",
+            "Light stage super-resolution"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jonathan_barron",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jonathan T. Barron's persona.",
+        "agent_params": {
+          "author_name": "Jonathan T. Barron",
+          "affiliation": "Unknown",
+          "publications": [
+            "Single-Image Lens Flare Removal",
+            "How to Train Neural Networks for Flare Removal",
+            "Nerfies: Deformable Neural Radiance Fields"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ren_ng",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ren Ng's persona.",
+        "agent_params": {
+          "author_name": "Ren Ng",
+          "affiliation": "Unknown",
+          "publications": [
+            "Compressed Sensing 3D Fluorescence Microscopy Using Optimized Phase Mask",
+            "Spatially-varying microscope calibration from unstructured sparse inputs",
+            "NeRF"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

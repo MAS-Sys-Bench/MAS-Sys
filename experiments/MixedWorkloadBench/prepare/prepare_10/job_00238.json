@@ -1,0 +1,368 @@
+{
+  "job_id": "job_00238",
+  "dispatch_id": 238,
+  "benchmark": "research_bench",
+  "logical_id": "2210.08402",
+  "arrival_offset_s": 1161.489804,
+  "task_prompt_sha256": "3b69a67a6ec1f87785ab3b9e06d652e0935efec18cb0a7e6e6f9dd26777d7f85",
+  "planning_start_time": 1777599690.741599,
+  "planning_end_time": 1777599764.3104916,
+  "planning_duration_s": 73.5689,
+  "planner_input_tokens": 22357,
+  "planner_completion_tokens": 2946,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_christoph_schuhmann",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Christoph Schuhmann's persona.",
+        "agent_params": {
+          "author_name": "Christoph Schuhmann",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_romain_beaumont",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Romain Beaumont's persona.",
+        "agent_params": {
+          "author_name": "Romain Beaumont",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "What Users Want? WARHOL: A Generative Model for Recommendation",
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_richard_vencu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Richard Vencu's persona.",
+        "agent_params": {
+          "author_name": "Richard Vencu",
+          "affiliation": "Unknown",
+          "publications": [
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_cade_gordon",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Cade Gordon's persona.",
+        "agent_params": {
+          "author_name": "Cade Gordon",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "Latent Neural Differential Equations for Video Generation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ross_wightman",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ross Wightman's persona.",
+        "agent_params": {
+          "author_name": "Ross Wightman",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "How to train your ViT? Data, Augmentation, and Regularization in Vision Transformers",
+            "ResNet strikes back: An improved training procedure in timm"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_mehdi_cherti",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Mehdi Cherti's persona.",
+        "agent_params": {
+          "author_name": "Mehdi Cherti",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "Effect of pre-training scale on intra- and inter-domain, full and few-shot transfer learning for natural and X-Ray chest images",
+            "Effect of large-scale pre-training on full and few-shot transfer learning for natural and medical images"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_theo_coombes",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Theo Coombes's persona.",
+        "agent_params": {
+          "author_name": "Theo Coombes",
+          "affiliation": "Unknown",
+          "publications": [
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_aarush_katta",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Aarush Katta's persona.",
+        "agent_params": {
+          "author_name": "Aarush Katta",
+          "affiliation": "Unknown",
+          "publications": [
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_clayton_mullis",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Clayton Mullis's persona.",
+        "agent_params": {
+          "author_name": "Clayton Mullis",
+          "affiliation": "Unknown",
+          "publications": [
+            "LAION-400M: Open Dataset of CLIP-Filtered 400 Million Image-Text Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_mitchell_wortsman",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Mitchell Wortsman's persona.",
+        "agent_params": {
+          "author_name": "Mitchell Wortsman",
+          "affiliation": "Unknown",
+          "publications": [
+            "Data Determines Distributional Robustness in Contrastive Language Image Pre-training (CLIP)",
+            "How well do contrastively trained models transfer?",
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_patrick_schramowski",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Patrick Schramowski's persona.",
+        "agent_params": {
+          "author_name": "Patrick Schramowski",
+          "affiliation": "Unknown",
+          "publications": [
+            "Safe Latent Diffusion: Mitigating Inappropriate Degeneration in Diffusion Models",
+            "Revision Transformers: Getting RiT of No-Nos",
+            "Does CLIP Know My Face?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_srivatsa_kundurthy",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Srivatsa Kundurthy's persona.",
+        "agent_params": {
+          "author_name": "Srivatsa Kundurthy",
+          "affiliation": "Unknown",
+          "publications": [
+            "LANTERN-RD: Enabling Deep Learning for Mitigation of the Invasive Spotted Lanternfly"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_katherine_crowson",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Katherine Crowson's persona.",
+        "agent_params": {
+          "author_name": "Katherine Crowson",
+          "affiliation": "Unknown",
+          "publications": [
+            "Musical audio samples generated from joint text embeddings",
+            "VQGAN-CLIP: Open Domain Image Generation and Editing with Natural Language Guidance"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ludwig_schmidt",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Ludwig Schmidt's persona.",
+        "agent_params": {
+          "author_name": "Ludwig Schmidt",
+          "affiliation": "Unknown",
+          "publications": [
+            "Data Determines Distributional Robustness in Contrastive Language Image Pre-training (CLIP)",
+            "How well do contrastively trained models transfer?",
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_robert_kaczmarczyk",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Robert Kaczmarczyk's persona.",
+        "agent_params": {
+          "author_name": "Robert Kaczmarczyk",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sociodemographic, clinical and therapeutic factors as predictors of life quality impairment in psoriasis: A cross‐sectional study in Italy",
+            "What’s driving dermatology? Contribution title analysis of the largest German Dermatology Congress 2019",
+            "Thermodynamic Analysis of the Effect of Green Hydrogen Addition to a Fuel Mixture on the Steam Methane Reforming Process"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jenia_jitsev",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jenia Jitsev's persona.",
+        "agent_params": {
+          "author_name": "Jenia Jitsev",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reproducible Scaling Laws for Contrastive Language-Image Learning",
+            "Effect of pre-training scale on intra- and inter-domain, full and few-shot transfer learning for natural and X-Ray chest images",
+            "Deep learning for the automation of particle analysis in catalyst layers for polymer electrolyte fuel cells."
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their persona and publications, which are then aggregated into a final proposal by the central aggregator agent."
+  }
+}

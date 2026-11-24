@@ -1,0 +1,23 @@
+# DeepFundBench – Development Experiment
+# Source: DeepFund/src/config/dev.yaml
+#
+# Two popular tech stocks with all 6 analyst types.
+# Suitable for quick integration testing.
+
+exp_name: "dev"
+start_date: "2025-04-01"
+end_date: "2025-04-03"
+cashflow: 100000
+
+tickers:
+  - TSLA
+  - NVDA
+
+# All 6 analyst roles (matches DeepFund default)
+# workflow_analysts:
+#   - technical
+#   - fundamental
+#   - insider
+#   - company_news
+#   - macroeconomic
+#   - policy

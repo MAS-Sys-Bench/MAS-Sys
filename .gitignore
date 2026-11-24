@@ -1,0 +1,43 @@
+# Local configuration and credentials
+/config/config.toml
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Build and test artifacts
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+/build/
+/dist/
+
+# Generated runtime files
+/workspace/
+/logs/
+/serving/logs/
+/serving/pids/
+/experiments/*/results/
+*.log
+*.pid
+
+# Local editor and OS files
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

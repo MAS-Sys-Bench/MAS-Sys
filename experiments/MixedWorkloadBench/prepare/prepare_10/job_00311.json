@@ -1,0 +1,121 @@
+{
+  "job_id": "job_00311",
+  "dispatch_id": 311,
+  "benchmark": "research_bench",
+  "logical_id": "1809.11096",
+  "arrival_offset_s": 1562.574963,
+  "task_prompt_sha256": "aa09e70016484037986c3cf602ecc09b589e4f67949120a17c3df3c66cdcdecb",
+  "planning_start_time": 1777600286.658616,
+  "planning_end_time": 1777600297.4131582,
+  "planning_duration_s": 10.7545,
+  "planner_input_tokens": 13920,
+  "planner_completion_tokens": 816,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Andrew Brock's persona.",
+        "agent_params": {
+          "author_name": "Andrew Brock",
+          "affiliation": "Unknown",
+          "publications": [
+            "ConvNet-Based Optical Recognition for Engineering Drawings",
+            "FreezeOut: Accelerate Training by Progressively Freezing Layers",
+            "SMASH: One-Shot Model Architecture Search through HyperNetworks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Jeff Donahue's persona.",
+        "agent_params": {
+          "author_name": "Jeff Donahue",
+          "affiliation": "Unknown",
+          "publications": [
+            "An infusion of new blood using the Toptica laser with GeMS: results of the commissioning and science performance",
+            "Long-Term Recurrent Convolutional Networks for Visual Recognition and Description",
+            "Getting ready for GeMS 2.0: A workhorse AO facility"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Karen Simonyan's persona.",
+        "agent_params": {
+          "author_name": "Karen Simonyan",
+          "affiliation": "Unknown",
+          "publications": [
+            "The challenge of realistic music generation: modelling raw audio at scale",
+            "How Does Private Firm Innovation Affect Anti-Takeover Provisions in Corporate Charters?",
+            "IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "author_1_writer",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "author_2_writer",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "author_3_writer",
+        "target": "proposal_aggregator"
+      }
+    ],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research background. The final proposal is aggregated from these candidates."
+  }
+}

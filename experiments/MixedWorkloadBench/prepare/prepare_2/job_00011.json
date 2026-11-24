@@ -1,0 +1,150 @@
+{
+  "job_id": "job_00011",
+  "dispatch_id": 11,
+  "benchmark": "research_bench",
+  "logical_id": "1905.09418",
+  "arrival_offset_s": 162.653806,
+  "task_prompt_sha256": "70046e10af67abbe688b9732f352218b185e6341afec5e35c0f0f6a0b0dd61e5",
+  "planning_start_time": 1777449601.0418103,
+  "planning_end_time": 1777449612.351469,
+  "planning_duration_s": 11.3097,
+  "planner_input_tokens": 10183,
+  "planner_completion_tokens": 1140,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_elena_voita",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Elena Voita's persona.",
+        "agent_params": {
+          "author_name": "Elena Voita",
+          "affiliation": "Unknown",
+          "publications": [
+            "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+            "Context-Aware Monolingual Repair for Neural Machine Translation",
+            "Sequence Modeling with Unconstrained Generation Order"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_david_talbot",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from David Talbot's persona.",
+        "agent_params": {
+          "author_name": "David Talbot",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Load Distribution Model for Double-Planet Planetary Gear Sets",
+            "An Experimental Investigation of the Impact of Random Spacing Errors on the Dynamic Transmission Error of Spur Gear Pairs",
+            "A Methodology to Experimentally Investigate the Impact of Wobble Errors on the Contact Pattern and Static Transmission Error of Helical Gear Pairs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_fedor_moiseev",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Fedor Moiseev's persona.",
+        "agent_params": {
+          "author_name": "Fedor Moiseev",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Object Segmentation by Redrawing: reproducibility challenge",
+            "[Application of the musculo-skeletal modelling software lhpFusionBox to a paleoanthropological problem: the Spyrou Neandertal moves!]",
+            "Validation of a Model-Based approach for gait analysis."
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_rico_sennrich",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Rico Sennrich's persona.",
+        "agent_params": {
+          "author_name": "Rico Sennrich",
+          "affiliation": "Unknown",
+          "publications": [
+            "Root Mean Square Layer Normalization",
+            "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+            "Domain, Translationese and Noise in Synthetic Data for Neural Machine Translation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_ivan_titov",
+        "llm_config_name": "lang.qwen2_5-14b-Instruct",
+        "role_description": "Generates a proposal candidate from Ivan Titov's persona.",
+        "agent_params": {
+          "author_name": "Ivan Titov",
+          "affiliation": "Unknown",
+          "publications": [
+            "Single Document Summarization as Tree Induction",
+            "Learning Latent Trees with Stochastic Perturbations and Differentiable Dynamic Programming",
+            "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors, each contributing a proposal candidate based on their research background. The final proposal is aggregated from these candidates."
+  }
+}

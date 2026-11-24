@@ -1,0 +1,221 @@
+[llm]
+model = "claude-3-7-sonnet-20250219"
+base_url = "YOUR_BASE_URL"
+api_key = "YOUR_API_KEY"
+max_tokens = 8192
+temperature = 0.0
+
+# PlanAgent's own LLM (used only by PlanAgent for planning and runtime coordination)
+[llm.planner]
+model = "claude-3-7-sonnet-20250219"
+base_url = "YOUR_BASE_URL"
+api_key = "YOUR_API_KEY"
+max_tokens = 8192
+temperature = 0.0
+
+# Vision model candidates (PlanAgent selects one per agent)
+# Each [llm.vision.<name>] defines a candidate LLM for vision agents.
+# PlanAgent sees size/capabilities/cost and assigns the best fit.
+
+[llm.vision]
+model = "claude-3-7-sonnet-20250219"       # Default vision model used by benchmark-time image evaluation
+base_url = "YOUR_BASE_URL" # API endpoint URL for the default vision evaluation model
+api_key = "YOUR_API_KEY"                   # Your API key for the default vision evaluation model
+max_tokens = 8192                          # Maximum number of tokens in the response
+temperature = 0.0                          # Controls randomness for the default vision evaluation model
+size = "unknown (cloud API)"
+capabilities = "Default vision model used by benchmark-time image evaluation"
+cost = "Cloud API pricing"
+
+[llm.vision.claude-3-7-sonnet]
+model = "claude-3-7-sonnet-20250219"       # The vision model to use
+base_url = "YOUR_BASE_URL" # API endpoint URL for vision model
+api_key = "YOUR_API_KEY"                   # Your API key for vision model
+max_tokens = 8192                          # Maximum number of tokens in the response
+temperature = 0.0                          # Controls randomness for vision model
+size = "unknown (cloud API)"
+capabilities = "Cloud-hosted large model with strong vision understanding, screenshot analysis, and multimodal reasoning"
+cost = "Cloud API pricing"
+
+# ── Language model candidates (PlanAgent selects one per agent) ────────────
+# Each [llm.lang.<name>] defines a candidate LLM for text-based agents.
+# PlanAgent sees size/capabilities/cost and assigns the best fit.
+
+[llm.lang.qwen2_5-14b-Instruct]
+model = "Qwen/Qwen2.5-14B-Instruct"
+base_url = "http://localhost:8010/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 0.0
+size = "14B"
+capabilities = "A efficient text model for general chat, coding/math assistance, structured data understanding, and multilingual tasks."
+cost = "Input: $0.20 / 1M tokens; Output: $0.20 / 1M tokens"
+backend = "vllm"
+model_path = "Qwen/Qwen2.5-14B-Instruct"
+port = 8010
+gpus = "0"
+
+[llm.lang.qwen3_5-27b]
+model = "Qwen/Qwen3.5-27B"
+base_url = "http://localhost:8020/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 0.0
+size = "27B"
+capabilities = "Can be used as a stronger text model for complex reasoning, advanced coding, agentic tool-use planning, multilingual understanding, search-oriented workflows, and long-document analysis with enhaced knowledge."
+cost = "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+backend = "vllm"
+model_path = "Qwen/Qwen3.5-27B"
+port = 8020
+gpus = "1"
+
+[llm.lang.qwen3-coder]
+model = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+base_url = "http://localhost:8030/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 0.0
+size = "30B (3B active MoE)"
+capabilities = "A coding-focused language model designed for agentic programming, tool use, function calling, browser-based tasks, and understanding large codebases."
+cost = "Input: <=32K $0.45 / 1M tokens; <=128K $0.75 / 1M tokens; >128K $1.20 / 1M tokens. Output: <=32K $2.25 / 1M tokens; <=128K $3.75 / 1M tokens; >128K $6.00 / 1M tokens"
+backend = "vllm"
+model_path = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+port = 8030
+gpus = "2"
+
+[llm.lang.glm-4_7-flash]
+model = "zai-org/GLM-4.7-Flash"
+base_url = "http://localhost:8003/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 0.0
+size = "31B"
+capabilities = "Fast inference, strong Chinese and English bilingual ability, good at summarization"
+cost = "Input: $0.07 / 1M tokens; Output: $0.40 / 1M tokens"
+backend = "sglang"
+model_path = "zai-org/GLM-4.7-Flash"
+port = 8003
+gpus = "2,3"
+
+# Vision-capable language model candidates (PlanAgent selects one per vision agent)
+
+[llm.vision.qwen3_5-27b]
+model = "Qwen/Qwen3.5-27B"
+base_url = "http://localhost:8020/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 0.0
+size = "27B"
+capabilities = "A versatile multimodal vision-language model capable of advanced reasoning, coding, tool use, multilingual understanding, document/OCR analysis, video comprehension, and long-context tasks."
+cost = "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+
+# ── Image generation model candidates (PlanAgent selects one per agent) ───
+
+[llm.image.qwen-image]
+model = "Qwen/Qwen-image-2512"
+base_url = "http://localhost:8040/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 1.0
+api_style = "openai"
+size = "~10B"
+capabilities = "Qwen's upgraded open-source text-to-image foundation model, focused on more photorealistic human generation, finer natural textures, and more accurate text/layout rendering in image compositions."
+cost = "Input: $0.20 - $0.40 / 1M tokens; Output: $0.40 - $0.80 / 1M tokens"
+backend = "vllm-omni"
+model_path = "Qwen/Qwen-image-2512"
+port = 8040
+gpus = "3"
+
+[llm.image.hunyuan-image-3_0]
+model = "tencent/HunyuanImage-3.0"
+base_url = "http://localhost:8006/v1"
+api_key = "EMPTY"
+max_tokens = 4096
+temperature = 1.0
+api_style = "openai"
+size = "3B"
+capabilities = "Lightweight multimodal model, fast image generation, good for simple plots"
+cost = "Very low — single GPU"
+backend = "sglang"
+model_path = "AIDC-AI/Ovis-U1-3B"
+port = 8006
+gpus = "7"
+
+# Optional ORLA runtime configuration (benchmark-only runtime switch)
+# Backend table keys should match planner-produced llm_config_name exactly.
+# Example:
+# [orla]
+# url = "http://127.0.0.1:8081"
+# timeout = 300.0
+#
+# [orla.backends."lang.qwen2_5-14b"]
+# endpoint = "http://127.0.0.1:8001/v1"
+# type = "openai"
+# model_id = "openai:Qwen/Qwen2.5-14B-Instruct"
+# max_concurrency = 8
+# queue_capacity = 0
+# quality = 0.75
+#
+# [orla.backends."lang.qwen2_5-14b".cost_model]
+# input_cost_per_mtoken = 0.0
+# output_cost_per_mtoken = 0.0
+#
+# Dry-run note:
+# `--runtime orla_dry_run` only compiles MAS -> ORLA stages/segments and does not
+# require any [orla] backend registration or reachable inference endpoints.
+
+# Financial data API keys (used by DeepFundBench experiments)
+[fund]
+alpha_vantage_api_key = ""                 # Alpha Vantage API key (https://www.alphavantage.co/support/#api-key)
+fred_api_key = ""                           # FRED API key (https://fred.stlouisfed.org/docs/api/api_key.html)
+
+# Optional configuration for specific browser configuration
+# [browser]
+# Whether to run browser in headless mode (default: false)
+#headless = false
+# Disable browser security features (default: true)
+#disable_security = true
+# Extra arguments to pass to the browser
+#extra_chromium_args = []
+# Path to a Chrome instance to use to connect to your normal browser
+# e.g. '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+#chrome_instance_path = ""
+# Connect to a browser instance via WebSocket
+#wss_url = ""
+# Connect to a browser instance via CDP
+#cdp_url = ""
+
+# Optional configuration, Proxy settings for the browser
+# [browser.proxy]
+# server = "http://proxy-server:port"
+# username = "proxy-username"
+# password = "proxy-password"
+
+# Optional configuration, Search settings.
+# [search]
+# Search engine for agent to use. Default is "Google", can be set to "Baidu" or "DuckDuckGo" or "Bing".
+#engine = "Google"
+# Fallback engine order. Default is ["DuckDuckGo", "Baidu", "Bing"] - will try in this order after primary engine fails.
+#fallback_engines = ["DuckDuckGo", "Baidu", "Bing"]
+# Seconds to wait before retrying all engines again when they all fail due to rate limits. Default is 60.
+#retry_delay = 60
+# Maximum number of times to retry all engines when all fail. Default is 3.
+#max_retries = 3
+# Language code for search results. Options: "en" (English), "zh" (Chinese), etc.
+#lang = "en"
+# Country code for search results. Options: "us" (United States), "cn" (China), etc.
+#country = "us"
+
+
+## Sandbox configuration
+## When enabled, bash, python_execute, and str_replace_editor all run inside
+## an isolated Docker container with resource limits.
+## Requires Docker Desktop (Windows/macOS) or Docker Engine (Linux).
+[sandbox]
+use_sandbox = false            # Set to true to enable containerized tool execution
+image = "python:3.12-slim"     # Docker image for the sandbox container
+work_dir = "/workspace"        # Working directory inside the container
+memory_limit = "512m"          # Container memory limit (e.g. "512m", "1g")
+cpu_limit = 1.0                # CPU core limit
+timeout = 300                  # Default command timeout in seconds
+network_enabled = false        # Allow network access from sandbox (set true for SWE-bench)

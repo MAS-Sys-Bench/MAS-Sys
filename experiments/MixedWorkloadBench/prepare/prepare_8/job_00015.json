@@ -1,0 +1,171 @@
+{
+  "job_id": "job_00015",
+  "dispatch_id": 15,
+  "benchmark": "research_bench",
+  "logical_id": "1909.11942",
+  "arrival_offset_s": 545.423902,
+  "task_prompt_sha256": "a6432c831f9aa48b288105375f8dbc0573555f1ddf3e53d07e5ef94ee5081241",
+  "planning_start_time": 1777594140.8402095,
+  "planning_end_time": 1777594155.3104842,
+  "planning_duration_s": 14.4703,
+  "planner_input_tokens": 16229,
+  "planner_completion_tokens": 1285,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Zhenzhong Lan.",
+        "agent_params": {
+          "author_name": "Zhenzhong Lan",
+          "affiliation": "Unknown",
+          "publications": [
+            "Multi-stage Pretraining for Abstractive Summarization",
+            "Video Representation Learning and Latent Concept Mining for Large-scale Multi-label Video Classification",
+            "Guided Optical Flow Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Mingda Chen.",
+        "agent_params": {
+          "author_name": "Mingda Chen",
+          "affiliation": "Unknown",
+          "publications": [
+            "Controllable Paraphrase Generation with a Syntactic Exemplar",
+            "Variational Sequential Labelers for Semi-Supervised Learning",
+            "How to Ask Better Questions? A Large-Scale Multi-Domain Dataset for Rewriting Ill-Formed Questions"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Sebastian Goodman.",
+        "agent_params": {
+          "author_name": "Sebastian Goodman",
+          "affiliation": "Unknown",
+          "publications": [
+            "Multi-stage Pretraining for Abstractive Summarization",
+            "Conceptual Captions: A Cleaned, Hypernymed, Image Alt-text Dataset For Automatic Image Captioning",
+            "CS 224 n PA 4 : Extending Match-LSTM"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Kevin Gimpel.",
+        "agent_params": {
+          "author_name": "Kevin Gimpel",
+          "affiliation": "Unknown",
+          "publications": [
+            "Generating Diverse Story Continuations with Controllable Semantics",
+            "Controllable Paraphrase Generation with a Syntactic Exemplar",
+            "Variational Sequential Labelers for Semi-Supervised Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Piyush Sharma.",
+        "agent_params": {
+          "author_name": "Piyush Sharma",
+          "affiliation": "Unknown",
+          "publications": [
+            "Decoupled Box Proposal and Featurization with Ultrafine-Grained Semantic Labels Improve Image Captioning and Visual Question Answering",
+            "Informative Image Captioning with External Sources of Information",
+            "Neural Naturalist: Generating Fine-Grained Image Comparisons"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Radu Soricut.",
+        "agent_params": {
+          "author_name": "Radu Soricut",
+          "affiliation": "Unknown",
+          "publications": [
+            "Sequence Transduction Neural Networks With Localized Self-Attention",
+            "Decoupled Box Proposal and Featurization with Ultrafine-Grained Semantic Labels Improve Image Captioning and Visual Question Answering",
+            "A Case Study on Combining ASR and Visual Features for Generating Instructional Video Captions"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator combines these into a cohesive final proposal."
+  }
+}

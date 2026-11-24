@@ -1,0 +1,276 @@
+{
+  "job_id": "job_00019",
+  "dispatch_id": 19,
+  "benchmark": "research_bench",
+  "logical_id": "2007.14062",
+  "arrival_offset_s": 889.560228,
+  "task_prompt_sha256": "834a20acac659dba4c53f243edc11552a24ebcb07d9b7375a326c9990788ebe5",
+  "planning_start_time": 1777594185.3989472,
+  "planning_end_time": 1777594210.3406863,
+  "planning_duration_s": 24.9417,
+  "planner_input_tokens": 23197,
+  "planner_completion_tokens": 2058,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_1",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Manzil Zaheer.",
+        "agent_params": {
+          "author_name": "Manzil Zaheer",
+          "affiliation": "Unknown",
+          "publications": [
+            "Scalable Hierarchical Agglomerative Clustering",
+            "Non-Stationary Latent Bandits",
+            "Anchor & Transform: Learning Sparse Embeddings for Large Vocabularies"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_2",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Guru Guruganesh.",
+        "agent_params": {
+          "author_name": "Guru Guruganesh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Scalable Hierarchical Agglomerative Clustering",
+            "Convergence Analysis of No-Regret Bidding Algorithms in Repeated Auctions",
+            "Palette Sparsiﬁcation Beyond (∆ + 1) Vertex 1 Coloring 2"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_3",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Avinava Dubey.",
+        "agent_params": {
+          "author_name": "Avinava Dubey",
+          "affiliation": "Unknown",
+          "publications": [
+            "Scalable Hierarchical Agglomerative Clustering",
+            "Scalable Bottom-Up Hierarchical Clustering",
+            "Distributed, partially collapsed MCMC for Bayesian Nonparametrics"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_4",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Joshua Ainslie.",
+        "agent_params": {
+          "author_name": "Joshua Ainslie",
+          "affiliation": "Unknown",
+          "publications": [
+            "Informer: Transformer Likes Informed Attention",
+            "RealFormer: Transformer Likes Residual Attention",
+            "ETC: Encoding Long and Structured Data in Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_5",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Chris Alberti.",
+        "agent_params": {
+          "author_name": "Chris Alberti",
+          "affiliation": "Unknown",
+          "publications": [
+            "ETC: Encoding Long and Structured Data in Transformers",
+            "Data Weighted Training Strategies for Grammatical Error Correction",
+            "ETC: Encoding Long and Structured Inputs in Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_6",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Santiago Ontanon.",
+        "agent_params": {
+          "author_name": "Santiago Ontanon",
+          "affiliation": "Unknown",
+          "publications": [
+            "Are Strong Policies Also Good Playout Policies? Playout Policy Optimization for RTS Games",
+            "Bandit-Based Policy Optimization for Monte Carlo Tree Search in RTS Games",
+            "Modeling Player Knowledge in a Parallel Programming Educational Game"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_7",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Philip Pham.",
+        "agent_params": {
+          "author_name": "Philip Pham",
+          "affiliation": "Unknown",
+          "publications": [
+            "Fair Hierarchical Clustering",
+            "Long Range Arena: A Benchmark for Efficient Transformers",
+            "ETC: Encoding Long and Structured Data in Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_8",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Anirudh Ravula.",
+        "agent_params": {
+          "author_name": "Anirudh Ravula",
+          "affiliation": "Unknown",
+          "publications": [
+            "Informer: Transformer Likes Informed Attention",
+            "RealFormer: Transformer Likes Residual Attention",
+            "ETC: Encoding Long and Structured Data in Transformers"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_9",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Qifan Wang.",
+        "agent_params": {
+          "author_name": "Qifan Wang",
+          "affiliation": "Unknown",
+          "publications": [
+            "DUGRA: Dual-Graph Representation Learning for Health Information Networks",
+            "Learning to Extract Attribute Value from Product via Question Answering: A Multi-task Approach",
+            "CatGCN: Graph Convolutional Networks With Categorical Node Features"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_10",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Li Yang.",
+        "agent_params": {
+          "author_name": "Li Yang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Dynamical Fermionization in One Dimensional Spinor Gases",
+            "Predicting Relapse in Patients With Triple Negative Breast Cancer (TNBC) Using a Deep-Learning Approach",
+            "Learning to Extract Attribute Value from Product via Question Answering: A Multi-task Approach"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_11",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Amr Ahmed.",
+        "agent_params": {
+          "author_name": "Amr Ahmed",
+          "affiliation": "Unknown",
+          "publications": [
+            "Scalable Hierarchical Agglomerative Clustering",
+            "Non-Stationary Latent Bandits",
+            "Anchor & Transform: Learning Sparse Embeddings for Large Vocabularies"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their persona and publications, which are then aggregated into a final proposal."
+  }
+}

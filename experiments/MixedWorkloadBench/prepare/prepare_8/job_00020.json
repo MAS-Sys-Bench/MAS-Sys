@@ -1,0 +1,121 @@
+{
+  "job_id": "job_00020",
+  "dispatch_id": 20,
+  "benchmark": "research_bench",
+  "logical_id": "2012.09841",
+  "arrival_offset_s": 940.046972,
+  "task_prompt_sha256": "2b83ae0bd6c77e6bf55266814df224b85cc8bc63da867ad9fe3770ae337bc357",
+  "planning_start_time": 1777594210.3433883,
+  "planning_end_time": 1777594230.0103273,
+  "planning_duration_s": 19.6669,
+  "planner_input_tokens": 18878,
+  "planner_completion_tokens": 824,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_patrick_esser",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Patrick Esser.",
+        "agent_params": {
+          "author_name": "Patrick Esser",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Disentangling Invertible Interpretation Network for Explaining Latent Representations",
+            "Network-to-Network Translation with Conditional Invertible Neural Networks",
+            "Network Fusion for Content Creation with Conditional INNs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_robin_rombach",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Robin Rombach.",
+        "agent_params": {
+          "author_name": "Robin Rombach",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Disentangling Invertible Interpretation Network for Explaining Latent Representations",
+            "Network-to-Network Translation with Conditional Invertible Neural Networks",
+            "Network Fusion for Content Creation with Conditional INNs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_bjorn_ommer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Björn Ommer.",
+        "agent_params": {
+          "author_name": "Björn Ommer",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep learning of cuneiform sign detection with weak supervision using transliteration alignment",
+            "Learning to Correct Overexposed and Underexposed Photos",
+            "A Disentangling Invertible Interpretation Network for Explaining Latent Representations"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "writer_patrick_esser",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "writer_robin_rombach",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "writer_bjorn_ommer",
+        "target": "proposal_aggregator"
+      }
+    ],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

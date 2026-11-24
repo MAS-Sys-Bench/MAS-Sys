@@ -1,0 +1,213 @@
+{
+  "job_id": "job_00027",
+  "dispatch_id": 27,
+  "benchmark": "research_bench",
+  "logical_id": "2005.00687",
+  "arrival_offset_s": 1396.29645,
+  "task_prompt_sha256": "314d7867558136e7e5ea79729f8a30fe5f02d69fb9ac354bd2d699378975f18a",
+  "planning_start_time": 1777594294.8559723,
+  "planning_end_time": 1777594305.29672,
+  "planning_duration_s": 10.4407,
+  "planner_input_tokens": 22769,
+  "planner_completion_tokens": 1532,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_weihua_hu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Weihua Hu.",
+        "agent_params": {
+          "author_name": "Weihua Hu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Design and implementation of sawdust dust removal system based on PLC control",
+            "Query2box: Reasoning over Knowledge Graphs in Vector Space using Box Embeddings",
+            "The Open Catalyst 2020 (OC20) Dataset and Community Challenges"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_matthias_fey",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Matthias Fey.",
+        "agent_params": {
+          "author_name": "Matthias Fey",
+          "affiliation": "Unknown",
+          "publications": [
+            "Deep Graph Matching Consensus",
+            "Hierarchical Inter-Message Passing for Learning on Molecular Graphs",
+            "Adversarial Generation of Continuous Implicit Shape Representations"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_marinka_zitnik",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Marinka Zitnik.",
+        "agent_params": {
+          "author_name": "Marinka Zitnik",
+          "affiliation": "Unknown",
+          "publications": [
+            "DeepPurpose: a deep learning library for drug–target interaction prediction",
+            "DeepPurpose: a Deep Learning Library for Drug-Target Interaction Prediction and Applications to Repurposing and Screening",
+            "Subgraph Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yuxiao_dong",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Yuxiao Dong.",
+        "agent_params": {
+          "author_name": "Yuxiao Dong",
+          "affiliation": "Unknown",
+          "publications": [
+            "GPT-GNN: Generative Pre-Training of Graph Neural Networks",
+            "Heterogeneous Graph Transformer",
+            "A Large-Scale Database for Graph Representation Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_hongyu_ren",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Hongyu Ren.",
+        "agent_params": {
+          "author_name": "Hongyu Ren",
+          "affiliation": "Unknown",
+          "publications": [
+            "Graph Information Bottleneck",
+            "Relational Message Passing for Knowledge Graph Completion",
+            "Query2box: Reasoning over Knowledge Graphs in Vector Space using Box Embeddings"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_bowen_liu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Bowen Liu.",
+        "agent_params": {
+          "author_name": "Bowen Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Targeted Computational Screen of the SWEETLEAD Database Reveals FDA-Approved Compounds with Anti-Dengue Viral Activity",
+            "Pre-training Graph Neural Networks",
+            "Strategies for Pre-training Graph Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_michele_catasta",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Michele Catasta.",
+        "agent_params": {
+          "author_name": "Michele Catasta",
+          "affiliation": "Unknown",
+          "publications": [
+            "SAGE: A Hybrid Geopolitical Event Forecasting System",
+            "Structuring Wikipedia Articles with Section Recommendations",
+            "Latent Structure in Collaboration: the Case of Reddit r/place"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_jure_leskovec",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Jure Leskovec.",
+        "agent_params": {
+          "author_name": "Jure Leskovec",
+          "affiliation": "Unknown",
+          "publications": [
+            "Handling Missing Data with Graph Representation Learning",
+            "F-FADE: Frequency Factorization for Anomaly Detection in Edge Streams",
+            "Design Space for Graph Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, and the aggregator compiles these into a cohesive final proposal."
+  }
+}

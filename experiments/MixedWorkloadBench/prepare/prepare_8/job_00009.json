@@ -1,0 +1,192 @@
+{
+  "job_id": "job_00009",
+  "dispatch_id": 9,
+  "benchmark": "research_bench",
+  "logical_id": "2212.10560",
+  "arrival_offset_s": 357.287403,
+  "task_prompt_sha256": "e0d070eddee34d2fdfcee1b21f718c42fcea575b42035b00a00bb04c5af6bb03",
+  "planning_start_time": 1777594084.1479213,
+  "planning_end_time": 1777594099.134243,
+  "planning_duration_s": 14.9863,
+  "planner_input_tokens": 15736,
+  "planner_completion_tokens": 1531,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yizhong_wang",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yizhong Wang's persona.",
+        "agent_params": {
+          "author_name": "Yizhong Wang",
+          "affiliation": "Unknown",
+          "publications": [
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "One Embedder, Any Task: Instruction-Finetuned Text Embeddings",
+            "HINT: Hypernetwork Instruction Tuning for Efficient Zero-Shot Generalisation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_yeganeh_kordi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Yeganeh Kordi's persona.",
+        "agent_params": {
+          "author_name": "Yeganeh Kordi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "UnifiedQA-v2: Stronger Generalization via Broader Cross-Format Training",
+            "Benchmarking Generalization via In-Context Instructions on 1, 600+ Language Tasks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_swaroop_mishra",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Swaroop Mishra's persona.",
+        "agent_params": {
+          "author_name": "Swaroop Mishra",
+          "affiliation": "Unknown",
+          "publications": [
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "Towards the Development of Disaster Management Tailored Machine Learning Systems",
+            "How Many Data Samples is an Additional Instruction Worth?"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_alisa_liu",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Alisa Liu's persona.",
+        "agent_params": {
+          "author_name": "Alisa Liu",
+          "affiliation": "Unknown",
+          "publications": [
+            "Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts",
+            "WANLI: Worker and AI Collaboration for Natural Language Inference Dataset Creation",
+            "Abstract 3030: Integrated in vitro and in silico screening of breast cancer reveals serine metabolism as a precision oncology target"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_noah_smith",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Noah A. Smith's persona.",
+        "agent_params": {
+          "author_name": "Noah A. Smith",
+          "affiliation": "Unknown",
+          "publications": [
+            "Measuring the Carbon Intensity of AI in Cloud Instances",
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_daniel_khashabi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Daniel Khashabi's persona.",
+        "agent_params": {
+          "author_name": "Daniel Khashabi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "ProsocialDialog: A Prosocial Backbone for Conversational Agents",
+            "Representation Projection Invariance Mitigates Representation Collapse"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_hannaneh_hajishirzi",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Hannaneh Hajishirzi's persona.",
+        "agent_params": {
+          "author_name": "Hannaneh Hajishirzi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+            "Z-ICL: Zero-Shot In-Context Learning with Pseudo-Demonstrations",
+            "Correcting Diverse Factual Errors in Abstractive Summarization via Post-Editing and Language Model Infilling"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates all proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of multiple authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the central aggregator agent."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "job_id": "job_00301",
+  "dispatch_id": 301,
+  "benchmark": "research_bench",
+  "logical_id": "1906.00446",
+  "arrival_offset_s": 1495.200223,
+  "task_prompt_sha256": "75ff9cbe71b8346d287ed973e05343ff9b59309ca1cdcae9aaddc529bd414b82",
+  "planning_start_time": 1777600199.9951258,
+  "planning_end_time": 1777600209.496828,
+  "planning_duration_s": 9.5017,
+  "planner_input_tokens": 11071,
+  "planner_completion_tokens": 727,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Ali Razavi.",
+        "agent_params": {
+          "author_name": "Ali Razavi",
+          "affiliation": "Unknown",
+          "publications": [
+            "Preventing Posterior Collapse with delta-VAEs",
+            "Data-Efficient Image Recognition with Contrastive Predictive Coding",
+            "Preventing Posterior Collapse with delta-VAEs"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Aaron van den Oord.",
+        "agent_params": {
+          "author_name": "Aaron van den Oord",
+          "affiliation": "Unknown",
+          "publications": [
+            "Preventing Posterior Collapse with delta-VAEs",
+            "Data-Efficient Image Recognition with Contrastive Predictive Coding",
+            "Shaping Belief States with Generative Environment Models for RL"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_3_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from the persona of Oriol Vinyals.",
+        "agent_params": {
+          "author_name": "Oriol Vinyals",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Doodling and Painting with Improved SPIRAL",
+            "Preventing Posterior Collapse with delta-VAEs",
+            "Seeing is Not Necessarily Believing: Limitations of BigGANs for Data Augmentation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research persona. The final proposal is aggregated from these candidates."
+  }
+}

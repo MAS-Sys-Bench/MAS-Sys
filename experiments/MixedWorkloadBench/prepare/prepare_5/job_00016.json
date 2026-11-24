@@ -1,0 +1,96 @@
+{
+  "job_id": "job_00016",
+  "dispatch_id": 16,
+  "benchmark": "research_bench",
+  "logical_id": "2003.01690",
+  "arrival_offset_s": 1108.602716,
+  "task_prompt_sha256": "461c884043210609938b078a65180161397c6f769c29bb7931537cd56cd78c6c",
+  "planning_start_time": 1777474250.4328318,
+  "planning_end_time": 1777474268.6640399,
+  "planning_duration_s": 18.2312,
+  "planner_input_tokens": 13129,
+  "planner_completion_tokens": 610,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_1_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Francesco Croce.",
+        "agent_params": {
+          "author_name": "Francesco Croce",
+          "affiliation": "Unknown",
+          "publications": [
+            "RobustBench: a standardized adversarial robustness benchmark",
+            "Sparse-RS: a versatile framework for query-efficient sparse black-box adversarial attacks",
+            "Minimally distorted Adversarial Examples with a Fast Adaptive Boundary Attack"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "author_2_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from the persona of Matthias Hein.",
+        "agent_params": {
+          "author_name": "Matthias Hein",
+          "affiliation": "Unknown",
+          "publications": [
+            "RobustBench: a standardized adversarial robustness benchmark",
+            "Learnable Uncertainty under Laplace Approximations",
+            "An Infinite-Feature Extension for Bayesian ReLU Nets That Fixes Their Asymptotic Overconfidence"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates the proposal candidates into a final five-question research proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "author_1_writer",
+        "target": "proposal_aggregator"
+      },
+      {
+        "source": "author_2_writer",
+        "target": "proposal_aggregator"
+      }
+    ],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a structured format by leveraging the expertise of two authors, Francesco Croce and Matthias Hein, and aggregating their individual proposal candidates into a cohesive final proposal."
+  }
+}

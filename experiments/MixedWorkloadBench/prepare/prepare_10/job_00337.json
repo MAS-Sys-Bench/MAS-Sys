@@ -1,0 +1,106 @@
+{
+  "job_id": "job_00337",
+  "dispatch_id": 337,
+  "benchmark": "research_bench",
+  "logical_id": "1906.02243",
+  "arrival_offset_s": 1668.995188,
+  "task_prompt_sha256": "dd4dc5f14a221991c0e6dad41f8b3fd2e54b883ef739368b8d39eb78e9b26608",
+  "planning_start_time": 1777600451.0142746,
+  "planning_end_time": 1777600456.724632,
+  "planning_duration_s": 5.7104,
+  "planner_input_tokens": 6472,
+  "planner_completion_tokens": 726,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "emma_strubell_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Emma Strubell's persona.",
+        "agent_params": {
+          "author_name": "Emma Strubell",
+          "affiliation": "Unknown",
+          "publications": [
+            "The Materials Science Procedural Text Corpus: Annotating Materials Synthesis Procedures with Shallow Semantic Structures",
+            "Machine Learning Models for Efficient and Robust Natural Language Processing",
+            "Linguistically-Informed Self-Attention for Semantic Role Labeling"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "ananya_ganesh_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Ananya Ganesh's persona.",
+        "agent_params": {
+          "author_name": "Ananya Ganesh",
+          "affiliation": "Unknown",
+          "publications": [
+            "Efficient Graph-based Word Sense Induction by Distributional Inclusion Vector Embeddings"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "andrew_mccallum_writer",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a research proposal candidate from Andrew McCallum's persona.",
+        "agent_params": {
+          "author_name": "Andrew McCallum",
+          "affiliation": "Unknown",
+          "publications": [
+            "Unsupervised Latent Tree Induction with Deep Inside-Outside Recursive Auto-Encoders",
+            "Overcoming Practical Issues of Deep Active Learning and its Applications on Named Entity Recognition",
+            "Unsupervised Labeled Parsing with Deep Inside-Outside Recursive Autoencoders"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final five-question proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS generates a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise of three authors, each contributing a proposal candidate based on their research background. The final proposal is aggregated from these candidates."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "job_id": "job_00012",
+  "dispatch_id": 12,
+  "benchmark": "deepfundbench",
+  "logical_id": "main:2025-04-23:KO",
+  "arrival_offset_s": 90.583397,
+  "task_prompt_sha256": "2d80dd0859cad3c4b4aa591ac20f7f793c324cad33ab065629b99c985089e966",
+  "planning_start_time": 1777596501.2962852,
+  "planning_end_time": 1777596508.246648,
+  "planning_duration_s": 6.9504,
+  "planner_input_tokens": 2686,
+  "planner_completion_tokens": 998,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "portfolio_manager"
+    },
+    "agents": [
+      {
+        "agent_key": "fund_technical",
+        "instance_id": "technical_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes stock price trends, momentum, RSI, volatility, volume patterns, and support/resistance levels for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_fundamental",
+        "instance_id": "fundamental_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates company financial health using PE ratio, EPS, ROE, profit margins, debt levels, and growth metrics for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_insider",
+        "instance_id": "insider_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Analyzes recent insider buy/sell transactions by executives and directors for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_news",
+        "instance_id": "news_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates recent news articles about KO to assess sentiment and likely impact on stock price.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_macro",
+        "instance_id": "macro_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates GDP, CPI, unemployment, interest rates, and treasury yields to assess broad economic conditions.",
+        "agent_params": {
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_policy",
+        "instance_id": "policy_analyst",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Evaluates fiscal and monetary policy news to assess their short-term economic impact.",
+        "agent_params": {
+          "trading_date": "2025-04-23"
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "fund_manager",
+        "instance_id": "portfolio_manager",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Performs internal risk analysis and makes final Buy/Sell/Hold trading decisions for KO.",
+        "agent_params": {
+          "ticker": "KO",
+          "trading_date": "2025-04-23",
+          "portfolio": {
+            "cashflow": 100000,
+            "positions": {}
+          }
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 0,
+    "convergence": {
+      "max_rounds": 0,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS performs a comprehensive stock trading analysis for the ticker KO on the trading date 2025-04-23. It involves multiple analysts evaluating technical, fundamental, insider, news, macroeconomic, and policy factors to provide a holistic view for the portfolio manager to make informed trading decisions."
+  }
+}

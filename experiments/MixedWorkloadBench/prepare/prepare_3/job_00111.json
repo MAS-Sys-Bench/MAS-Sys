@@ -1,0 +1,109 @@
+{
+  "job_id": "job_00111",
+  "dispatch_id": 111,
+  "benchmark": "swebench",
+  "logical_id": "sphinx-doc__sphinx-8595",
+  "arrival_offset_s": 1182.024008,
+  "task_prompt_sha256": "9f4c812e45b8b9bd9bac89516f42f8488955bdaa4c324a9ee622fbe2992d447e",
+  "planning_start_time": 1777452024.049616,
+  "planning_end_time": 1777452028.062596,
+  "planning_duration_s": 4.013,
+  "planner_input_tokens": 3314,
+  "planner_completion_tokens": 499,
+  "mas_config": {
+    "topology": "fsm",
+    "topology_params": {},
+    "agents": [
+      {
+        "agent_key": "swe",
+        "instance_id": "swe_explorer",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Explore the repository to understand the codebase structure and locate the relevant source files related to the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash",
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_solver",
+        "instance_id": "swe_solver",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Make the necessary code changes to fix the issue.",
+        "agent_params": {},
+        "allowed_tools": [
+          "str_replace_editor"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "swe_verifier",
+        "instance_id": "swe_verifier",
+        "llm_config_name": "lang.qwen3-coder",
+        "role_description": "Verify the changes are correct.",
+        "agent_params": {},
+        "allowed_tools": [
+          "bash"
+        ],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [
+      {
+        "source": "swe_explorer",
+        "target": "swe_solver"
+      },
+      {
+        "source": "swe_solver",
+        "target": "swe_verifier"
+      },
+      {
+        "source": "swe_verifier",
+        "target": "swe_solver"
+      }
+    ],
+    "fsm": {
+      "start": "swe_explorer",
+      "decision_nodes": [
+        {
+          "node": "swe_verifier",
+          "decision_field": "decision",
+          "transitions": [
+            {
+              "value": "continue",
+              "target": "swe_solver",
+              "terminate": false
+            },
+            {
+              "value": "finish",
+              "target": null,
+              "terminate": true
+            }
+          ]
+        }
+      ]
+    },
+    "max_rounds": 3,
+    "convergence": {
+      "max_rounds": 3,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "This MAS is designed to resolve a GitHub issue in the Sphinx project by exploring the codebase, making necessary code changes, and verifying the correctness of those changes."
+  }
+}

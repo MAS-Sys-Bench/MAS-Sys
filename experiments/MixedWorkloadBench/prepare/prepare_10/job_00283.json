@@ -1,0 +1,128 @@
+{
+  "job_id": "job_00283",
+  "dispatch_id": 283,
+  "benchmark": "research_bench",
+  "logical_id": "2006.11477",
+  "arrival_offset_s": 1393.859151,
+  "task_prompt_sha256": "988693c728a56771a71d9b9f104cc3a288bbc98b5caa934e1ca427be217d675c",
+  "planning_start_time": 1777600080.9642138,
+  "planning_end_time": 1777600089.2323287,
+  "planning_duration_s": 8.2681,
+  "planner_input_tokens": 14415,
+  "planner_completion_tokens": 873,
+  "mas_config": {
+    "topology": "star",
+    "topology_params": {
+      "center": "proposal_aggregator"
+    },
+    "agents": [
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_alexei_baevski",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Alexei Baevski's persona.",
+        "agent_params": {
+          "author_name": "Alexei Baevski",
+          "affiliation": "Unknown",
+          "publications": [
+            "The Zero Resource Speech Benchmark 2021: Metrics and baselines for unsupervised spoken language modeling",
+            "Reservoir Transformers",
+            "A Comparison of Discrete Latent Variable Models for Speech Representation Learning"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_henry_zhou",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Henry Zhou's persona.",
+        "agent_params": {
+          "author_name": "Henry Zhou",
+          "affiliation": "Unknown",
+          "publications": [
+            "A Comparison of Discrete Latent Variable Models for Speech Representation Learning",
+            "Mammogram Classification Using Convolutional Neural Networks"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_abdelrahman_mohamed",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Abdelrahman Mohamed's persona.",
+        "agent_params": {
+          "author_name": "Abdelrahman Mohamed",
+          "affiliation": "Unknown",
+          "publications": [
+            "Esthetic Evaluation of Facial Soft Tissue Based on Nonrigid Image Deformation",
+            "Cumulative bayesian ridge for handling missing data",
+            "Artificial Intelligence and Humans"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_writer",
+        "instance_id": "writer_michael_auli",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Generates a proposal candidate from Michael Auli's persona.",
+        "agent_params": {
+          "author_name": "Michael Auli",
+          "affiliation": "Unknown",
+          "publications": [
+            "Reservoir Transformers",
+            "A Comparison of Discrete Latent Variable Models for Speech Representation Learning",
+            "Beyond English-Centric Multilingual Machine Translation"
+          ]
+        },
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      },
+      {
+        "agent_key": "research_proposal_aggregator",
+        "instance_id": "proposal_aggregator",
+        "llm_config_name": "lang.qwen3_5-27b",
+        "role_description": "Aggregates proposal candidates into a final proposal.",
+        "agent_params": {},
+        "allowed_tools": [],
+        "memory_permission": {
+          "can_read": false,
+          "can_write": false
+        },
+        "input_aggregation": "concat"
+      }
+    ],
+    "routes": [],
+    "fsm": null,
+    "max_rounds": 1,
+    "convergence": {
+      "max_rounds": 1,
+      "max_rounds_per_agent": null,
+      "llm_check": false,
+      "llm_check_prompt": null,
+      "llm_assign_tasks": true
+    },
+    "mas_context": "The MAS is designed to generate a follow-up research proposal in a [Question 1]-[Question 5] format by leveraging the expertise and previous work of four authors. Each author generates a proposal candidate based on their research persona, which is then aggregated into a final proposal by the proposal aggregator."
+  }
+}

@@ -1,0 +1,2586 @@
+{
+  "plan_agent_visible_config": {
+    "llm": {
+      "lang": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "Can be used as a stronger text model for complex reasoning, advanced coding, agentic tool-use planning, multilingual understanding, search-oriented workflows, and long-document analysis with enhaced knowledge.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "vision": {
+        "qwen3_5-27b": {
+          "model": "Qwen/Qwen3.5-27B",
+          "size": "27B",
+          "capabilities": "A versatile multimodal vision-language model capable of advanced reasoning, coding, tool use, multilingual understanding, document/OCR analysis, video comprehension, and long-context tasks.",
+          "cost": "Input: $0.30 / 1M tokens; Output: $2.40 / 1M tokens"
+        }
+      },
+      "image": {
+        "qwen-image": {
+          "model": "Qwen/Qwen-image-2512",
+          "size": "~10B",
+          "capabilities": "Qwen's upgraded open-source text-to-image foundation model, focused on more photorealistic human generation, finer natural textures, and more accurate text/layout rendering in image compositions.",
+          "cost": "Input: $0.20 - $0.40 / 1M tokens; Output: $0.40 - $0.80 / 1M tokens"
+        }
+      }
+    }
+  },
+  "prepare_fingerprint": "b94c0b3b5e5f02400fb95ab251f6696b967a27ced8f32777ffcec38a9230b9e0",
+  "sampling_config": {
+    "seed": 42,
+    "duration_minutes": 30,
+    "total_jps": 0.2,
+    "ratio": {
+      "research_bench": 0.2,
+      "pinchbench": 0.2,
+      "swebench": 0.2,
+      "paperbananabench": 0.2,
+      "deepfundbench": 0.2
+    },
+    "pool_sizes": {
+      "research_bench": 100,
+      "pinchbench": 23,
+      "swebench": 300,
+      "paperbananabench": 292,
+      "deepfundbench": 161
+    },
+    "arrival_plan": [
+      {
+        "dispatch_id": 1,
+        "job_id": "job_00001",
+        "arrival_offset_s": 5.100301,
+        "benchmark": "research_bench",
+        "logical_id": "1911.02116"
+      },
+      {
+        "dispatch_id": 2,
+        "job_id": "job_00002",
+        "arrival_offset_s": 6.504773,
+        "benchmark": "research_bench",
+        "logical_id": "2105.05233"
+      },
+      {
+        "dispatch_id": 3,
+        "job_id": "job_00003",
+        "arrival_offset_s": 12.150638,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:NVDA"
+      },
+      {
+        "dispatch_id": 4,
+        "job_id": "job_00004",
+        "arrival_offset_s": 16.614638,
+        "benchmark": "research_bench",
+        "logical_id": "1903.07291"
+      },
+      {
+        "dispatch_id": 5,
+        "job_id": "job_00005",
+        "arrival_offset_s": 17.848222,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11133"
+      },
+      {
+        "dispatch_id": 6,
+        "job_id": "job_00006",
+        "arrival_offset_s": 21.967293,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_288"
+      },
+      {
+        "dispatch_id": 7,
+        "job_id": "job_00007",
+        "arrival_offset_s": 24.686791,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-26020"
+      },
+      {
+        "dispatch_id": 8,
+        "job_id": "job_00008",
+        "arrival_offset_s": 32.975482,
+        "benchmark": "research_bench",
+        "logical_id": "1805.08318"
+      },
+      {
+        "dispatch_id": 9,
+        "job_id": "job_00009",
+        "arrival_offset_s": 38.964431,
+        "benchmark": "pinchbench",
+        "logical_id": "task_04_weather"
+      },
+      {
+        "dispatch_id": 10,
+        "job_id": "job_00010",
+        "arrival_offset_s": 40.176788,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_53"
+      },
+      {
+        "dispatch_id": 11,
+        "job_id": "job_00011",
+        "arrival_offset_s": 40.663451,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09418"
+      },
+      {
+        "dispatch_id": 12,
+        "job_id": "job_00012",
+        "arrival_offset_s": 45.291699,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:KO"
+      },
+      {
+        "dispatch_id": 13,
+        "job_id": "job_00013",
+        "arrival_offset_s": 49.133511,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:KO"
+      },
+      {
+        "dispatch_id": 14,
+        "job_id": "job_00014",
+        "arrival_offset_s": 49.543902,
+        "benchmark": "pinchbench",
+        "logical_id": "task_20_eli5_pdf_summary"
+      },
+      {
+        "dispatch_id": 15,
+        "job_id": "job_00015",
+        "arrival_offset_s": 54.362384,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-30:TSLA"
+      },
+      {
+        "dispatch_id": 16,
+        "job_id": "job_00016",
+        "arrival_offset_s": 55.430136,
+        "benchmark": "research_bench",
+        "logical_id": "2003.01690"
+      },
+      {
+        "dispatch_id": 17,
+        "job_id": "job_00017",
+        "arrival_offset_s": 56.723331,
+        "benchmark": "pinchbench",
+        "logical_id": "task_02_stock"
+      },
+      {
+        "dispatch_id": 18,
+        "job_id": "job_00018",
+        "arrival_offset_s": 66.389406,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:CVX"
+      },
+      {
+        "dispatch_id": 19,
+        "job_id": "job_00019",
+        "arrival_offset_s": 68.017874,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_193"
+      },
+      {
+        "dispatch_id": 20,
+        "job_id": "job_00020",
+        "arrival_offset_s": 68.905464,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 21,
+        "job_id": "job_00021",
+        "arrival_offset_s": 70.458361,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-03:BAC"
+      },
+      {
+        "dispatch_id": 22,
+        "job_id": "job_00022",
+        "arrival_offset_s": 75.155275,
+        "benchmark": "research_bench",
+        "logical_id": "1406.2661"
+      },
+      {
+        "dispatch_id": 23,
+        "job_id": "job_00023",
+        "arrival_offset_s": 76.559211,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-25433"
+      },
+      {
+        "dispatch_id": 24,
+        "job_id": "job_00024",
+        "arrival_offset_s": 99.352243,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_294"
+      },
+      {
+        "dispatch_id": 25,
+        "job_id": "job_00025",
+        "arrival_offset_s": 100.592083,
+        "benchmark": "pinchbench",
+        "logical_id": "task_01_calendar"
+      },
+      {
+        "dispatch_id": 26,
+        "job_id": "job_00026",
+        "arrival_offset_s": 101.892729,
+        "benchmark": "research_bench",
+        "logical_id": "1906.01502"
+      },
+      {
+        "dispatch_id": 27,
+        "job_id": "job_00027",
+        "arrival_offset_s": 104.456573,
+        "benchmark": "research_bench",
+        "logical_id": "1810.05270"
+      },
+      {
+        "dispatch_id": 28,
+        "job_id": "job_00028",
+        "arrival_offset_s": 114.908788,
+        "benchmark": "pinchbench",
+        "logical_id": "task_20_eli5_pdf_summary"
+      },
+      {
+        "dispatch_id": 29,
+        "job_id": "job_00029",
+        "arrival_offset_s": 118.366842,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:KO"
+      },
+      {
+        "dispatch_id": 30,
+        "job_id": "job_00030",
+        "arrival_offset_s": 119.13768,
+        "benchmark": "research_bench",
+        "logical_id": "1607.06450"
+      },
+      {
+        "dispatch_id": 31,
+        "job_id": "job_00031",
+        "arrival_offset_s": 123.258154,
+        "benchmark": "pinchbench",
+        "logical_id": "task_18_market_research"
+      },
+      {
+        "dispatch_id": 32,
+        "job_id": "job_00032",
+        "arrival_offset_s": 126.055029,
+        "benchmark": "swebench",
+        "logical_id": "scikit-learn__scikit-learn-10508"
+      },
+      {
+        "dispatch_id": 33,
+        "job_id": "job_00033",
+        "arrival_offset_s": 127.292983,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-25:BAC"
+      },
+      {
+        "dispatch_id": 34,
+        "job_id": "job_00034",
+        "arrival_offset_s": 130.694295,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_57"
+      },
+      {
+        "dispatch_id": 35,
+        "job_id": "job_00035",
+        "arrival_offset_s": 131.523631,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09272"
+      },
+      {
+        "dispatch_id": 36,
+        "job_id": "job_00036",
+        "arrival_offset_s": 134.265922,
+        "benchmark": "research_bench",
+        "logical_id": "1911.11763"
+      },
+      {
+        "dispatch_id": 37,
+        "job_id": "job_00037",
+        "arrival_offset_s": 138.796243,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-23913"
+      },
+      {
+        "dispatch_id": 38,
+        "job_id": "job_00038",
+        "arrival_offset_s": 156.512072,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-01:AAPL"
+      },
+      {
+        "dispatch_id": 39,
+        "job_id": "job_00039",
+        "arrival_offset_s": 162.213674,
+        "benchmark": "research_bench",
+        "logical_id": "1812.00332"
+      },
+      {
+        "dispatch_id": 40,
+        "job_id": "job_00040",
+        "arrival_offset_s": 169.162732,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_181"
+      },
+      {
+        "dispatch_id": 41,
+        "job_id": "job_00041",
+        "arrival_offset_s": 169.754129,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-13043"
+      },
+      {
+        "dispatch_id": 42,
+        "job_id": "job_00042",
+        "arrival_offset_s": 169.770382,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_140"
+      },
+      {
+        "dispatch_id": 43,
+        "job_id": "job_00043",
+        "arrival_offset_s": 187.628194,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_268"
+      },
+      {
+        "dispatch_id": 44,
+        "job_id": "job_00044",
+        "arrival_offset_s": 199.816086,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:CVX"
+      },
+      {
+        "dispatch_id": 45,
+        "job_id": "job_00045",
+        "arrival_offset_s": 209.031435,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15851"
+      },
+      {
+        "dispatch_id": 46,
+        "job_id": "job_00046",
+        "arrival_offset_s": 209.860759,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_285"
+      },
+      {
+        "dispatch_id": 47,
+        "job_id": "job_00047",
+        "arrival_offset_s": 225.202247,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-01:TSLA"
+      },
+      {
+        "dispatch_id": 48,
+        "job_id": "job_00048",
+        "arrival_offset_s": 229.770525,
+        "benchmark": "swebench",
+        "logical_id": "django__django-13551"
+      },
+      {
+        "dispatch_id": 49,
+        "job_id": "job_00049",
+        "arrival_offset_s": 243.002852,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-16:NVDA"
+      },
+      {
+        "dispatch_id": 50,
+        "job_id": "job_00050",
+        "arrival_offset_s": 244.371434,
+        "benchmark": "pinchbench",
+        "logical_id": "task_18_market_research"
+      },
+      {
+        "dispatch_id": 51,
+        "job_id": "job_00051",
+        "arrival_offset_s": 259.053984,
+        "benchmark": "research_bench",
+        "logical_id": "2006.06676"
+      },
+      {
+        "dispatch_id": 52,
+        "job_id": "job_00052",
+        "arrival_offset_s": 267.518713,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-28:AXP"
+      },
+      {
+        "dispatch_id": 53,
+        "job_id": "job_00053",
+        "arrival_offset_s": 274.777348,
+        "benchmark": "research_bench",
+        "logical_id": "2006.10739"
+      },
+      {
+        "dispatch_id": 54,
+        "job_id": "job_00054",
+        "arrival_offset_s": 289.450409,
+        "benchmark": "research_bench",
+        "logical_id": "1908.03265"
+      },
+      {
+        "dispatch_id": 55,
+        "job_id": "job_00055",
+        "arrival_offset_s": 299.745979,
+        "benchmark": "swebench",
+        "logical_id": "django__django-16255"
+      },
+      {
+        "dispatch_id": 56,
+        "job_id": "job_00056",
+        "arrival_offset_s": 312.965267,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_105"
+      },
+      {
+        "dispatch_id": 57,
+        "job_id": "job_00057",
+        "arrival_offset_s": 319.205744,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 58,
+        "job_id": "job_00058",
+        "arrival_offset_s": 324.453113,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-18057"
+      },
+      {
+        "dispatch_id": 59,
+        "job_id": "job_00059",
+        "arrival_offset_s": 327.455826,
+        "benchmark": "pinchbench",
+        "logical_id": "task_02_stock"
+      },
+      {
+        "dispatch_id": 60,
+        "job_id": "job_00060",
+        "arrival_offset_s": 329.518921,
+        "benchmark": "swebench",
+        "logical_id": "django__django-16910"
+      },
+      {
+        "dispatch_id": 61,
+        "job_id": "job_00061",
+        "arrival_offset_s": 333.957925,
+        "benchmark": "research_bench",
+        "logical_id": "2102.03334"
+      },
+      {
+        "dispatch_id": 62,
+        "job_id": "job_00062",
+        "arrival_offset_s": 338.944113,
+        "benchmark": "pinchbench",
+        "logical_id": "task_01_calendar"
+      },
+      {
+        "dispatch_id": 63,
+        "job_id": "job_00063",
+        "arrival_offset_s": 348.761673,
+        "benchmark": "research_bench",
+        "logical_id": "2012.07436"
+      },
+      {
+        "dispatch_id": 64,
+        "job_id": "job_00064",
+        "arrival_offset_s": 350.39363,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20154"
+      },
+      {
+        "dispatch_id": 65,
+        "job_id": "job_00065",
+        "arrival_offset_s": 351.103245,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-29:CVX"
+      },
+      {
+        "dispatch_id": 66,
+        "job_id": "job_00066",
+        "arrival_offset_s": 355.39585,
+        "benchmark": "pinchbench",
+        "logical_id": "task_15_daily_summary"
+      },
+      {
+        "dispatch_id": 67,
+        "job_id": "job_00067",
+        "arrival_offset_s": 363.634068,
+        "benchmark": "research_bench",
+        "logical_id": "2205.13764"
+      },
+      {
+        "dispatch_id": 68,
+        "job_id": "job_00068",
+        "arrival_offset_s": 369.013179,
+        "benchmark": "pinchbench",
+        "logical_id": "task_13_image_gen"
+      },
+      {
+        "dispatch_id": 69,
+        "job_id": "job_00069",
+        "arrival_offset_s": 372.15958,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_51"
+      },
+      {
+        "dispatch_id": 70,
+        "job_id": "job_00070",
+        "arrival_offset_s": 372.472217,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_56"
+      },
+      {
+        "dispatch_id": 71,
+        "job_id": "job_00071",
+        "arrival_offset_s": 373.901677,
+        "benchmark": "research_bench",
+        "logical_id": "1905.00537"
+      },
+      {
+        "dispatch_id": 72,
+        "job_id": "job_00072",
+        "arrival_offset_s": 374.656852,
+        "benchmark": "research_bench",
+        "logical_id": "1905.02175"
+      },
+      {
+        "dispatch_id": 73,
+        "job_id": "job_00073",
+        "arrival_offset_s": 376.093972,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:NVDA"
+      },
+      {
+        "dispatch_id": 74,
+        "job_id": "job_00074",
+        "arrival_offset_s": 384.345851,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:BAC"
+      },
+      {
+        "dispatch_id": 75,
+        "job_id": "job_00075",
+        "arrival_offset_s": 384.605415,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-01:AXP"
+      },
+      {
+        "dispatch_id": 76,
+        "job_id": "job_00076",
+        "arrival_offset_s": 401.973651,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-11:BAC"
+      },
+      {
+        "dispatch_id": 77,
+        "job_id": "job_00077",
+        "arrival_offset_s": 402.883126,
+        "benchmark": "swebench",
+        "logical_id": "django__django-16379"
+      },
+      {
+        "dispatch_id": 78,
+        "job_id": "job_00078",
+        "arrival_offset_s": 412.882597,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-09:TSLA"
+      },
+      {
+        "dispatch_id": 79,
+        "job_id": "job_00079",
+        "arrival_offset_s": 415.264502,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-14:BAC"
+      },
+      {
+        "dispatch_id": 80,
+        "job_id": "job_00080",
+        "arrival_offset_s": 428.318081,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_152"
+      },
+      {
+        "dispatch_id": 81,
+        "job_id": "job_00081",
+        "arrival_offset_s": 431.067711,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-29:AAPL"
+      },
+      {
+        "dispatch_id": 82,
+        "job_id": "job_00082",
+        "arrival_offset_s": 436.489354,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15789"
+      },
+      {
+        "dispatch_id": 83,
+        "job_id": "job_00083",
+        "arrival_offset_s": 438.249269,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-30:NVDA"
+      },
+      {
+        "dispatch_id": 84,
+        "job_id": "job_00084",
+        "arrival_offset_s": 444.903324,
+        "benchmark": "research_bench",
+        "logical_id": "1906.01502"
+      },
+      {
+        "dispatch_id": 85,
+        "job_id": "job_00085",
+        "arrival_offset_s": 445.197646,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-16503"
+      },
+      {
+        "dispatch_id": 86,
+        "job_id": "job_00086",
+        "arrival_offset_s": 457.788131,
+        "benchmark": "swebench",
+        "logical_id": "django__django-12113"
+      },
+      {
+        "dispatch_id": 87,
+        "job_id": "job_00087",
+        "arrival_offset_s": 473.980833,
+        "benchmark": "research_bench",
+        "logical_id": "2301.12597"
+      },
+      {
+        "dispatch_id": 88,
+        "job_id": "job_00088",
+        "arrival_offset_s": 474.335743,
+        "benchmark": "research_bench",
+        "logical_id": "2012.07436"
+      },
+      {
+        "dispatch_id": 89,
+        "job_id": "job_00089",
+        "arrival_offset_s": 476.921433,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-29:KO"
+      },
+      {
+        "dispatch_id": 90,
+        "job_id": "job_00090",
+        "arrival_offset_s": 478.334676,
+        "benchmark": "swebench",
+        "logical_id": "django__django-12747"
+      },
+      {
+        "dispatch_id": 91,
+        "job_id": "job_00091",
+        "arrival_offset_s": 481.051635,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-18199"
+      },
+      {
+        "dispatch_id": 92,
+        "job_id": "job_00092",
+        "arrival_offset_s": 482.953326,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 93,
+        "job_id": "job_00093",
+        "arrival_offset_s": 489.250609,
+        "benchmark": "pinchbench",
+        "logical_id": "task_12_skill_search"
+      },
+      {
+        "dispatch_id": 94,
+        "job_id": "job_00094",
+        "arrival_offset_s": 489.951969,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_242"
+      },
+      {
+        "dispatch_id": 95,
+        "job_id": "job_00095",
+        "arrival_offset_s": 491.852252,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_38"
+      },
+      {
+        "dispatch_id": 96,
+        "job_id": "job_00096",
+        "arrival_offset_s": 491.899047,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_297"
+      },
+      {
+        "dispatch_id": 97,
+        "job_id": "job_00097",
+        "arrival_offset_s": 519.628389,
+        "benchmark": "research_bench",
+        "logical_id": "1902.02918"
+      },
+      {
+        "dispatch_id": 98,
+        "job_id": "job_00098",
+        "arrival_offset_s": 523.153321,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09418"
+      },
+      {
+        "dispatch_id": 99,
+        "job_id": "job_00099",
+        "arrival_offset_s": 533.790776,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:AXP"
+      },
+      {
+        "dispatch_id": 100,
+        "job_id": "job_00100",
+        "arrival_offset_s": 535.468052,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20322"
+      },
+      {
+        "dispatch_id": 101,
+        "job_id": "job_00101",
+        "arrival_offset_s": 541.547265,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_279"
+      },
+      {
+        "dispatch_id": 102,
+        "job_id": "job_00102",
+        "arrival_offset_s": 541.586535,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:CVX"
+      },
+      {
+        "dispatch_id": 103,
+        "job_id": "job_00103",
+        "arrival_offset_s": 555.009866,
+        "benchmark": "research_bench",
+        "logical_id": "1908.02265"
+      },
+      {
+        "dispatch_id": 104,
+        "job_id": "job_00104",
+        "arrival_offset_s": 556.545658,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-29:NVDA"
+      },
+      {
+        "dispatch_id": 105,
+        "job_id": "job_00105",
+        "arrival_offset_s": 557.390403,
+        "benchmark": "pinchbench",
+        "logical_id": "task_06_events"
+      },
+      {
+        "dispatch_id": 106,
+        "job_id": "job_00106",
+        "arrival_offset_s": 563.712772,
+        "benchmark": "pinchbench",
+        "logical_id": "task_20_eli5_pdf_summary"
+      },
+      {
+        "dispatch_id": 107,
+        "job_id": "job_00107",
+        "arrival_offset_s": 573.296421,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-23913"
+      },
+      {
+        "dispatch_id": 108,
+        "job_id": "job_00108",
+        "arrival_offset_s": 585.083555,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:AAPL"
+      },
+      {
+        "dispatch_id": 109,
+        "job_id": "job_00109",
+        "arrival_offset_s": 590.113052,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-02:BAC"
+      },
+      {
+        "dispatch_id": 110,
+        "job_id": "job_00110",
+        "arrival_offset_s": 590.130812,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_140"
+      },
+      {
+        "dispatch_id": 111,
+        "job_id": "job_00111",
+        "arrival_offset_s": 591.012004,
+        "benchmark": "swebench",
+        "logical_id": "sphinx-doc__sphinx-8595"
+      },
+      {
+        "dispatch_id": 112,
+        "job_id": "job_00112",
+        "arrival_offset_s": 595.127223,
+        "benchmark": "research_bench",
+        "logical_id": "1812.02900"
+      },
+      {
+        "dispatch_id": 113,
+        "job_id": "job_00113",
+        "arrival_offset_s": 606.840539,
+        "benchmark": "swebench",
+        "logical_id": "scikit-learn__scikit-learn-12471"
+      },
+      {
+        "dispatch_id": 114,
+        "job_id": "job_00114",
+        "arrival_offset_s": 611.208007,
+        "benchmark": "research_bench",
+        "logical_id": "2105.15203"
+      },
+      {
+        "dispatch_id": 115,
+        "job_id": "job_00115",
+        "arrival_offset_s": 611.421652,
+        "benchmark": "pinchbench",
+        "logical_id": "task_01_calendar"
+      },
+      {
+        "dispatch_id": 116,
+        "job_id": "job_00116",
+        "arrival_offset_s": 622.881096,
+        "benchmark": "pinchbench",
+        "logical_id": "task_07_email"
+      },
+      {
+        "dispatch_id": 117,
+        "job_id": "job_00117",
+        "arrival_offset_s": 628.37816,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 118,
+        "job_id": "job_00118",
+        "arrival_offset_s": 639.154795,
+        "benchmark": "swebench",
+        "logical_id": "django__django-14752"
+      },
+      {
+        "dispatch_id": 119,
+        "job_id": "job_00119",
+        "arrival_offset_s": 652.157314,
+        "benchmark": "pinchbench",
+        "logical_id": "task_05_summary"
+      },
+      {
+        "dispatch_id": 120,
+        "job_id": "job_00120",
+        "arrival_offset_s": 670.84893,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-22:TSLA"
+      },
+      {
+        "dispatch_id": 121,
+        "job_id": "job_00121",
+        "arrival_offset_s": 670.974423,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_176"
+      },
+      {
+        "dispatch_id": 122,
+        "job_id": "job_00122",
+        "arrival_offset_s": 678.599597,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-23563"
+      },
+      {
+        "dispatch_id": 123,
+        "job_id": "job_00123",
+        "arrival_offset_s": 680.15132,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_56"
+      },
+      {
+        "dispatch_id": 124,
+        "job_id": "job_00124",
+        "arrival_offset_s": 682.562039,
+        "benchmark": "research_bench",
+        "logical_id": "2006.10739"
+      },
+      {
+        "dispatch_id": 125,
+        "job_id": "job_00125",
+        "arrival_offset_s": 683.81997,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:KO"
+      },
+      {
+        "dispatch_id": 126,
+        "job_id": "job_00126",
+        "arrival_offset_s": 685.971258,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-11:AAPL"
+      },
+      {
+        "dispatch_id": 127,
+        "job_id": "job_00127",
+        "arrival_offset_s": 687.232341,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_211"
+      },
+      {
+        "dispatch_id": 128,
+        "job_id": "job_00128",
+        "arrival_offset_s": 689.221775,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:NVDA"
+      },
+      {
+        "dispatch_id": 129,
+        "job_id": "job_00129",
+        "arrival_offset_s": 691.384514,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-19487"
+      },
+      {
+        "dispatch_id": 130,
+        "job_id": "job_00130",
+        "arrival_offset_s": 693.39549,
+        "benchmark": "research_bench",
+        "logical_id": "1907.11932"
+      },
+      {
+        "dispatch_id": 131,
+        "job_id": "job_00131",
+        "arrival_offset_s": 694.37902,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-14:BAC"
+      },
+      {
+        "dispatch_id": 132,
+        "job_id": "job_00132",
+        "arrival_offset_s": 694.574061,
+        "benchmark": "swebench",
+        "logical_id": "pytest-dev__pytest-7168"
+      },
+      {
+        "dispatch_id": 133,
+        "job_id": "job_00133",
+        "arrival_offset_s": 701.093856,
+        "benchmark": "pinchbench",
+        "logical_id": "task_19_spreadsheet_summary"
+      },
+      {
+        "dispatch_id": 134,
+        "job_id": "job_00134",
+        "arrival_offset_s": 721.843941,
+        "benchmark": "research_bench",
+        "logical_id": "1807.05960"
+      },
+      {
+        "dispatch_id": 135,
+        "job_id": "job_00135",
+        "arrival_offset_s": 722.898032,
+        "benchmark": "research_bench",
+        "logical_id": "2006.09661"
+      },
+      {
+        "dispatch_id": 136,
+        "job_id": "job_00136",
+        "arrival_offset_s": 722.906496,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-28:BAC"
+      },
+      {
+        "dispatch_id": 137,
+        "job_id": "job_00137",
+        "arrival_offset_s": 728.711975,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-10:NVDA"
+      },
+      {
+        "dispatch_id": 138,
+        "job_id": "job_00138",
+        "arrival_offset_s": 730.9765,
+        "benchmark": "research_bench",
+        "logical_id": "1902.10811"
+      },
+      {
+        "dispatch_id": 139,
+        "job_id": "job_00139",
+        "arrival_offset_s": 743.653555,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_64"
+      },
+      {
+        "dispatch_id": 140,
+        "job_id": "job_00140",
+        "arrival_offset_s": 750.013997,
+        "benchmark": "pinchbench",
+        "logical_id": "task_09_files"
+      },
+      {
+        "dispatch_id": 141,
+        "job_id": "job_00141",
+        "arrival_offset_s": 755.510453,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 142,
+        "job_id": "job_00142",
+        "arrival_offset_s": 757.26289,
+        "benchmark": "research_bench",
+        "logical_id": "1904.12848"
+      },
+      {
+        "dispatch_id": 143,
+        "job_id": "job_00143",
+        "arrival_offset_s": 762.72996,
+        "benchmark": "pinchbench",
+        "logical_id": "task_05_summary"
+      },
+      {
+        "dispatch_id": 144,
+        "job_id": "job_00144",
+        "arrival_offset_s": 767.509212,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 145,
+        "job_id": "job_00145",
+        "arrival_offset_s": 776.479778,
+        "benchmark": "pinchbench",
+        "logical_id": "task_06_events"
+      },
+      {
+        "dispatch_id": 146,
+        "job_id": "job_00146",
+        "arrival_offset_s": 779.289391,
+        "benchmark": "swebench",
+        "logical_id": "pylint-dev__pylint-7114"
+      },
+      {
+        "dispatch_id": 147,
+        "job_id": "job_00147",
+        "arrival_offset_s": 782.416724,
+        "benchmark": "swebench",
+        "logical_id": "django__django-16379"
+      },
+      {
+        "dispatch_id": 148,
+        "job_id": "job_00148",
+        "arrival_offset_s": 785.995467,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_88"
+      },
+      {
+        "dispatch_id": 149,
+        "job_id": "job_00149",
+        "arrival_offset_s": 791.372643,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 150,
+        "job_id": "job_00150",
+        "arrival_offset_s": 796.383805,
+        "benchmark": "pinchbench",
+        "logical_id": "task_07_email"
+      },
+      {
+        "dispatch_id": 151,
+        "job_id": "job_00151",
+        "arrival_offset_s": 801.969657,
+        "benchmark": "pinchbench",
+        "logical_id": "task_06_events"
+      },
+      {
+        "dispatch_id": 152,
+        "job_id": "job_00152",
+        "arrival_offset_s": 802.766711,
+        "benchmark": "research_bench",
+        "logical_id": "2006.10739"
+      },
+      {
+        "dispatch_id": 153,
+        "job_id": "job_00153",
+        "arrival_offset_s": 807.491113,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_241"
+      },
+      {
+        "dispatch_id": 154,
+        "job_id": "job_00154",
+        "arrival_offset_s": 810.167055,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_102"
+      },
+      {
+        "dispatch_id": 155,
+        "job_id": "job_00155",
+        "arrival_offset_s": 816.502433,
+        "benchmark": "pinchbench",
+        "logical_id": "task_12_skill_search"
+      },
+      {
+        "dispatch_id": 156,
+        "job_id": "job_00156",
+        "arrival_offset_s": 817.900899,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_2"
+      },
+      {
+        "dispatch_id": 157,
+        "job_id": "job_00157",
+        "arrival_offset_s": 829.059661,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:CVX"
+      },
+      {
+        "dispatch_id": 158,
+        "job_id": "job_00158",
+        "arrival_offset_s": 836.594528,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 159,
+        "job_id": "job_00159",
+        "arrival_offset_s": 840.243146,
+        "benchmark": "research_bench",
+        "logical_id": "1809.09401"
+      },
+      {
+        "dispatch_id": 160,
+        "job_id": "job_00160",
+        "arrival_offset_s": 852.716114,
+        "benchmark": "research_bench",
+        "logical_id": "1908.02265"
+      },
+      {
+        "dispatch_id": 161,
+        "job_id": "job_00161",
+        "arrival_offset_s": 860.798844,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_295"
+      },
+      {
+        "dispatch_id": 162,
+        "job_id": "job_00162",
+        "arrival_offset_s": 865.323773,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:NVDA"
+      },
+      {
+        "dispatch_id": 163,
+        "job_id": "job_00163",
+        "arrival_offset_s": 870.065936,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_267"
+      },
+      {
+        "dispatch_id": 164,
+        "job_id": "job_00164",
+        "arrival_offset_s": 872.848022,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-23:AAPL"
+      },
+      {
+        "dispatch_id": 165,
+        "job_id": "job_00165",
+        "arrival_offset_s": 884.223265,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_251"
+      },
+      {
+        "dispatch_id": 166,
+        "job_id": "job_00166",
+        "arrival_offset_s": 887.213085,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_147"
+      },
+      {
+        "dispatch_id": 167,
+        "job_id": "job_00167",
+        "arrival_offset_s": 894.471276,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-22835"
+      },
+      {
+        "dispatch_id": 168,
+        "job_id": "job_00168",
+        "arrival_offset_s": 896.076419,
+        "benchmark": "research_bench",
+        "logical_id": "1901.02860"
+      },
+      {
+        "dispatch_id": 169,
+        "job_id": "job_00169",
+        "arrival_offset_s": 897.412507,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 170,
+        "job_id": "job_00170",
+        "arrival_offset_s": 897.832555,
+        "benchmark": "research_bench",
+        "logical_id": "1912.01865"
+      },
+      {
+        "dispatch_id": 171,
+        "job_id": "job_00171",
+        "arrival_offset_s": 903.752586,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_33"
+      },
+      {
+        "dispatch_id": 172,
+        "job_id": "job_00172",
+        "arrival_offset_s": 906.432175,
+        "benchmark": "pinchbench",
+        "logical_id": "task_14_humanizer"
+      },
+      {
+        "dispatch_id": 173,
+        "job_id": "job_00173",
+        "arrival_offset_s": 909.119513,
+        "benchmark": "pinchbench",
+        "logical_id": "task_13_image_gen"
+      },
+      {
+        "dispatch_id": 174,
+        "job_id": "job_00174",
+        "arrival_offset_s": 911.586709,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_10"
+      },
+      {
+        "dispatch_id": 175,
+        "job_id": "job_00175",
+        "arrival_offset_s": 921.301901,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_201"
+      },
+      {
+        "dispatch_id": 176,
+        "job_id": "job_00176",
+        "arrival_offset_s": 924.542576,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:CVX"
+      },
+      {
+        "dispatch_id": 177,
+        "job_id": "job_00177",
+        "arrival_offset_s": 931.544038,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-22:AAPL"
+      },
+      {
+        "dispatch_id": 178,
+        "job_id": "job_00178",
+        "arrival_offset_s": 935.407378,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_116"
+      },
+      {
+        "dispatch_id": 179,
+        "job_id": "job_00179",
+        "arrival_offset_s": 938.756773,
+        "benchmark": "pinchbench",
+        "logical_id": "task_15_daily_summary"
+      },
+      {
+        "dispatch_id": 180,
+        "job_id": "job_00180",
+        "arrival_offset_s": 938.904044,
+        "benchmark": "pinchbench",
+        "logical_id": "task_21_openclaw_comprehension"
+      },
+      {
+        "dispatch_id": 181,
+        "job_id": "job_00181",
+        "arrival_offset_s": 946.905006,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_247"
+      },
+      {
+        "dispatch_id": 182,
+        "job_id": "job_00182",
+        "arrival_offset_s": 959.505083,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-28:AXP"
+      },
+      {
+        "dispatch_id": 183,
+        "job_id": "job_00183",
+        "arrival_offset_s": 959.641766,
+        "benchmark": "pinchbench",
+        "logical_id": "task_18_market_research"
+      },
+      {
+        "dispatch_id": 184,
+        "job_id": "job_00184",
+        "arrival_offset_s": 965.080124,
+        "benchmark": "research_bench",
+        "logical_id": "2205.11916"
+      },
+      {
+        "dispatch_id": 185,
+        "job_id": "job_00185",
+        "arrival_offset_s": 965.809298,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11905"
+      },
+      {
+        "dispatch_id": 186,
+        "job_id": "job_00186",
+        "arrival_offset_s": 967.31588,
+        "benchmark": "pinchbench",
+        "logical_id": "task_14_humanizer"
+      },
+      {
+        "dispatch_id": 187,
+        "job_id": "job_00187",
+        "arrival_offset_s": 969.294784,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_201"
+      },
+      {
+        "dispatch_id": 188,
+        "job_id": "job_00188",
+        "arrival_offset_s": 970.925212,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-22:AAPL"
+      },
+      {
+        "dispatch_id": 189,
+        "job_id": "job_00189",
+        "arrival_offset_s": 972.378789,
+        "benchmark": "research_bench",
+        "logical_id": "2112.10752"
+      },
+      {
+        "dispatch_id": 190,
+        "job_id": "job_00190",
+        "arrival_offset_s": 979.290784,
+        "benchmark": "research_bench",
+        "logical_id": "1905.09418"
+      },
+      {
+        "dispatch_id": 191,
+        "job_id": "job_00191",
+        "arrival_offset_s": 980.56023,
+        "benchmark": "research_bench",
+        "logical_id": "1903.12261"
+      },
+      {
+        "dispatch_id": 192,
+        "job_id": "job_00192",
+        "arrival_offset_s": 980.765684,
+        "benchmark": "research_bench",
+        "logical_id": "1809.09401"
+      },
+      {
+        "dispatch_id": 193,
+        "job_id": "job_00193",
+        "arrival_offset_s": 981.877408,
+        "benchmark": "research_bench",
+        "logical_id": "2002.05709"
+      },
+      {
+        "dispatch_id": 194,
+        "job_id": "job_00194",
+        "arrival_offset_s": 983.240029,
+        "benchmark": "swebench",
+        "logical_id": "django__django-13590"
+      },
+      {
+        "dispatch_id": 195,
+        "job_id": "job_00195",
+        "arrival_offset_s": 987.390245,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 196,
+        "job_id": "job_00196",
+        "arrival_offset_s": 988.870454,
+        "benchmark": "pinchbench",
+        "logical_id": "task_19_spreadsheet_summary"
+      },
+      {
+        "dispatch_id": 197,
+        "job_id": "job_00197",
+        "arrival_offset_s": 993.543332,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_59"
+      },
+      {
+        "dispatch_id": 198,
+        "job_id": "job_00198",
+        "arrival_offset_s": 1001.064037,
+        "benchmark": "research_bench",
+        "logical_id": "1905.05950"
+      },
+      {
+        "dispatch_id": 199,
+        "job_id": "job_00199",
+        "arrival_offset_s": 1001.636036,
+        "benchmark": "research_bench",
+        "logical_id": "1905.05950"
+      },
+      {
+        "dispatch_id": 200,
+        "job_id": "job_00200",
+        "arrival_offset_s": 1005.923749,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:KO"
+      },
+      {
+        "dispatch_id": 201,
+        "job_id": "job_00201",
+        "arrival_offset_s": 1008.450075,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_39"
+      },
+      {
+        "dispatch_id": 202,
+        "job_id": "job_00202",
+        "arrival_offset_s": 1012.933715,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-11:CVX"
+      },
+      {
+        "dispatch_id": 203,
+        "job_id": "job_00203",
+        "arrival_offset_s": 1013.471091,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_62"
+      },
+      {
+        "dispatch_id": 204,
+        "job_id": "job_00204",
+        "arrival_offset_s": 1021.42484,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11742"
+      },
+      {
+        "dispatch_id": 205,
+        "job_id": "job_00205",
+        "arrival_offset_s": 1023.557291,
+        "benchmark": "swebench",
+        "logical_id": "scikit-learn__scikit-learn-12471"
+      },
+      {
+        "dispatch_id": 206,
+        "job_id": "job_00206",
+        "arrival_offset_s": 1023.914539,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_6"
+      },
+      {
+        "dispatch_id": 207,
+        "job_id": "job_00207",
+        "arrival_offset_s": 1033.386013,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-04:CVX"
+      },
+      {
+        "dispatch_id": 208,
+        "job_id": "job_00208",
+        "arrival_offset_s": 1036.22761,
+        "benchmark": "pinchbench",
+        "logical_id": "task_14_humanizer"
+      },
+      {
+        "dispatch_id": 209,
+        "job_id": "job_00209",
+        "arrival_offset_s": 1042.370793,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-18199"
+      },
+      {
+        "dispatch_id": 210,
+        "job_id": "job_00210",
+        "arrival_offset_s": 1059.200968,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 211,
+        "job_id": "job_00211",
+        "arrival_offset_s": 1066.65128,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-25332"
+      },
+      {
+        "dispatch_id": 212,
+        "job_id": "job_00212",
+        "arrival_offset_s": 1068.596567,
+        "benchmark": "pinchbench",
+        "logical_id": "task_02_stock"
+      },
+      {
+        "dispatch_id": 213,
+        "job_id": "job_00213",
+        "arrival_offset_s": 1070.23165,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-13480"
+      },
+      {
+        "dispatch_id": 214,
+        "job_id": "job_00214",
+        "arrival_offset_s": 1074.449753,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_179"
+      },
+      {
+        "dispatch_id": 215,
+        "job_id": "job_00215",
+        "arrival_offset_s": 1074.595352,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-09:BAC"
+      },
+      {
+        "dispatch_id": 216,
+        "job_id": "job_00216",
+        "arrival_offset_s": 1077.938112,
+        "benchmark": "pinchbench",
+        "logical_id": "task_08_memory"
+      },
+      {
+        "dispatch_id": 217,
+        "job_id": "job_00217",
+        "arrival_offset_s": 1080.018257,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:TSLA"
+      },
+      {
+        "dispatch_id": 218,
+        "job_id": "job_00218",
+        "arrival_offset_s": 1084.075558,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15789"
+      },
+      {
+        "dispatch_id": 219,
+        "job_id": "job_00219",
+        "arrival_offset_s": 1084.523065,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_258"
+      },
+      {
+        "dispatch_id": 220,
+        "job_id": "job_00220",
+        "arrival_offset_s": 1088.57345,
+        "benchmark": "pinchbench",
+        "logical_id": "task_15_daily_summary"
+      },
+      {
+        "dispatch_id": 221,
+        "job_id": "job_00221",
+        "arrival_offset_s": 1093.76437,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11001"
+      },
+      {
+        "dispatch_id": 222,
+        "job_id": "job_00222",
+        "arrival_offset_s": 1094.252729,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 223,
+        "job_id": "job_00223",
+        "arrival_offset_s": 1095.646705,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_195"
+      },
+      {
+        "dispatch_id": 224,
+        "job_id": "job_00224",
+        "arrival_offset_s": 1098.85195,
+        "benchmark": "swebench",
+        "logical_id": "sphinx-doc__sphinx-8506"
+      },
+      {
+        "dispatch_id": 225,
+        "job_id": "job_00225",
+        "arrival_offset_s": 1127.318336,
+        "benchmark": "swebench",
+        "logical_id": "pytest-dev__pytest-7490"
+      },
+      {
+        "dispatch_id": 226,
+        "job_id": "job_00226",
+        "arrival_offset_s": 1133.38601,
+        "benchmark": "pinchbench",
+        "logical_id": "task_08_memory"
+      },
+      {
+        "dispatch_id": 227,
+        "job_id": "job_00227",
+        "arrival_offset_s": 1134.696329,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_167"
+      },
+      {
+        "dispatch_id": 228,
+        "job_id": "job_00228",
+        "arrival_offset_s": 1135.332966,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15695"
+      },
+      {
+        "dispatch_id": 229,
+        "job_id": "job_00229",
+        "arrival_offset_s": 1136.396093,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_147"
+      },
+      {
+        "dispatch_id": 230,
+        "job_id": "job_00230",
+        "arrival_offset_s": 1142.843474,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-28:NVDA"
+      },
+      {
+        "dispatch_id": 231,
+        "job_id": "job_00231",
+        "arrival_offset_s": 1147.384972,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-10:TSLA"
+      },
+      {
+        "dispatch_id": 232,
+        "job_id": "job_00232",
+        "arrival_offset_s": 1149.141607,
+        "benchmark": "pinchbench",
+        "logical_id": "task_09_files"
+      },
+      {
+        "dispatch_id": 233,
+        "job_id": "job_00233",
+        "arrival_offset_s": 1149.212854,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-25498"
+      },
+      {
+        "dispatch_id": 234,
+        "job_id": "job_00234",
+        "arrival_offset_s": 1149.445775,
+        "benchmark": "research_bench",
+        "logical_id": "1906.02243"
+      },
+      {
+        "dispatch_id": 235,
+        "job_id": "job_00235",
+        "arrival_offset_s": 1155.422779,
+        "benchmark": "research_bench",
+        "logical_id": "1503.02531"
+      },
+      {
+        "dispatch_id": 236,
+        "job_id": "job_00236",
+        "arrival_offset_s": 1158.798124,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-29:CVX"
+      },
+      {
+        "dispatch_id": 237,
+        "job_id": "job_00237",
+        "arrival_offset_s": 1160.47087,
+        "benchmark": "swebench",
+        "logical_id": "pytest-dev__pytest-5692"
+      },
+      {
+        "dispatch_id": 238,
+        "job_id": "job_00238",
+        "arrival_offset_s": 1161.489804,
+        "benchmark": "research_bench",
+        "logical_id": "2210.08402"
+      },
+      {
+        "dispatch_id": 239,
+        "job_id": "job_00239",
+        "arrival_offset_s": 1162.095487,
+        "benchmark": "research_bench",
+        "logical_id": "2006.06676"
+      },
+      {
+        "dispatch_id": 240,
+        "job_id": "job_00240",
+        "arrival_offset_s": 1162.480336,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_28"
+      },
+      {
+        "dispatch_id": 241,
+        "job_id": "job_00241",
+        "arrival_offset_s": 1163.3031,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-16:TSLA"
+      },
+      {
+        "dispatch_id": 242,
+        "job_id": "job_00242",
+        "arrival_offset_s": 1163.748245,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 243,
+        "job_id": "job_00243",
+        "arrival_offset_s": 1170.977266,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_119"
+      },
+      {
+        "dispatch_id": 244,
+        "job_id": "job_00244",
+        "arrival_offset_s": 1178.450976,
+        "benchmark": "pinchbench",
+        "logical_id": "task_14_humanizer"
+      },
+      {
+        "dispatch_id": 245,
+        "job_id": "job_00245",
+        "arrival_offset_s": 1180.21548,
+        "benchmark": "swebench",
+        "logical_id": "sphinx-doc__sphinx-8627"
+      },
+      {
+        "dispatch_id": 246,
+        "job_id": "job_00246",
+        "arrival_offset_s": 1182.037434,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_51"
+      },
+      {
+        "dispatch_id": 247,
+        "job_id": "job_00247",
+        "arrival_offset_s": 1196.780742,
+        "benchmark": "pinchbench",
+        "logical_id": "task_06_events"
+      },
+      {
+        "dispatch_id": 248,
+        "job_id": "job_00248",
+        "arrival_offset_s": 1198.317759,
+        "benchmark": "research_bench",
+        "logical_id": "2012.07436"
+      },
+      {
+        "dispatch_id": 249,
+        "job_id": "job_00249",
+        "arrival_offset_s": 1199.272433,
+        "benchmark": "research_bench",
+        "logical_id": "1911.05722"
+      },
+      {
+        "dispatch_id": 250,
+        "job_id": "job_00250",
+        "arrival_offset_s": 1201.89805,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_248"
+      },
+      {
+        "dispatch_id": 251,
+        "job_id": "job_00251",
+        "arrival_offset_s": 1203.619377,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 252,
+        "job_id": "job_00252",
+        "arrival_offset_s": 1205.280811,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-03:BAC"
+      },
+      {
+        "dispatch_id": 253,
+        "job_id": "job_00253",
+        "arrival_offset_s": 1211.094724,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-05-01:CVX"
+      },
+      {
+        "dispatch_id": 254,
+        "job_id": "job_00254",
+        "arrival_offset_s": 1215.550149,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-10:NVDA"
+      },
+      {
+        "dispatch_id": 255,
+        "job_id": "job_00255",
+        "arrival_offset_s": 1218.318284,
+        "benchmark": "swebench",
+        "logical_id": "django__django-14667"
+      },
+      {
+        "dispatch_id": 256,
+        "job_id": "job_00256",
+        "arrival_offset_s": 1230.270529,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-03:BAC"
+      },
+      {
+        "dispatch_id": 257,
+        "job_id": "job_00257",
+        "arrival_offset_s": 1230.577981,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_300"
+      },
+      {
+        "dispatch_id": 258,
+        "job_id": "job_00258",
+        "arrival_offset_s": 1243.281718,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-13773"
+      },
+      {
+        "dispatch_id": 259,
+        "job_id": "job_00259",
+        "arrival_offset_s": 1249.116356,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_145"
+      },
+      {
+        "dispatch_id": 260,
+        "job_id": "job_00260",
+        "arrival_offset_s": 1252.586816,
+        "benchmark": "swebench",
+        "logical_id": "django__django-12747"
+      },
+      {
+        "dispatch_id": 261,
+        "job_id": "job_00261",
+        "arrival_offset_s": 1257.143788,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-16:KO"
+      },
+      {
+        "dispatch_id": 262,
+        "job_id": "job_00262",
+        "arrival_offset_s": 1261.771879,
+        "benchmark": "research_bench",
+        "logical_id": "1802.01548"
+      },
+      {
+        "dispatch_id": 263,
+        "job_id": "job_00263",
+        "arrival_offset_s": 1278.111041,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-30:TSLA"
+      },
+      {
+        "dispatch_id": 264,
+        "job_id": "job_00264",
+        "arrival_offset_s": 1282.534068,
+        "benchmark": "research_bench",
+        "logical_id": "1811.12808"
+      },
+      {
+        "dispatch_id": 265,
+        "job_id": "job_00265",
+        "arrival_offset_s": 1288.112071,
+        "benchmark": "pinchbench",
+        "logical_id": "task_01_calendar"
+      },
+      {
+        "dispatch_id": 266,
+        "job_id": "job_00266",
+        "arrival_offset_s": 1295.312846,
+        "benchmark": "research_bench",
+        "logical_id": "2006.03654"
+      },
+      {
+        "dispatch_id": 267,
+        "job_id": "job_00267",
+        "arrival_offset_s": 1300.583568,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-09:BAC"
+      },
+      {
+        "dispatch_id": 268,
+        "job_id": "job_00268",
+        "arrival_offset_s": 1329.539224,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-15345"
+      },
+      {
+        "dispatch_id": 269,
+        "job_id": "job_00269",
+        "arrival_offset_s": 1346.916981,
+        "benchmark": "swebench",
+        "logical_id": "sphinx-doc__sphinx-11445"
+      },
+      {
+        "dispatch_id": 270,
+        "job_id": "job_00270",
+        "arrival_offset_s": 1348.944119,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_83"
+      },
+      {
+        "dispatch_id": 271,
+        "job_id": "job_00271",
+        "arrival_offset_s": 1350.945042,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_153"
+      },
+      {
+        "dispatch_id": 272,
+        "job_id": "job_00272",
+        "arrival_offset_s": 1356.377229,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20639"
+      },
+      {
+        "dispatch_id": 273,
+        "job_id": "job_00273",
+        "arrival_offset_s": 1356.564166,
+        "benchmark": "research_bench",
+        "logical_id": "1902.03393"
+      },
+      {
+        "dispatch_id": 274,
+        "job_id": "job_00274",
+        "arrival_offset_s": 1358.516608,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-21:KO"
+      },
+      {
+        "dispatch_id": 275,
+        "job_id": "job_00275",
+        "arrival_offset_s": 1368.5257,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-01:TSLA"
+      },
+      {
+        "dispatch_id": 276,
+        "job_id": "job_00276",
+        "arrival_offset_s": 1373.88546,
+        "benchmark": "swebench",
+        "logical_id": "sphinx-doc__sphinx-7738"
+      },
+      {
+        "dispatch_id": 277,
+        "job_id": "job_00277",
+        "arrival_offset_s": 1374.164103,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-16106"
+      },
+      {
+        "dispatch_id": 278,
+        "job_id": "job_00278",
+        "arrival_offset_s": 1379.073702,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_108"
+      },
+      {
+        "dispatch_id": 279,
+        "job_id": "job_00279",
+        "arrival_offset_s": 1380.627133,
+        "benchmark": "research_bench",
+        "logical_id": "1901.02860"
+      },
+      {
+        "dispatch_id": 280,
+        "job_id": "job_00280",
+        "arrival_offset_s": 1383.509434,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_63"
+      },
+      {
+        "dispatch_id": 281,
+        "job_id": "job_00281",
+        "arrival_offset_s": 1383.655905,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_127"
+      },
+      {
+        "dispatch_id": 282,
+        "job_id": "job_00282",
+        "arrival_offset_s": 1389.841534,
+        "benchmark": "pinchbench",
+        "logical_id": "task_00_sanity"
+      },
+      {
+        "dispatch_id": 283,
+        "job_id": "job_00283",
+        "arrival_offset_s": 1393.859151,
+        "benchmark": "research_bench",
+        "logical_id": "2006.11477"
+      },
+      {
+        "dispatch_id": 284,
+        "job_id": "job_00284",
+        "arrival_offset_s": 1396.953506,
+        "benchmark": "research_bench",
+        "logical_id": "2002.05709"
+      },
+      {
+        "dispatch_id": 285,
+        "job_id": "job_00285",
+        "arrival_offset_s": 1400.403023,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_269"
+      },
+      {
+        "dispatch_id": 286,
+        "job_id": "job_00286",
+        "arrival_offset_s": 1406.513905,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-14774"
+      },
+      {
+        "dispatch_id": 287,
+        "job_id": "job_00287",
+        "arrival_offset_s": 1426.135555,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 288,
+        "job_id": "job_00288",
+        "arrival_offset_s": 1426.916731,
+        "benchmark": "research_bench",
+        "logical_id": "1907.10903"
+      },
+      {
+        "dispatch_id": 289,
+        "job_id": "job_00289",
+        "arrival_offset_s": 1430.465562,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-03:AXP"
+      },
+      {
+        "dispatch_id": 290,
+        "job_id": "job_00290",
+        "arrival_offset_s": 1432.082091,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_219"
+      },
+      {
+        "dispatch_id": 291,
+        "job_id": "job_00291",
+        "arrival_offset_s": 1434.158723,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_142"
+      },
+      {
+        "dispatch_id": 292,
+        "job_id": "job_00292",
+        "arrival_offset_s": 1442.748001,
+        "benchmark": "pinchbench",
+        "logical_id": "task_09_files"
+      },
+      {
+        "dispatch_id": 293,
+        "job_id": "job_00293",
+        "arrival_offset_s": 1451.832647,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-15308"
+      },
+      {
+        "dispatch_id": 294,
+        "job_id": "job_00294",
+        "arrival_offset_s": 1461.85471,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-14774"
+      },
+      {
+        "dispatch_id": 295,
+        "job_id": "job_00295",
+        "arrival_offset_s": 1463.971257,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20322"
+      },
+      {
+        "dispatch_id": 296,
+        "job_id": "job_00296",
+        "arrival_offset_s": 1466.338987,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-09:CVX"
+      },
+      {
+        "dispatch_id": 297,
+        "job_id": "job_00297",
+        "arrival_offset_s": 1486.09661,
+        "benchmark": "pinchbench",
+        "logical_id": "task_12_skill_search"
+      },
+      {
+        "dispatch_id": 298,
+        "job_id": "job_00298",
+        "arrival_offset_s": 1487.42662,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_22"
+      },
+      {
+        "dispatch_id": 299,
+        "job_id": "job_00299",
+        "arrival_offset_s": 1489.341541,
+        "benchmark": "swebench",
+        "logical_id": "scikit-learn__scikit-learn-13584"
+      },
+      {
+        "dispatch_id": 300,
+        "job_id": "job_00300",
+        "arrival_offset_s": 1491.780984,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_78"
+      },
+      {
+        "dispatch_id": 301,
+        "job_id": "job_00301",
+        "arrival_offset_s": 1495.200223,
+        "benchmark": "research_bench",
+        "logical_id": "1906.00446"
+      },
+      {
+        "dispatch_id": 302,
+        "job_id": "job_00302",
+        "arrival_offset_s": 1512.013029,
+        "benchmark": "pinchbench",
+        "logical_id": "task_03_blog"
+      },
+      {
+        "dispatch_id": 303,
+        "job_id": "job_00303",
+        "arrival_offset_s": 1522.377956,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-18621"
+      },
+      {
+        "dispatch_id": 304,
+        "job_id": "job_00304",
+        "arrival_offset_s": 1534.442282,
+        "benchmark": "research_bench",
+        "logical_id": "2103.00020"
+      },
+      {
+        "dispatch_id": 305,
+        "job_id": "job_00305",
+        "arrival_offset_s": 1537.080265,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_80"
+      },
+      {
+        "dispatch_id": 306,
+        "job_id": "job_00306",
+        "arrival_offset_s": 1537.469144,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_141"
+      },
+      {
+        "dispatch_id": 307,
+        "job_id": "job_00307",
+        "arrival_offset_s": 1539.535834,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_42"
+      },
+      {
+        "dispatch_id": 308,
+        "job_id": "job_00308",
+        "arrival_offset_s": 1549.080626,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-28:AXP"
+      },
+      {
+        "dispatch_id": 309,
+        "job_id": "job_00309",
+        "arrival_offset_s": 1551.47088,
+        "benchmark": "pinchbench",
+        "logical_id": "task_22_second_brain"
+      },
+      {
+        "dispatch_id": 310,
+        "job_id": "job_00310",
+        "arrival_offset_s": 1562.392166,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20212"
+      },
+      {
+        "dispatch_id": 311,
+        "job_id": "job_00311",
+        "arrival_offset_s": 1562.574963,
+        "benchmark": "research_bench",
+        "logical_id": "1809.11096"
+      },
+      {
+        "dispatch_id": 312,
+        "job_id": "job_00312",
+        "arrival_offset_s": 1568.341355,
+        "benchmark": "pinchbench",
+        "logical_id": "task_07_email"
+      },
+      {
+        "dispatch_id": 313,
+        "job_id": "job_00313",
+        "arrival_offset_s": 1575.208568,
+        "benchmark": "swebench",
+        "logical_id": "django__django-13230"
+      },
+      {
+        "dispatch_id": 314,
+        "job_id": "job_00314",
+        "arrival_offset_s": 1582.351858,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_52"
+      },
+      {
+        "dispatch_id": 315,
+        "job_id": "job_00315",
+        "arrival_offset_s": 1585.283903,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_14"
+      },
+      {
+        "dispatch_id": 316,
+        "job_id": "job_00316",
+        "arrival_offset_s": 1585.519314,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_156"
+      },
+      {
+        "dispatch_id": 317,
+        "job_id": "job_00317",
+        "arrival_offset_s": 1587.738759,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-23476"
+      },
+      {
+        "dispatch_id": 318,
+        "job_id": "job_00318",
+        "arrival_offset_s": 1591.526295,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15400"
+      },
+      {
+        "dispatch_id": 319,
+        "job_id": "job_00319",
+        "arrival_offset_s": 1592.457844,
+        "benchmark": "research_bench",
+        "logical_id": "1911.11763"
+      },
+      {
+        "dispatch_id": 320,
+        "job_id": "job_00320",
+        "arrival_offset_s": 1597.291955,
+        "benchmark": "pinchbench",
+        "logical_id": "task_18_market_research"
+      },
+      {
+        "dispatch_id": 321,
+        "job_id": "job_00321",
+        "arrival_offset_s": 1598.064228,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-23987"
+      },
+      {
+        "dispatch_id": 322,
+        "job_id": "job_00322",
+        "arrival_offset_s": 1601.141184,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_246"
+      },
+      {
+        "dispatch_id": 323,
+        "job_id": "job_00323",
+        "arrival_offset_s": 1612.714949,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_81"
+      },
+      {
+        "dispatch_id": 324,
+        "job_id": "job_00324",
+        "arrival_offset_s": 1613.098609,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-30:AXP"
+      },
+      {
+        "dispatch_id": 325,
+        "job_id": "job_00325",
+        "arrival_offset_s": 1614.875946,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-14:NVDA"
+      },
+      {
+        "dispatch_id": 326,
+        "job_id": "job_00326",
+        "arrival_offset_s": 1617.927664,
+        "benchmark": "pinchbench",
+        "logical_id": "task_12_skill_search"
+      },
+      {
+        "dispatch_id": 327,
+        "job_id": "job_00327",
+        "arrival_offset_s": 1627.525701,
+        "benchmark": "research_bench",
+        "logical_id": "1911.11763"
+      },
+      {
+        "dispatch_id": 328,
+        "job_id": "job_00328",
+        "arrival_offset_s": 1631.767958,
+        "benchmark": "swebench",
+        "logical_id": "psf__requests-2148"
+      },
+      {
+        "dispatch_id": 329,
+        "job_id": "job_00329",
+        "arrival_offset_s": 1631.878877,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-21:AXP"
+      },
+      {
+        "dispatch_id": 330,
+        "job_id": "job_00330",
+        "arrival_offset_s": 1633.483213,
+        "benchmark": "swebench",
+        "logical_id": "django__django-11905"
+      },
+      {
+        "dispatch_id": 331,
+        "job_id": "job_00331",
+        "arrival_offset_s": 1645.557334,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_152"
+      },
+      {
+        "dispatch_id": 332,
+        "job_id": "job_00332",
+        "arrival_offset_s": 1653.032102,
+        "benchmark": "pinchbench",
+        "logical_id": "task_11_clawdhub"
+      },
+      {
+        "dispatch_id": 333,
+        "job_id": "job_00333",
+        "arrival_offset_s": 1654.268032,
+        "benchmark": "research_bench",
+        "logical_id": "1902.03393"
+      },
+      {
+        "dispatch_id": 334,
+        "job_id": "job_00334",
+        "arrival_offset_s": 1659.930394,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_71"
+      },
+      {
+        "dispatch_id": 335,
+        "job_id": "job_00335",
+        "arrival_offset_s": 1664.878037,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-02:AXP"
+      },
+      {
+        "dispatch_id": 336,
+        "job_id": "job_00336",
+        "arrival_offset_s": 1666.725629,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-24102"
+      },
+      {
+        "dispatch_id": 337,
+        "job_id": "job_00337",
+        "arrival_offset_s": 1668.995188,
+        "benchmark": "research_bench",
+        "logical_id": "1906.02243"
+      },
+      {
+        "dispatch_id": 338,
+        "job_id": "job_00338",
+        "arrival_offset_s": 1670.973151,
+        "benchmark": "swebench",
+        "logical_id": "django__django-15902"
+      },
+      {
+        "dispatch_id": 339,
+        "job_id": "job_00339",
+        "arrival_offset_s": 1671.68189,
+        "benchmark": "swebench",
+        "logical_id": "scikit-learn__scikit-learn-11040"
+      },
+      {
+        "dispatch_id": 340,
+        "job_id": "job_00340",
+        "arrival_offset_s": 1675.466079,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-09:TSLA"
+      },
+      {
+        "dispatch_id": 341,
+        "job_id": "job_00341",
+        "arrival_offset_s": 1676.951174,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-24:BAC"
+      },
+      {
+        "dispatch_id": 342,
+        "job_id": "job_00342",
+        "arrival_offset_s": 1694.065947,
+        "benchmark": "pinchbench",
+        "logical_id": "task_10_workflow"
+      },
+      {
+        "dispatch_id": 343,
+        "job_id": "job_00343",
+        "arrival_offset_s": 1702.220086,
+        "benchmark": "swebench",
+        "logical_id": "django__django-12589"
+      },
+      {
+        "dispatch_id": 344,
+        "job_id": "job_00344",
+        "arrival_offset_s": 1702.978603,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-21:AXP"
+      },
+      {
+        "dispatch_id": 345,
+        "job_id": "job_00345",
+        "arrival_offset_s": 1720.075881,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:AAPL"
+      },
+      {
+        "dispatch_id": 346,
+        "job_id": "job_00346",
+        "arrival_offset_s": 1720.549098,
+        "benchmark": "pinchbench",
+        "logical_id": "task_08_memory"
+      },
+      {
+        "dispatch_id": 347,
+        "job_id": "job_00347",
+        "arrival_offset_s": 1724.394623,
+        "benchmark": "swebench",
+        "logical_id": "matplotlib__matplotlib-24970"
+      },
+      {
+        "dispatch_id": 348,
+        "job_id": "job_00348",
+        "arrival_offset_s": 1728.786709,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-18:BAC"
+      },
+      {
+        "dispatch_id": 349,
+        "job_id": "job_00349",
+        "arrival_offset_s": 1729.360096,
+        "benchmark": "pinchbench",
+        "logical_id": "task_00_sanity"
+      },
+      {
+        "dispatch_id": 350,
+        "job_id": "job_00350",
+        "arrival_offset_s": 1734.192057,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-16:CVX"
+      },
+      {
+        "dispatch_id": 351,
+        "job_id": "job_00351",
+        "arrival_offset_s": 1746.532653,
+        "benchmark": "pinchbench",
+        "logical_id": "task_02_stock"
+      },
+      {
+        "dispatch_id": 352,
+        "job_id": "job_00352",
+        "arrival_offset_s": 1751.577479,
+        "benchmark": "swebench",
+        "logical_id": "psf__requests-3362"
+      },
+      {
+        "dispatch_id": 353,
+        "job_id": "job_00353",
+        "arrival_offset_s": 1756.815736,
+        "benchmark": "research_bench",
+        "logical_id": "2207.02696"
+      },
+      {
+        "dispatch_id": 354,
+        "job_id": "job_00354",
+        "arrival_offset_s": 1771.433867,
+        "benchmark": "pinchbench",
+        "logical_id": "task_15_daily_summary"
+      },
+      {
+        "dispatch_id": 355,
+        "job_id": "job_00355",
+        "arrival_offset_s": 1772.05104,
+        "benchmark": "pinchbench",
+        "logical_id": "task_17_email_search"
+      },
+      {
+        "dispatch_id": 356,
+        "job_id": "job_00356",
+        "arrival_offset_s": 1772.780009,
+        "benchmark": "swebench",
+        "logical_id": "sympy__sympy-20154"
+      },
+      {
+        "dispatch_id": 357,
+        "job_id": "job_00357",
+        "arrival_offset_s": 1775.496122,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_80"
+      },
+      {
+        "dispatch_id": 358,
+        "job_id": "job_00358",
+        "arrival_offset_s": 1786.328261,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_258"
+      },
+      {
+        "dispatch_id": 359,
+        "job_id": "job_00359",
+        "arrival_offset_s": 1791.109298,
+        "benchmark": "deepfundbench",
+        "logical_id": "main:2025-04-15:NVDA"
+      },
+      {
+        "dispatch_id": 360,
+        "job_id": "job_00360",
+        "arrival_offset_s": 1791.275616,
+        "benchmark": "pinchbench",
+        "logical_id": "task_14_humanizer"
+      },
+      {
+        "dispatch_id": 361,
+        "job_id": "job_00361",
+        "arrival_offset_s": 1794.216812,
+        "benchmark": "pinchbench",
+        "logical_id": "task_11_clawdhub"
+      },
+      {
+        "dispatch_id": 362,
+        "job_id": "job_00362",
+        "arrival_offset_s": 1794.740031,
+        "benchmark": "paperbananabench",
+        "logical_id": "test_287"
+      }
+    ]
+  }
+}
